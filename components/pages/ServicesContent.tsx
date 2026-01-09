@@ -41,6 +41,7 @@ const ServicesContent: React.FC = () => {
                     src={service.image} 
                     alt={service.title} 
                     fill
+                    priority
                     className="object-cover grayscale brightness-90 group-hover:brightness-100 group-hover:grayscale-0 transition-all duration-[1.2s] ease-luxury group-hover:scale-105" 
                   />
                   <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-700 flex items-center justify-center">

@@ -32,6 +32,7 @@ const ServiceDetailContent: React.FC<ServiceDetailContentProps> = ({ service }) 
             src={service.image} 
             alt={service.title} 
             fill
+            priority
             className="object-cover grayscale brightness-90"
           />
         </div>
