@@ -1,11 +1,12 @@
 "use client";
 
-import React from 'react';
+import React, { useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import CircularText from '@/components/CircularText';
-import { PROJECTS } from '@/constants';
+import { SERVICES } from '@/constants';
+import { ArrowLeft, ArrowRight } from 'lucide-react';
 
 const luxuryEasing = [0.16, 1, 0.3, 1] as const;
 
@@ -49,6 +50,14 @@ const imageRevealVariants = {
 
 const HomeContent: React.FC = () => {
   const heroWords = ["LILLI", "PALMER"];
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+  const scroll = (direction: 'left' | 'right') => {
+    if (scrollContainerRef.current) {
+      const scrollAmount = direction === 'left' ? -400 : 400;
+      scrollContainerRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    }
+  };
 
   return (
     <div className="flex flex-col">
@@ -179,7 +188,7 @@ const HomeContent: React.FC = () => {
         </div>
       </section>
 
-      {/* Projects Carousel Section */}
+      {/* Services Carousel Section (Renamed from Projects) */}
       <section className="bg-white py-40 overflow-hidden">
         <div className="container mx-auto px-6 mb-20">
           <motion.div 
@@ -191,44 +200,68 @@ const HomeContent: React.FC = () => {
           >
             <h2 className="text-gray-800 text-4xl md:text-6xl font-light leading-tight uppercase tracking-tighter max-w-3xl">
               INNOVATION AND DURABILITY <br />
-              ACROSS EVERY SUBURB.
+              ACROSS EVERY DISCIPLINE.
             </h2>
             <Link href="/services" className="text-h1-custom text-black hover:text-[#BBA899] transition-colors pb-2 border-b-2 border-black uppercase tracking-widest">
-              VIEW SERVICES
+              VIEW ALL SERVICES
             </Link>
           </motion.div>
         </div>
         
-        <div className="flex gap-10 px-6 overflow-x-auto hide-scrollbar pb-16">
-          {PROJECTS.map((project, idx) => (
+        {/* Carousel Container */}
+        <div 
+          ref={scrollContainerRef}
+          className="flex gap-10 px-6 overflow-x-auto hide-scrollbar pb-16 snap-x snap-mandatory"
+        >
+          {SERVICES.map((service, idx) => (
             <motion.div 
-              key={project.id}
+              key={service.id}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: idx * 0.15, duration: 1, ease: luxuryEasing }}
               viewport={{ once: true, margin: "0px 0px -50px 0px" }}
-              className="min-w-[350px] md:min-w-[600px] group cursor-pointer"
+              className="min-w-[350px] md:min-w-[600px] group cursor-pointer snap-center"
             >
-              <div className="relative aspect-[4/5] overflow-hidden mb-8 rounded-[3px] shadow-lg">
-                <Image 
-                  src={project.image} 
-                  alt={project.title} 
-                  fill
-                  className="object-cover grayscale brightness-90 transition-transform duration-[1.5s] ease-luxury group-hover:scale-110 group-hover:grayscale-0 group-hover:brightness-100"
-                />
-                <div className="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 flex items-center justify-center">
-                  <span className="text-white text-[11px] font-bold tracking-[0.4em] border border-white/40 px-10 py-4 bg-black/20 backdrop-blur-md uppercase">View Case Study</span>
+              <Link href={`/services/${service.id}`} className="block">
+                <div className="relative aspect-[4/5] overflow-hidden mb-8 rounded-[3px] shadow-lg">
+                  <Image 
+                    src={service.image} 
+                    alt={service.title} 
+                    fill
+                    className="object-cover grayscale brightness-90 transition-transform duration-[1.5s] ease-luxury group-hover:scale-110 group-hover:grayscale-0 group-hover:brightness-100"
+                  />
+                  <div className="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 flex items-center justify-center">
+                    <span className="text-white text-[11px] font-bold tracking-[0.4em] border border-white/40 px-10 py-4 bg-black/20 backdrop-blur-md uppercase">Explore Service</span>
+                  </div>
                 </div>
-              </div>
-              <div className="flex justify-between items-start px-4">
-                <div className="space-y-2">
-                  <h4 className="text-gray-800 text-lg font-light tracking-[0.1em] uppercase">{project.title}</h4>
-                  <p className="text-[#BBA899] text-[10px] uppercase tracking-[0.3em] font-bold">{project.category}</p>
+                <div className="flex justify-between items-start px-4">
+                  <div className="space-y-2">
+                    <h4 className="text-gray-800 text-lg font-light tracking-[0.1em] uppercase">{service.title}</h4>
+                    <p className="text-[#BBA899] text-[10px] uppercase tracking-[0.3em] font-bold line-clamp-1">{service.description}</p>
+                  </div>
+                  <span className="text-gray-300 font-light text-2xl">0{idx + 1}</span>
                 </div>
-                <span className="text-gray-300 font-light text-2xl">0{idx + 1}</span>
-              </div>
+              </Link>
             </motion.div>
           ))}
+        </div>
+
+        {/* Navigation Buttons */}
+        <div className="container mx-auto px-6 flex gap-4 mt-8">
+            <button 
+              onClick={() => scroll('left')}
+              className="w-12 h-12 border border-gray-300 rounded-full flex items-center justify-center hover:bg-[#191919] hover:text-white hover:border-[#191919] transition-all duration-300"
+              aria-label="Scroll Left"
+            >
+              <ArrowLeft size={16} />
+            </button>
+            <button 
+              onClick={() => scroll('right')}
+              className="w-12 h-12 border border-gray-300 rounded-full flex items-center justify-center hover:bg-[#191919] hover:text-white hover:border-[#191919] transition-all duration-300"
+              aria-label="Scroll Right"
+            >
+              <ArrowRight size={16} />
+            </button>
         </div>
       </section>
     </div>
