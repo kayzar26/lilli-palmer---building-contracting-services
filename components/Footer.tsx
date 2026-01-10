@@ -36,6 +36,7 @@ const Footer: React.FC = () => {
             <nav className="flex flex-col md:items-end gap-4 text-4xl md:text-6xl font-light">
               <Link href="/" className="hover:text-[#BBA899] transition-colors">HOME</Link>
               <Link href="/services" className="hover:text-[#BBA899] transition-colors">SERVICES</Link>
+              <Link href="/about" className="hover:text-[#BBA899] transition-colors">ABOUT</Link>
               <Link href="/blog" className="hover:text-[#BBA899] transition-colors">BLOG</Link>
               <Link href="/contact" className="hover:text-[#BBA899] transition-colors">CONTACT</Link>
             </nav>
