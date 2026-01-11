@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { Instagram, Facebook, Linkedin, Twitter, ArrowUp } from 'lucide-react';
+import { Instagram, Facebook, Linkedin, ArrowUp } from 'lucide-react';
 
 const Footer: React.FC = () => {
   const scrollToTop = () => {
@@ -25,10 +25,14 @@ const Footer: React.FC = () => {
             </div>
             
             <div className="flex gap-4 mt-8">
-              <a href="#" className="p-2 hover:bg-white/50 rounded-full transition-colors"><Instagram size={18} /></a>
-              <a href="#" className="p-2 hover:bg-white/50 rounded-full transition-colors"><Facebook size={18} /></a>
-              <a href="#" className="p-2 hover:bg-white/50 rounded-full transition-colors"><Linkedin size={18} /></a>
-              <a href="#" className="p-2 hover:bg-white/50 rounded-full transition-colors"><Twitter size={18} /></a>
+              <a href="https://www.instagram.com/lillipalmer.ae/#" target="_blank" rel="noopener noreferrer" className="p-2 hover:bg-white/50 rounded-full transition-colors"><Instagram size={18} /></a>
+              <a href="https://www.facebook.com/people/Lilli-Palmer-Building-Contracting/61584535720704/" target="_blank" rel="noopener noreferrer" className="p-2 hover:bg-white/50 rounded-full transition-colors"><Facebook size={18} /></a>
+              <a href="https://www.linkedin.com/company/lilli-palmer/" target="_blank" rel="noopener noreferrer" className="p-2 hover:bg-white/50 rounded-full transition-colors"><Linkedin size={18} /></a>
+              <a href="https://www.tiktok.com/@lillipalmer.ae" target="_blank" rel="noopener noreferrer" className="p-2 hover:bg-white/50 rounded-full transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
+                </svg>
+              </a>
             </div>
           </div>
 
@@ -37,7 +41,6 @@ const Footer: React.FC = () => {
               <Link href="/" className="hover:text-[#BBA899] transition-colors">HOME</Link>
               <Link href="/services" className="hover:text-[#BBA899] transition-colors">SERVICES</Link>
               <Link href="/about" className="hover:text-[#BBA899] transition-colors">ABOUT</Link>
-              <Link href="/blog" className="hover:text-[#BBA899] transition-colors">BLOG</Link>
               <Link href="/contact" className="hover:text-[#BBA899] transition-colors">CONTACT</Link>
             </nav>
             
@@ -52,10 +55,10 @@ const Footer: React.FC = () => {
 
         <div className="border-t border-gray-400 pt-10 text-[10px] tracking-widest leading-loose flex flex-col md:flex-row justify-between uppercase">
           <p className="max-w-xl mb-4 md:mb-0">
-            ALL IMAGES & INFORMATION SHOWN ON THIS WEBSITE ARE SUBJECT TO COPYRIGHT BY LILLI PALMER PTY LTD & MUST NOT BE USED WITHOUT WRITTEN CONSENT.
+            ALL IMAGES & INFORMATION SHOWN ON THIS WEBSITE ARE SUBJECT TO COPYRIGHT BY LILLI PALMER & MUST NOT BE USED WITHOUT WRITTEN CONSENT.
           </p>
           <p>
-            CURATED BY <a href="#" className="underline font-bold">LILLI PALMER</a> BUILDING CONTRACTING
+            CURATED BY <a href="https://www.instagram.com/_kayzar_" className="underline font-bold">KAYZAR</a> FOR LILLI PALMER
           </p>
         </div>
       </div>
@@ -63,15 +66,15 @@ const Footer: React.FC = () => {
       <div className="mt-20 overflow-hidden border-y border-gray-300 py-4">
         <div className="marquee-container">
           <div className="marquee-content inline-flex items-center gap-10 text-[12px] font-bold tracking-[0.2em] whitespace-nowrap">
-            <span>LILLI PALMER ACKNOWLEDGES THE TRADITIONAL CUSTODIANS OF THE LAND ON WHICH WE LIVE AND WORK</span>
+            <span> LILLI PALMER ACKNOWLEDGES THE TRADITIONAL CUSTODIANS OF THE LAND ON WHICH WE LIVE AND WORK </span>
             <span className="text-lg">•</span>
-            <span>HVAC • PLUMBING • ELECTRICAL • PAINTING • RENOVATION • CONSTRUCTION</span>
+            <span> HVAC • PLUMBING • ELECTRICAL • PAINTING • RENOVATION • CONSTRUCTION </span>
             <span className="text-lg">•</span>
-            <span>BUILDING PROPERTY EXCELLENCE SINCE 2023</span>
+            <span> BUILDING PROPERTY EXCELLENCE SINCE 2023 </span>
             <span className="text-lg">•</span>
-            <span>UNITED ARAB EMIRATES</span>
+            <span> UNITED ARAB EMIRATES </span>
             <span className="text-lg">•</span>
-            <span>LILLI PALMER ACKNOWLEDGES THE TRADITIONAL CUSTODIANS OF THE LAND ON WHICH WE LIVE AND WORK</span>
+            <span> LILLI PALMER ACKNOWLEDGES THE TRADITIONAL CUSTODIANS OF THE LAND ON WHICH WE LIVE AND WORK </span>
           </div>
         </div>
       </div>

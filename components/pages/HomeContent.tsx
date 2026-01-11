@@ -118,7 +118,7 @@ const HomeContent: React.FC = () => {
               transition={{ delay: 1.2, duration: 1.5 }}
               className="text-white/70 text-h1-custom mt-6 tracking-[0.6em] uppercase"
             >
-              Property Excellence
+              Building Excellence, Maintaining Comfort
             </motion.p>
           </div>
         </div>
@@ -262,6 +262,26 @@ const HomeContent: React.FC = () => {
             >
               <ArrowRight size={16} />
             </button>
+        </div>
+      </section>
+
+      {/* Why Choose Us Section */}
+      <section className="bg-white pb-24 px-6">
+        <div className="container mx-auto">
+          <motion.div
+            variants={fadeUpVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="flex flex-col items-center text-center max-w-4xl mx-auto space-y-8"
+          >
+            <div className="h-[2px] w-24 bg-[#BBA899]"></div>
+            <h2 className="text-gray-800 text-2xl md:text-3xl font-light leading-relaxed tracking-wide">
+              <span className="text-[#BBA899] font-normal uppercase text-sm tracking-[0.3em] block mb-4">Why Choose Us</span>
+              "Unlike standard maintenance apps, we are fully licensed building contractors. <br className="hidden md:block" />
+              <span className="font-normal">We don't just patch it; we build it.</span>"
+            </h2>
+          </motion.div>
         </div>
       </section>
     </div>

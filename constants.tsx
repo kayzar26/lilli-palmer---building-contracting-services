@@ -95,6 +95,19 @@ export const SERVICES: Service[] = [
       { title: 'End-to-End Delivery', text: 'Our process is transparent and controlled, providing regular quality assurance.' }
     ]
   },
+  { 
+    id: 'annual-maintenance-contract', 
+    title: 'Annual Maintenance', 
+    description: 'Comprehensive maintenance contracts providing year-round peace of mind for your property.', 
+    image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=1200',
+    extendedContent: 'Our Annual Maintenance Contracts (AMC) offer proactive care, ensuring your property remains in pristine condition year-round.',
+    features: ['Priority Response', 'Scheduled Preventive Maintenance', 'Unlimited Emergency Callouts', 'Comprehensive Coverage'],
+    sections: [
+      { title: 'Proactive Care', text: 'We identify issues before they become problems with regular detailed inspections.' },
+      { title: 'Priority Access', text: 'AMC clients receive skip-the-queue priority for all service requests.' },
+      { title: 'Cost Certainty', text: 'Avoid unexpected repair bills with our inclusive maintenance packages.' }
+    ]
+  },
 ];
 
 export const BLOGS: BlogPost[] = [

@@ -68,7 +68,7 @@ const ContactContent: React.FC = () => {
                   <Phone size={18} />
                 </div>
                 <div>
-                  <p className="text-[10px] tracking-[0.3em] text-gray-400 uppercase mb-2 font-bold">Studio Line</p>
+                  <p className="text-[10px] tracking-[0.3em] text-gray-400 uppercase mb-2 font-bold">Phone Enquiries</p>
                   <a href="tel:+971507098676" className="text-xl text-gray-700 font-light group-hover:text-[#BBA899] transition-colors">+971 50 709 8676</a>
                 </div>
               </motion.div>
@@ -78,7 +78,7 @@ const ContactContent: React.FC = () => {
                   <MapPin size={18} />
                 </div>
                 <div>
-                  <p className="text-[10px] tracking-[0.3em] text-gray-400 uppercase mb-2 font-bold">Studio Address</p>
+                  <p className="text-[10px] tracking-[0.3em] text-gray-400 uppercase mb-2 font-bold">Dubai Address</p>
                   <p className="text-xl text-gray-700 font-light group-hover:text-[#BBA899] transition-colors">
                     702, Garhoud Views Building, Al Garhoud, Dubai
                   </p>
@@ -136,7 +136,7 @@ const ContactContent: React.FC = () => {
                   <select className="appearance-none w-full bg-gray-50 border border-transparent border-b-gray-200 px-5 py-4 rounded-[5px] focus:bg-white focus:border-[#BBA899] focus:ring-0 outline-none transition-all text-gray-800 font-light text-base ease-luxury cursor-pointer">
                     <option>HVAC Solutions</option>
                     <option>Full Construction</option>
-                    <option>Boutique Renovation</option>
+                    <option>Home/Villa Renovation</option>
                     <option>Electrical Repair</option>
                     <option>Professional Plumbing</option>
                     <option>Painting Services</option>
@@ -167,7 +167,7 @@ const ContactContent: React.FC = () => {
               </motion.button>
               
               <motion.p variants={formElementVariants} className="text-center text-[10px] text-gray-400 tracking-widest uppercase mt-6">
-                Our studio will respond within 24 business hours.
+                Our company will respond within 24 business hours.
               </motion.p>
             </motion.form>
           </motion.div>

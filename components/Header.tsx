@@ -6,6 +6,7 @@ import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 
 import { ScrollSmoother } from 'gsap/ScrollSmoother';
+import HamburgerMenu from './HamburgerMenu';
 
 const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -104,7 +105,7 @@ const Header: React.FC = () => {
       <div className={`container mx-auto px-6 flex justify-between items-center relative z-20 transition-all duration-300 ${isScrolled ? 'py-4' : 'py-8'}`}>
         <Link href="/" className="flex flex-col group">
           <span className={`text-xl md:text-2xl font-light tracking-[0.2em] transition-colors ${isMenuOpen ? 'text-black' : (isScrolled ? 'text-black' : 'text-white')} group-hover:text-[#BBA899]`}>LILLI PALMER</span>
-          <span className={`text-[9px] tracking-[0.4em] uppercase -mt-1 transition-colors ${isMenuOpen ? 'text-gray-400' : (isScrolled ? 'text-gray-400' : 'text-white/60')}`}>Building Contracting Services</span>
+          <span className={`text-[9px] tracking-[0.4em] uppercase -mt-1 transition-colors ${isMenuOpen ? 'text-gray-400' : (isScrolled ? 'text-gray-400' : 'text-white/60')}`}>Building Contracting LLC</span>
         </Link>
 
         {/* Desktop Menu */}
@@ -123,27 +124,14 @@ const Header: React.FC = () => {
         </nav>
 
         {/* High-End Animated Hamburger Toggle */}
-        <button 
-          className="md:hidden flex flex-col gap-1.5 p-2 justify-center items-center group overflow-hidden"
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-          aria-label="Toggle Menu"
-        >
-          <motion.span 
-            animate={isMenuOpen ? { rotate: 45, y: 8 } : { rotate: 0, y: 0 }}
-            transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] as const }}
-            className={`w-6 h-[1.5px] block ${isMenuOpen || isScrolled ? 'bg-black' : 'bg-white'}`}
-          ></motion.span>
-          <motion.span 
-            animate={isMenuOpen ? { x: 40, opacity: 0 } : { x: 0, opacity: 1 }}
-            transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            className={`w-6 h-[1.5px] block ${isScrolled ? 'bg-black' : 'bg-white'}`}
-          ></motion.span>
-          <motion.span 
-            animate={isMenuOpen ? { rotate: -45, y: -8 } : { rotate: 0, y: 0 }}
-            transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] as const }}
-            className={`w-6 h-[1.5px] block ${isMenuOpen || isScrolled ? 'bg-black' : 'bg-white'}`}
-          ></motion.span>
-        </button>
+        <div className="md:hidden">
+          <HamburgerMenu 
+            isOpen={isMenuOpen} 
+            onToggle={() => setIsMenuOpen(!isMenuOpen)} 
+            color={isMenuOpen ? "#000000" : (isScrolled ? "#000000" : "#FFFFFF")}
+            size={32}
+          />
+        </div>
       </div>
 
       {/* Mobile Menu Overlay */}

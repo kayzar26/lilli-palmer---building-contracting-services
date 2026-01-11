@@ -3,7 +3,7 @@ import React from 'react';
 import { ArrowUpRight } from 'lucide-react';
 
 const CircularText: React.FC = () => {
-  const text = "GET A FREE QUOTE • ";
+  const text = "REQUEST A FREE QUOTE • ";
   const characters = text.split("");
 
   return (
