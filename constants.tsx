@@ -123,7 +123,7 @@ export const SERVICES: Service[] = [
   },
   { 
     id: 'renovation', 
-    title: 'Boutique Renovation', 
+    title: 'Home Renovation', 
     description: 'Transformative spatial design and structural upgrades that breathe new life into existing structures.', 
     image: 'https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&q=80&w=1200',
     extendedContent: 'Renovating requires respect for original character while pushing boundaries of modern living.',

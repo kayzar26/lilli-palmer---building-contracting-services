@@ -17,8 +17,10 @@ const Footer: React.FC = () => {
             <h2 className="text-3xl font-light tracking-[0.2em] text-black mb-10">LILLI PALMER</h2>
             <div className="space-y-2 text-[13px] uppercase tracking-widest leading-relaxed">
               <p>DUBAI BRANCH</p>
+              <a href="https://maps.app.goo.gl/yKDKHBYmYQymwQXb7" className="hover:text-[#BBA899] transition-colors tracking-widest" target="_blank" rel="noopener noreferrer"> 
               <p>702, Garhoud Views Building</p>
               <p>Al Garhoud, Dubai, UAE</p>
+              </a>
               <br />
               <p><a href="tel:+971507098676" className="hover:text-[#BBA899] transition-colors tracking-widest">+971 50 709 8676</a></p>
               <p><a href="mailto:contact@lillipalmer.com" className="hover:text-[#BBA899] transition-colors tracking-widest">contact@lillipalmer.com</a></p>

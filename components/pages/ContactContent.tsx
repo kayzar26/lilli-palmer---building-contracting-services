@@ -79,9 +79,9 @@ const ContactContent: React.FC = () => {
                 </div>
                 <div>
                   <p className="text-[10px] tracking-[0.3em] text-gray-400 uppercase mb-2 font-bold">Dubai Address</p>
-                  <p className="text-xl text-gray-700 font-light group-hover:text-[#BBA899] transition-colors">
+                  <a href="https://maps.app.goo.gl/yKDKHBYmYQymwQXb7" target="_blank" rel="noopener noreferrer" className="text-xl text-gray-700 font-light group-hover:text-[#BBA899] transition-colors">
                     702, Garhoud Views Building, Al Garhoud, Dubai
-                  </p>
+                  </a>
                 </div>
               </motion.div>
             </div>
