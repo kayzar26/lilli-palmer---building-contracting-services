@@ -4,6 +4,11 @@ export interface ServiceDetailSection {
   text: string;
 }
 
+export interface ServiceDetailItem {
+  title: string;
+  description: string;
+}
+
 export interface Service {
   id: string;
   title: string;
@@ -12,6 +17,9 @@ export interface Service {
   extendedContent: string;
   features: string[];
   sections: ServiceDetailSection[];
+  benefits?: ServiceDetailItem[];
+  process?: ServiceDetailItem[];
+  whyChooseUs?: string;
 }
 
 export interface BlogPostSection {

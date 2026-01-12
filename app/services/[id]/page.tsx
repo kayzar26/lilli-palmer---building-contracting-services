@@ -25,6 +25,32 @@ export default async function ServiceDetailPage({ params }: Props) {
   if (!service) {
     notFound();
   }
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: service.title,
+    description: service.description,
+    provider: {
+      '@type': 'Organization',
+      name: 'Lilli Palmer Building Contracting',
+      url: 'https://www.lillipalmer.ae',
+    },
+    image: service.image,
+    url: `https://www.lillipalmer.ae/services/${service.id}`,
+    areaServed: {
+      '@type': 'Country',
+      name: 'United Arab Emirates',
+    },
+  };
   
-  return <ServiceDetailContent service={service} />;
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <ServiceDetailContent service={service} />
+    </>
+  );
 }

@@ -39,23 +39,68 @@ const ServiceDetailContent: React.FC<ServiceDetailContentProps> = ({ service }) 
 
         {/* Content Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-24 mb-32">
-          <div className="lg:col-span-2 space-y-16">
+          <div className="lg:col-span-2 space-y-20">
+            {/* Main Description */}
             <div className="space-y-8">
               <h2 className="text-3xl md:text-5xl font-light text-gray-800 leading-tight">
                 {service.extendedContent}
               </h2>
             </div>
+            
+            {/* Why Choose Us - Enhanced Section */}
+            {service.whyChooseUs && (
+               <div className="border-l-4 border-[#BBA899] pl-8 py-2 bg-gray-50 rounded-r-sm">
+                 <h3 className="text-xs font-bold tracking-[0.3em] text-[#BBA899] mb-4 uppercase">Why Select Us</h3>
+                 <p className="text-lg text-gray-700 font-light italic leading-relaxed">"{service.whyChooseUs}"</p>
+               </div>
+            )}
 
-            <div className="grid grid-cols-1 md:grid-cols-1 gap-12">
-              {service.sections.map((section, idx) => (
-                <div key={idx} className="border-t border-gray-200 pt-10">
-                  <h3 className="text-xl font-bold tracking-widest text-gray-800 mb-4 uppercase">{section.title}</h3>
-                  <p className="text-xl text-gray-500 font-light leading-relaxed">
-                    {section.text}
-                  </p>
+            {/* Benefits Grid */}
+            {service.benefits && service.benefits.length > 0 && (
+              <div>
+                 <h3 className="text-xl font-bold tracking-widest text-gray-800 mb-10 uppercase border-b border-gray-200 pb-4">Key Advantages</h3>
+                 <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-12">
+                   {service.benefits.map((benefit, idx) => (
+                     <div key={idx} className="space-y-3">
+                       <h4 className="text-sm font-bold tracking-wide text-gray-900 uppercase">{benefit.title}</h4>
+                       <p className="text-sm text-gray-500 font-light leading-relaxed">{benefit.description}</p>
+                     </div>
+                   ))}
+                 </div>
+              </div>
+            )}
+
+            {/* Process / Steps */}
+            {service.process && service.process.length > 0 && (
+              <div>
+                 <h3 className="text-xl font-bold tracking-widest text-gray-800 mb-10 uppercase border-b border-gray-200 pb-4">Our Process</h3>
+                 <div className="space-y-12">
+                   {service.process.map((step, idx) => (
+                     <div key={idx} className="flex gap-6">
+                       <span className="text-4xl font-light text-[#BBA899]/30 -mt-2">0{idx + 1}</span>
+                       <div className="space-y-2 border-b border-gray-100 pb-8 w-full">
+                         <h4 className="text-lg font-medium tracking-wide text-gray-800 uppercase">{step.title}</h4>
+                         <p className="text-base text-gray-500 font-light leading-relaxed">{step.description}</p>
+                       </div>
+                     </div>
+                   ))}
+                 </div>
+              </div>
+            )}
+
+            {/* Legacy/Fallback Sections (Usage: AMC & backward compatibility) */}
+            {(!service.benefits && !service.process) && (
+                <div className="grid grid-cols-1 md:grid-cols-1 gap-12">
+                  {service.sections.map((section, idx) => (
+                    <div key={idx} className="border-t border-gray-200 pt-10">
+                      <h3 className="text-xl font-bold tracking-widest text-gray-800 mb-4 uppercase">{section.title}</h3>
+                      <p className="text-xl text-gray-500 font-light leading-relaxed">
+                        {section.text}
+                      </p>
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </div>
+            )}
           </div>
 
           <div className="space-y-12">

@@ -61,6 +61,7 @@ const HomeContent: React.FC = () => {
 
   return (
     <div className="flex flex-col">
+      <h1 className="sr-only">Lilli Palmer Building Contracting</h1>
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-end justify-between pb-24 px-6 overflow-hidden">
         {/* Background Image with Parallax-like effect */}

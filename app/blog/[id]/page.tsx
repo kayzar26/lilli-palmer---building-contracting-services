@@ -25,6 +25,39 @@ export default async function BlogDetailPage({ params }: Props) {
   if (!blog) {
     notFound();
   }
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: blog.title,
+    image: blog.image,
+    datePublished: new Date(blog.date).toISOString(), // Provided date string is parsed to ISO
+    author: {
+      '@type': 'Person',
+      name: blog.author,
+    },
+    description: blog.excerpt,
+    publisher: {
+      '@type': 'Organization',
+      name: 'Lilli Palmer Building Contracting',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://www.lillipalmer.ae/icon.png',
+      },
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `https://www.lillipalmer.ae/blog/${blog.id}`,
+    },
+  };
   
-  return <BlogDetailContent blog={blog} />;
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <BlogDetailContent blog={blog} />
+    </>
+  );
 }

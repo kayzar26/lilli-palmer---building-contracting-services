@@ -28,7 +28,20 @@ export const SERVICES: Service[] = [
       { title: 'Preventative Maintenance', text: 'Regular servicing prevents 90% of system failures. Our team conducts deep-cycle inspections twice yearly.' },
       { title: 'Rapid Repair', text: 'When systems fail, response time is critical. Our HVAC engineers are equipped with advanced diagnostics.' },
       { title: 'Energy Efficiency', text: 'We integrate smart thermostats and zone-based controls to reduce environmental impact.' }
-    ]
+    ],
+    benefits: [
+      { title: 'Optimized Energy Consumption', description: 'Advanced calibration reduces energy bills by up to 30% while maintaining superior comfort levels.' },
+      { title: 'Enhanced Air Quality', description: 'Hospital-grade filtration systems remove 99.9% of biological contaminants and allergens.' },
+      { title: 'Silent Operation', description: 'Acoustic dampers and precision balancing ensure your system is felt, not heard.' },
+      { title: 'Extended Hardware Life', description: 'Proactive component care doubles the operational lifespan of expensive HVAC units.' }
+    ],
+    process: [
+      { title: 'System Auditing', description: 'We begin with a thermal imaging audit to identify efficiency leaks and airflow bottlenecks.' },
+      { title: 'Bespoke Design', description: 'For new installs, we engineer ductwork that integrates invisibly with your architecture.' },
+      { title: 'Precision Installation', description: 'Our certified engineers execute installations with surgical cleanliness and care.' },
+      { title: 'Smart Calibration', description: 'Final commissioning involves balancing air pressure and integrating smart controls.' }
+    ],
+    whyChooseUs: 'Unlike standard technicians, our engineers understand the thermal dynamics of luxury properties. We treat climate control as an integrated architectural element, not just a mechanical utility.'
   },
   { 
     id: 'electrical', 
@@ -41,7 +54,20 @@ export const SERVICES: Service[] = [
       { title: 'Safety & Compliance', text: 'We ensure your property meets the highest standards. Our safety audits identify potential hazards.' },
       { title: 'Aesthetic Lighting', text: 'Lighting is an architectural tool. We design bespoke systems that highlight the best features of your home.' },
       { title: 'Technology Integration', text: 'From smart hubs to backup power, we build the infrastructure required for modern living.' }
-    ]
+    ],
+    benefits: [
+      { title: 'Absolute Safety', description: 'Rigorous testing protocols ensure your property is protected against surges and fire hazards.' },
+      { title: 'Smart Future-Proofing', description: 'Infrastructure designed to support EV chargers, solar integration, and next-gen automation.' },
+      { title: 'Mood Architecture', description: 'Lighting circuits designed to create distinct atmospheres for day, evening, and entertaining.' },
+      { title: 'Uninterrupted Power', description: 'Seamless backup solutions ensure your lifestyle is never disrupted by grid failures.' }
+    ],
+    process: [
+      { title: 'Load Calculation', description: 'We calculate the precise power requirements of your modern lifestyle appliances.' },
+      { title: 'Strategic Wiring', description: 'Cabling is routed with future accessibility in mind, minimizing disruption for upgrades.' },
+      { title: 'Fixture Installation', description: 'We handle premium fittings with white-glove care, ensuring perfect alignment.' },
+      { title: 'Safety Certification', description: 'Every project concludes with a full compliance certificate and safety stress-test.' }
+    ],
+    whyChooseUs: 'We bridge the gap between heavy engineering and delicate interior design. Our electricians are trained to work around expensive finishes, ensuring that the only sign of our presence is flawless functionality.'
   },
   { 
     id: 'plumbing', 
@@ -54,7 +80,20 @@ export const SERVICES: Service[] = [
       { title: 'High-Pressure Diagnostics', text: 'We use acoustic leak detection to find hidden issues without damaging your property.' },
       { title: 'Bespoke Installations', text: 'We specialize in the installation of premium international fixtures for kitchens and bathrooms.' },
       { title: 'Emergency Management', text: 'Our rapid-response team is available for critical repairs 24/7 for our retained clients.' }
-    ]
+    ],
+    benefits: [
+      { title: 'Water Purity', description: 'Whole-home filtration integration for spa-quality water from every tap.' },
+      { title: 'Pressure Balance', description: 'Optimized systems that deliver consistent, powerful pressure across all bathrooms simultaneously.' },
+      { title: 'Silent Drainage', description: 'Acoustically insulated piping eliminates the noise of water movement behind walls.' },
+      { title: 'Leak Immunity', description: 'Advanced jointing techniques and pressure testing prevent future water damage.' }
+    ],
+    process: [
+      { title: 'Non-Invasive Inspection', description: 'We use fiber-optic cameras to inspect internal pipe health without breaking tiles.' },
+      { title: 'Technical Planning', description: 'Complex flows are hydraulically calculated to prevent blockages and pressure drops.' },
+      { title: 'Precision Fitting', description: 'Fixtures are installed using laser levels to ensure perfect symmetry and alignment.' },
+      { title: 'System Sterilization', description: 'New systems are flushed and sterilized before handover.' }
+    ],
+    whyChooseUs: 'Plumbing is often hidden, but its failure is catastrophic. We use industrial-grade materials in residential settings to provide commercial-level durability and peace of mind.'
   },
   { 
     id: 'painting', 
@@ -67,7 +106,20 @@ export const SERVICES: Service[] = [
       { title: 'Master Surface Prep', text: 'We believe a great finish starts underneath. Our team meticulously sands and primes every surface.' },
       { title: 'Heritage Timber Care', text: 'Preserving old-growth timber requires specialized knowledge of traditional methods.' },
       { title: 'Exterior Durability', text: 'Our exterior solutions are designed for longevity, utilizing UV-resistant coatings.' }
-    ]
+    ],
+    benefits: [
+      { title: 'Flawless Surfaces', description: 'Level 5 drywall finishing ensures walls are perfectly smooth even under rake lighting.' },
+      { title: 'Health Conscious', description: 'Zero-VOC, odorless paints allow you to inhabit your space immediately after completion.' },
+      { title: 'Color Permanence', description: 'UV-stabilized pigments prevent fading and chalking on exteriors for a decade.' },
+      { title: 'Easy Maintenance', description: 'Washable, scuff-resistant finishes that forgive the wear and tear of daily life.' }
+    ],
+    process: [
+      { title: 'Furniture Protection', description: 'We treat your belongings with reverence, using museum-grade covers and barriers.' },
+      { title: 'Defect Correction', description: 'Every imperfection, crack, and nail pop is surgically repaired and smoothed.' },
+      { title: 'Multi-Coat Application', description: 'Light sanding between coats ensures mechanical adhesion and a velvet touch.' },
+      { title: 'White Glove Clean', description: 'We leave your property spotlessly clean, with windows polished and floors vacuumed.' }
+    ],
+    whyChooseUs: 'We don’t just apply paint; we restore surfaces. Our team consists of artisan decorators who understand how light interacts with texture and color, delivering a finish that feels as good as it looks.'
   },
   { 
     id: 'renovation', 
@@ -80,7 +132,20 @@ export const SERVICES: Service[] = [
       { title: 'Spatial Design', text: 'We reimagine how you move through your home, removing barriers to create open environments.' },
       { title: 'Material Selection', text: 'From Calacatta marble to custom-milled oak, we source the world’s finest materials.' },
       { title: 'Project Management', text: 'We manage every detail, from council approvals to the final site clean.' }
-    ]
+    ],
+    benefits: [
+      { title: 'Value Addition', description: 'Strategic renovations that are proven to increase property valuation by 20-30%.' },
+      { title: 'Flow & Function', description: 'Reconfigured layouts that unlock the hidden potential of your existing footprint.' },
+      { title: 'Bespoke Identity', description: 'Custom joinery and unique finishes that reflect your personal narrative, not a trend.' },
+      { title: 'Stress-Free Build', description: 'A single point of contact manages all trades, schedules, and quality control.' }
+    ],
+    process: [
+      { title: 'Concept Feasibility', description: 'We assess structural constraints to determine exactly what is possible.' },
+      { title: 'Material Sourcing', description: 'We escort you to private showrooms to select stones, woods, and fixtures.' },
+      { title: 'Construction Phase', description: 'A strictly scheduled build ensures momentum is maintained without compromising quality.' },
+      { title: 'Detailing', description: 'The final 5%—silicones, trims, and adjustments—receives 50% of our attention.' }
+    ],
+    whyChooseUs: 'We handle the "impossible" renovations. Tight access, occupied spaces, and heritage restrictions are where we excel. We respect that we are guests in your home, maintaining a tidy and polite site at all times.'
   },
   { 
     id: 'construction', 
@@ -93,7 +158,20 @@ export const SERVICES: Service[] = [
       { title: 'Structural Integrity', text: 'We build for generations, focusing on structural redundancy and long-term performance.' },
       { title: 'Architectural Fidelity', text: 'We ensure every millimeter of the vision is realized, from hidden supports to cladding.' },
       { title: 'End-to-End Delivery', text: 'Our process is transparent and controlled, providing regular quality assurance.' }
-    ]
+    ],
+    benefits: [
+      { title: 'Architectural Accuracy', description: 'We speak the language of architects, translating complex details into built reality.' },
+      { title: 'Structural Longevity', description: 'Over-engineered foundations and frames ensure your asset withstands the test of time.' },
+      { title: 'Transparent Costing', description: 'Detailed quantity surveying prevents budget creep and unexpected variations.' },
+      { title: 'Site Excellence', description: 'A managed site is a safe site. We maintain rigorous standards of organization and safety.' }
+    ],
+    process: [
+      { title: 'Site Mobilization', description: 'Secure hoarding and site setup to establish a professional workspace.' },
+      { title: 'Shell & Core', description: 'Rapid, precise execution of the structural elements to get watertight quickly.' },
+      { title: 'MEP Integration', description: 'Mechanical, Electrical, and Plumbing systems are roughed in with future-proofing in mind.' },
+      { title: 'Finishes & Handover', description: 'The installation of final layers, followed by a comprehensive snagging and handover capability.' }
+    ],
+    whyChooseUs: 'We are builders who think like owners. We understand that a construction project is a significant financial asset, and we manage it with the rigour of an investment portfolio.'
   },
   { 
     id: 'annual-maintenance-contract', 
