@@ -33,12 +33,12 @@ export default function RootLayout({
         <div className="min-h-screen flex flex-col selection:bg-[#BBA899] selection:text-white">
           <Header />
           <WhatsAppButton />
-          <SmoothScroller>
+          {/* <SmoothScroller> */}
             <main className="flex-grow">
               {children}
             </main>
             <Footer />
-          </SmoothScroller>
+          {/* </SmoothScroller> */}
         </div>
         <SpeedInsights />
         <Analytics/>
