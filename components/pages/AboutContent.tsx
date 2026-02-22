@@ -20,10 +20,10 @@ const AboutContent: React.FC = () => {
             </h1>
             <div className="space-y-8 text-gray-500 text-xl font-light leading-relaxed">
               <p>
-                Founded on the principles of architectural integrity and uncompromising quality, Lilli Palmer is Dubai's premier destination for high-end building contracting and maintenance.
+                Founded on the principles of architectural integrity and uncompromising quality, Lilli Palmer is a 100% Emirati-owned company and Dubai's premier destination for high-end building contracting and maintenance.
               </p>
               <p>
-                We serve a discerning clientele who understand that property is more than an asset—it's a sanctuary. Our team of master tradespeople and project managers treat every project with a level of care usually reserved for heritage restorations.
+                We serve a discerning clientele who understand that property is more than an asset, it's a sanctuary. Our team of master tradespeople and project managers treat every project with a level of care usually reserved for heritage restorations.
               </p>
             </div>
           </motion.div>
