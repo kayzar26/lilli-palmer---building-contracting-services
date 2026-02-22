@@ -1,20 +1,20 @@
 
-import { Project, Service, BlogPost } from './types';
+import { Service, BlogPost } from './types';
 
-export const COLORS = {
-  primary: '#BBA899',
-  accent: '#69727D',
-  background: '#EBEBEB',
-  text: '#69727D',
-};
+// export const COLORS = {
+//   primary: '#BBA899',
+//   accent: '#69727D',
+//   background: '#EBEBEB',
+//   text: '#69727D',
+// };
 
-export const PROJECTS: Project[] = [
-  { id: '1', title: 'MODERN HVAC OVERHAUL', category: 'Climate Control', image: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&q=80&w=1200' },
-  { id: '2', title: 'HERITAGE RE-PAINTING', category: 'Aesthetics', image: 'https://images.unsplash.com/photo-1562663474-6cbb3eaa4d14?auto=format&fit=crop&q=80&w=1200' },
-  { id: '3', title: 'LUXURY KITCHEN RENO', category: 'Renovation', image: 'https://images.unsplash.com/photo-1556912173-3bb406ef7e77?auto=format&fit=crop&q=80&w=1200' },
-  { id: '4', title: 'ARCHITECTURAL ADDITION', category: 'Construction', image: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&q=80&w=1200' },
-  { id: '5', title: 'SMART GRID ELECTRICAL', category: 'Repair', image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1200' },
-];
+// export const PROJECTS: Project[] = [
+//   { id: '1', title: 'MODERN HVAC OVERHAUL', category: 'Climate Control', image: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&q=80&w=1200' },
+//   { id: '2', title: 'HERITAGE RE-PAINTING', category: 'Aesthetics', image: 'https://images.unsplash.com/photo-1562663474-6cbb3eaa4d14?auto=format&fit=crop&q=80&w=1200' },
+//   { id: '3', title: 'LUXURY KITCHEN RENO', category: 'Renovation', image: 'https://images.unsplash.com/photo-1556912173-3bb406ef7e77?auto=format&fit=crop&q=80&w=1200' },
+//   { id: '4', title: 'ARCHITECTURAL ADDITION', category: 'Construction', image: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&q=80&w=1200' },
+//   { id: '5', title: 'SMART GRID ELECTRICAL', category: 'Repair', image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1200' },
+// ];
 
 export const SERVICES: Service[] = [
   { 

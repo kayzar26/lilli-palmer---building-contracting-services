@@ -47,7 +47,7 @@ const BlogDetailContent: React.FC<BlogDetailContentProps> = ({ blog }) => {
           transition={{ duration: 1.2, ease: luxuryEasing }}
           className="relative h-[400px] md:h-[700px] mb-20 overflow-hidden rounded-sm"
         >
-          <Image src={blog.image} alt={blog.title} fill className="object-cover" />
+          <Image src={blog.image} alt={blog.title} fill priority className="object-cover" />
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">

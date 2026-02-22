@@ -37,6 +37,7 @@ const AboutContent: React.FC = () => {
               src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&q=80&w=800" 
               alt="Architectural Excellence" 
               fill
+              priority
               className="object-cover rounded-sm grayscale" 
             />
             <motion.div 

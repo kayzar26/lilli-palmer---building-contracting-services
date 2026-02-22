@@ -38,9 +38,9 @@ export interface BlogPost {
   sections: BlogPostSection[];
 }
 
-export interface Project {
-  id: string;
-  title: string;
-  category: string;
-  image: string;
-}
+// export interface Project {
+//   id: string;
+//   title: string;
+//   category: string;
+//   image: string;
+// }
