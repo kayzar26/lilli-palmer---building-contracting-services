@@ -20,6 +20,12 @@ export interface Service {
   benefits?: ServiceDetailItem[];
   process?: ServiceDetailItem[];
   whyChooseUs?: string;
+  seoContent?: string;
+  cta?: {
+    heading: string;
+    description: string;
+    buttonText: string;
+  };
 }
 
 export interface BlogPostSection {

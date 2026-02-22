@@ -38,7 +38,7 @@ const ServiceDetailContent: React.FC<ServiceDetailContentProps> = ({ service }) 
         </div>
 
         {/* Content Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-24 mb-32">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-16 lg:gap-24 mb-12 lg:mb-18">
           <div className="lg:col-span-2 space-y-20">
             {/* Main Description */}
             <div className="space-y-8">
@@ -121,6 +121,40 @@ const ServiceDetailContent: React.FC<ServiceDetailContentProps> = ({ service }) 
             </div>
           </div>
         </div>
+
+        {/* SEO Content Section */}
+        {service.seoContent && (
+          <div className="mb-16 lg:mb-24 border-t border-gray-200 pt-8 lg:pt-12">
+            <div className="max-w-4xl">
+              <h2 className="text-l font-bold tracking-[0.3em] text-[#BBA899] mb-8 uppercase">About Our {service.title}</h2>
+              <p className="text-lg text-gray-600 font-light leading-[1.9]">
+                {service.seoContent}
+              </p>
+            </div>
+          </div>
+        )}
+
+        {/* CTA Banner */}
+        {service.cta && (
+          <div className="mb-24 bg-[#191919] rounded-sm overflow-hidden">
+            <div className="px-10 py-16 md:px-20 md:py-24 flex flex-col md:flex-row items-start md:items-center justify-between gap-12">
+              <div className="space-y-5 max-w-2xl">
+                <h2 className="text-3xl md:text-4xl font-light text-white leading-tight tracking-tight">
+                  {service.cta.heading}
+                </h2>
+                <p className="text-gray-400 text-lg font-light leading-relaxed">
+                  {service.cta.description}
+                </p>
+              </div>
+              <Link 
+                href="/contact" 
+                className="shrink-0 bg-[#BBA899] text-white px-12 py-5 flex items-center gap-3 hover:bg-white hover:text-[#191919] transition-all duration-500 uppercase tracking-[0.2em] font-bold text-[11px]"
+              >
+                {service.cta.buttonText} <ArrowRight size={16} />
+              </Link>
+            </div>
+          </div>
+        )}
 
         {/* Other Services Section */}
         <div className="border-t border-gray-300 pt-24">

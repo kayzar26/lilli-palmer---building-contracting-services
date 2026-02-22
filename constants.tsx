@@ -41,7 +41,13 @@ export const SERVICES: Service[] = [
       { title: 'Precision Installation', description: 'Our certified engineers execute installations with surgical cleanliness and care.' },
       { title: 'Smart Calibration', description: 'Final commissioning involves balancing air pressure and integrating smart controls.' }
     ],
-    whyChooseUs: 'Unlike standard technicians, our engineers understand the thermal dynamics of luxury properties. We treat climate control as an integrated architectural element, not just a mechanical utility.'
+    whyChooseUs: 'Unlike standard technicians, our engineers understand the thermal dynamics of luxury properties. We treat climate control as an integrated architectural element, not just a mechanical utility.',
+    seoContent: 'When it comes to premium HVAC services in Dubai, Lilli Palmer stands as the region\'s most trusted provider. Our HVAC solutions are engineered for the unique demands of high-end residential and commercial properties across the UAE. Whether you require a complete HVAC installation for a new build, a precision HVAC repair for an existing system, or a seasonal HVAC maintenance programme to keep your climate control running at peak efficiency, our certified engineers deliver results that exceed expectations. We understand that a reliable HVAC system is not a luxury, it is a necessity in the Gulf climate. That is why every HVAC project we undertake is backed by our commitment to energy efficiency, silent operation, and long-term durability. Choose Lilli Palmer for HVAC excellence that protects your comfort and your investment.',
+    cta: {
+      heading: 'Is Your HVAC System Performing at Its Best?',
+      description: 'Schedule a complimentary HVAC performance assessment with our certified engineers. We\'ll identify efficiency gaps and recommend solutions tailored to your property.',
+      buttonText: 'Book Your Free HVAC Assessment'
+    }
   },
   { 
     id: 'electrical', 
@@ -67,7 +73,13 @@ export const SERVICES: Service[] = [
       { title: 'Fixture Installation', description: 'We handle premium fittings with white-glove care, ensuring perfect alignment.' },
       { title: 'Safety Certification', description: 'Every project concludes with a full compliance certificate and safety stress-test.' }
     ],
-    whyChooseUs: 'We bridge the gap between heavy engineering and delicate interior design. Our electricians are trained to work around expensive finishes, ensuring that the only sign of our presence is flawless functionality.'
+    whyChooseUs: 'We bridge the gap between heavy engineering and delicate interior design. Our electricians are trained to work around expensive finishes, ensuring that the only sign of our presence is flawless functionality.',
+    seoContent: 'Lilli Palmer delivers expert electrical services across Dubai, combining safety-first engineering with the refined touch that luxury properties demand. Our electrical repair and installation team comprises fully certified engineers who specialise in both high-voltage infrastructure and delicate smart-home electrical integrations. From comprehensive electrical safety audits to bespoke lighting design and complete electrical system upgrades, we handle every aspect of your property\'s electrical needs. Our electrical solutions are future-proofed for EV charging, solar panel integration, and next-generation home automation. When you choose Lilli Palmer for your electrical project, you are choosing a partner who treats electrical work as both a science and an art delivering flawless functionality without compromising your property\'s aesthetic integrity.',
+    cta: {
+      heading: 'Concerned About Your Property\'s Electrical Safety?',
+      description: 'Our certified electrical engineers will conduct a thorough safety audit of your property, identifying potential hazards and recommending smart upgrades.',
+      buttonText: 'Request an Electrical Repair'
+    }
   },
   { 
     id: 'plumbing', 
@@ -93,7 +105,13 @@ export const SERVICES: Service[] = [
       { title: 'Precision Fitting', description: 'Fixtures are installed using laser levels to ensure perfect symmetry and alignment.' },
       { title: 'System Sterilization', description: 'New systems are flushed and sterilized before handover.' }
     ],
-    whyChooseUs: 'Plumbing is often hidden, but its failure is catastrophic. We use industrial-grade materials in residential settings to provide commercial-level durability and peace of mind.'
+    whyChooseUs: 'Plumbing is often hidden, but its failure is catastrophic. We use industrial-grade materials in residential settings to provide commercial-level durability and peace of mind.',
+    seoContent: 'For professional plumbing services in Dubai that go beyond the ordinary, Lilli Palmer is the contractor of choice for discerning property owners. Our master plumbers bring decades of combined plumbing experience to every project, from non-invasive leak detection to the installation of premium international plumbing fixtures. We understand that quality plumbing is the invisible infrastructure that underpins a comfortable home. That is why our plumbing solutions use industrial-grade materials and precision engineering techniques to deliver commercial-level reliability in residential settings. Whether you need emergency plumbing repairs, a complete bathroom plumbing overhaul, or advanced drainage management for a new property, our plumbing team delivers results that are built to last quietly, efficiently, and without disruption to your daily life.',
+    cta: {
+      heading: 'Protect Your Property from Hidden Plumbing Issues',
+      description: 'Our non-invasive plumbing inspection uses fibre-optic cameras and acoustic detection to identify problems before they cause damage. No tiles broken, no walls opened.',
+      buttonText: 'Schedule a Plumbing Inspection'
+    }
   },
   { 
     id: 'painting', 
@@ -119,7 +137,13 @@ export const SERVICES: Service[] = [
       { title: 'Multi-Coat Application', description: 'Light sanding between coats ensures mechanical adhesion and a velvet touch.' },
       { title: 'White Glove Clean', description: 'We leave your property spotlessly clean, with windows polished and floors vacuumed.' }
     ],
-    whyChooseUs: 'We don’t just apply paint; we restore surfaces. Our team consists of artisan decorators who understand how light interacts with texture and color, delivering a finish that feels as good as it looks.'
+    whyChooseUs: 'We don\'t just apply paint; we restore surfaces. Our team consists of artisan decorators who understand how light interacts with texture and color, delivering a finish that feels as good as it looks.',
+    seoContent: 'Lilli Palmer\'s painting services are designed for clients who understand that a flawless finish transforms a space entirely. Our professional painting team combines artisan-level skill with premium, health-conscious materials to deliver painting results that are both visually stunning and enduring. From intricate interior painting that requires colour-matching precision to large-scale exterior painting projects that demand weather-resistant durability, we approach every painting job as a craft. Our painting process begins with meticulous surface preparation because we know that a perfect painting finish starts underneath. Whether you are refreshing a single feature wall or repainting an entire villa, our painting specialists ensure a Level 5 finish that looks flawless under any light.',
+    cta: {
+      heading: 'Ready to Transform Your Space with a Perfect Finish?',
+      description: 'Book a colour consultation with our painting specialists. We\'ll help you select the perfect palette and provide a detailed quote for your project.',
+      buttonText: 'Get a Painting Consultation'
+    }
   },
   { 
     id: 'renovation', 
@@ -145,7 +169,13 @@ export const SERVICES: Service[] = [
       { title: 'Construction Phase', description: 'A strictly scheduled build ensures momentum is maintained without compromising quality.' },
       { title: 'Detailing', description: 'The final 5%—silicones, trims, and adjustments—receives 50% of our attention.' }
     ],
-    whyChooseUs: 'We handle the "impossible" renovations. Tight access, occupied spaces, and heritage restrictions are where we excel. We respect that we are guests in your home, maintaining a tidy and polite site at all times.'
+    whyChooseUs: 'We handle the "impossible" renovations. Tight access, occupied spaces, and heritage restrictions are where we excel. We respect that we are guests in your home, maintaining a tidy and polite site at all times.',
+    seoContent: 'When you choose Lilli Palmer for your home renovation in Dubai, you are partnering with a team that specialises in transforming existing spaces into extraordinary living environments. Our renovation services cover everything from complete kitchen and bathroom renovation to structural renovation work that reimagines your floor plan. Every renovation project we undertake begins with a detailed feasibility study to understand what is structurally possible, followed by material sourcing from the world\'s finest suppliers. Our renovation process is managed by a single dedicated project manager, ensuring your renovation stays on schedule and within budget. We have built our reputation on delivering renovation results that increase property value by 20–30% while reflecting the unique identity of each homeowner.',
+    cta: {
+      heading: 'Envisioning a Home That Truly Reflects You?',
+      description: 'Let\'s discuss your renovation vision. Our team will assess your space, explore structural possibilities, and present a detailed plan with transparent costing.',
+      buttonText: 'Start Your Renovation Journey'
+    }
   },
   { 
     id: 'construction', 
@@ -171,7 +201,13 @@ export const SERVICES: Service[] = [
       { title: 'MEP Integration', description: 'Mechanical, Electrical, and Plumbing systems are roughed in with future-proofing in mind.' },
       { title: 'Finishes & Handover', description: 'The installation of final layers, followed by a comprehensive snagging and handover capability.' }
     ],
-    whyChooseUs: 'We are builders who think like owners. We understand that a construction project is a significant financial asset, and we manage it with the rigour of an investment portfolio.'
+    whyChooseUs: 'We are builders who think like owners. We understand that a construction project is a significant financial asset, and we manage it with the rigour of an investment portfolio.',
+    seoContent: 'Lilli Palmer offers full-scope construction services in Dubai for clients who demand architectural precision and structural excellence. Our construction team works in close partnership with leading architects and designers to translate visionary blueprints into built reality. From ground-up new-build construction to large-scale structural extensions, every construction project we deliver is defined by over-engineered foundations, meticulous quality control, and transparent costing. We understand that a construction project is one of the most significant investments you will make, which is why we manage every construction phase from site mobilisation through to final handover with the rigour of an asset portfolio. Choose Lilli Palmer for construction that stands the test of time.',
+    cta: {
+      heading: 'Ready to Build Something Extraordinary?',
+      description: 'From concept to completion, our construction team manages every detail. Let\'s discuss your architectural vision and turn blueprints into reality.',
+      buttonText: 'Discuss Your Construction Project'
+    }
   },
   { 
     id: 'annual-maintenance-contract', 
