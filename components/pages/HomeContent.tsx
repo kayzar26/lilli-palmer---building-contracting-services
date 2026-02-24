@@ -5,8 +5,8 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import CircularText from '@/components/CircularText';
-import { SERVICES } from '@/constants';
-import { ArrowLeft, ArrowRight } from 'lucide-react';
+import { SERVICES, TESTIMONIALS } from '@/constants';
+import { ArrowLeft, ArrowRight, Star } from 'lucide-react';
 
 const luxuryEasing = [0.16, 1, 0.3, 1] as const;
 
@@ -51,11 +51,19 @@ const imageRevealVariants = {
 const HomeContent: React.FC = () => {
   const heroWords = ["LILLI", "PALMER"];
   const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const scrollTestimonialsContainerRef = useRef<HTMLDivElement>(null);
 
   const scroll = (direction: 'left' | 'right') => {
     if (scrollContainerRef.current) {
       const scrollAmount = direction === 'left' ? -400 : 400;
       scrollContainerRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    }
+  };
+
+  const scrollTestimonials = (direction: 'left' | 'right') => {
+    if (scrollTestimonialsContainerRef.current) {
+      const scrollAmount = direction === 'left' ? -400 : 400;
+      scrollTestimonialsContainerRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
     }
   };
 
@@ -259,6 +267,91 @@ const HomeContent: React.FC = () => {
             <button 
               onClick={() => scroll('right')}
               className="w-12 h-12 border border-gray-300 rounded-full flex items-center justify-center hover:bg-[#191919] hover:text-white hover:border-[#191919] transition-all duration-300"
+              aria-label="Scroll Right"
+            >
+              <ArrowRight size={16} />
+            </button>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="bg-[#EBEBEB] py-40 overflow-hidden relative">
+        <div className="container mx-auto px-6 mb-20">
+          <motion.div 
+            variants={fadeUpVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="flex flex-col md:flex-row md:items-end justify-between gap-12"
+          >
+            <h2 className="text-gray-800 text-4xl md:text-6xl font-light leading-tight uppercase tracking-tighter max-w-3xl">
+              TRUSTED BY<br /><span className="text-[#BBA899]">THE BEST.</span>
+            </h2>
+            <div className="hidden md:flex gap-4">
+              <button 
+                onClick={() => scrollTestimonials('left')}
+                className="w-12 h-12 border border-gray-400 rounded-full flex items-center justify-center hover:bg-[#191919] hover:text-white hover:border-[#191919] transition-all duration-300"
+                aria-label="Scroll Left"
+              >
+                <ArrowLeft size={16} />
+              </button>
+              <button 
+                onClick={() => scrollTestimonials('right')}
+                className="w-12 h-12 border border-gray-400 rounded-full flex items-center justify-center hover:bg-[#191919] hover:text-white hover:border-[#191919] transition-all duration-300"
+                aria-label="Scroll Right"
+              >
+                <ArrowRight size={16} />
+              </button>
+            </div>
+          </motion.div>
+        </div>
+        
+        {/* Testimonials Carousel Container */}
+        <div 
+          ref={scrollTestimonialsContainerRef}
+          className="flex gap-8 px-6 overflow-x-auto hide-scrollbar pb-8 snap-x snap-mandatory"
+        >
+          {TESTIMONIALS.map((testimonial, idx) => (
+            <motion.div 
+              key={testimonial.id}
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ delay: idx * 0.1, duration: 0.8, ease: luxuryEasing }}
+              viewport={{ once: true, margin: "0px 0px -50px 0px" }}
+              className="min-w-[320px] md:min-w-[450px] bg-white p-10 md:p-12 shadow-[0_15px_40px_rgba(0,0,0,0.04)] snap-center flex flex-col justify-between rounded-[2px]"
+            >
+              <div>
+                <div className="flex text-[#BBA899] mb-8 gap-1">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} size={16} fill="currentColor" />
+                  ))}
+                </div>
+                <p className="text-xl text-gray-700 font-light leading-relaxed mb-10 italic">"{testimonial.text}"</p>
+              </div>
+              <div>
+                <h4 className="text-gray-900 text-lg font-bold tracking-tight uppercase">{testimonial.name}</h4>
+                <div className="flex flex-col md:flex-row md:items-center gap-1 md:gap-3 mt-2 text-[10px] uppercase font-bold tracking-[0.2em] text-gray-400">
+                  <span>{testimonial.stats}</span>
+                  <span className="hidden md:inline">•</span>
+                  <span>{testimonial.time}</span>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Mobile Navigation Buttons */}
+        <div className="container mx-auto px-6 flex md:hidden justify-center gap-4 mt-12">
+            <button 
+              onClick={() => scrollTestimonials('left')}
+              className="w-12 h-12 border border-gray-400 rounded-full flex items-center justify-center hover:bg-[#191919] hover:text-white transition-all duration-300"
+              aria-label="Scroll Left"
+            >
+              <ArrowLeft size={16} />
+            </button>
+            <button 
+              onClick={() => scrollTestimonials('right')}
+              className="w-12 h-12 border border-gray-400 rounded-full flex items-center justify-center hover:bg-[#191919] hover:text-white transition-all duration-300"
               aria-label="Scroll Right"
             >
               <ArrowRight size={16} />

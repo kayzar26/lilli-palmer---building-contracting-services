@@ -173,6 +173,27 @@ const ContactContent: React.FC = () => {
           </motion.div>
         </motion.div>
       </div>
+
+      {/* Embedded Map */}
+      <div className="container mx-auto px-6 mt-20 md:mt-32">
+        <motion.div 
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={itemVariants}
+          className="w-full h-[400px] md:h-[600px] bg-gray-200 rounded-[5px] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.05)]"
+        >
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4501.591281937492!2d55.3399858!3d25.243952!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5d5529afac99%3A0x6f1d4ab364118706!2sLilli%20Palmer%20Building%20Contracting!5e1!3m2!1sen!2sin!4v1771856256580!5m2!1sen!2sin" 
+            width="100%" 
+            height="100%" 
+            style={{ border: 0 }} 
+            allowFullScreen={false} 
+            loading="lazy" 
+            referrerPolicy="no-referrer-when-downgrade"
+          />
+        </motion.div>
+      </div>
     </div>
   );
 };

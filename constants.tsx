@@ -1,5 +1,4 @@
-
-import { Service, BlogPost } from './types';
+import { Service, BlogPost, Testimonial } from './types';
 
 // export const COLORS = {
 //   primary: '#BBA899',
@@ -264,4 +263,42 @@ export const BLOGS: BlogPost[] = [
       { title: 'Structural Considerations', content: 'Sometimes, the bones are too far gone. We help clients navigate the difficult decision between a costly restoration and a fresh architectural start.' }
     ]
   },
+];
+
+export const TESTIMONIALS: Testimonial[] = [
+  {
+    id: 't1',
+    name: 'Leila Olalia',
+    stats: '10 reviews',
+    time: 'a month ago',
+    text: 'Very helpful, polite and professional. Thank you',
+  },
+  {
+    id: 't2',
+    name: 'Mohayer Dam',
+    stats: 'Local Guide · 5 reviews',
+    time: '4 months ago',
+    text: 'Best maintenance and renovation company in Dubai! Everything was perfect.',
+  },
+  {
+    id: 't3',
+    name: 'Ahmed Sharif',
+    stats: '1 review',
+    time: '4 months ago',
+    text: 'Great experience overall — organized, honest, and highly efficient team.',
+  },
+  {
+    id: 't4',
+    name: 'Faisal Saeed',
+    stats: '2 reviews',
+    time: '4 months ago',
+    text: 'Affordable pricing with premium results. Totally satisfied!',
+  },
+  {
+    id: 't5',
+    name: 'Kazia Majewska',
+    stats: '1 review',
+    time: '4 months ago',
+    text: 'LILLI PALMER delivered beyond my expectations. Great team and communication.',
+  }
 ];

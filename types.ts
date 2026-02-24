@@ -44,6 +44,14 @@ export interface BlogPost {
   sections: BlogPostSection[];
 }
 
+export interface Testimonial {
+  id: string;
+  name: string;
+  stats: string;
+  time: string;
+  text: string;
+}
+
 // export interface Project {
 //   id: string;
 //   title: string;
