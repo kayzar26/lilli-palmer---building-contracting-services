@@ -103,7 +103,7 @@ const Header: React.FC = () => {
 
       {/* Content Container */}
       <div className={`container mx-auto px-6 flex justify-between items-center relative z-20 transition-all duration-300 ${isScrolled ? 'py-4' : 'py-8'}`}>
-        <Link href="/" className="flex flex-col group">
+        <Link href="/" className="flex flex-col group" prefetch={false}>
           <span className={`text-xl md:text-2xl font-light tracking-[0.2em] transition-colors ${isMenuOpen ? 'text-black' : (isScrolled ? 'text-black' : 'text-white')} group-hover:text-[#BBA899]`}>LILLI PALMER</span>
           <span className={`text-[9px] tracking-[0.4em] uppercase -mt-1 transition-colors ${isMenuOpen ? 'text-gray-400' : (isScrolled ? 'text-gray-400' : 'text-white/60')}`}>Building Contracting LLC</span>
         </Link>
@@ -114,6 +114,7 @@ const Header: React.FC = () => {
             <Link 
               key={link.path} 
               href={link.path}
+              prefetch={false}
               className={`text-[11px] font-bold tracking-[0.2em] transition-colors hover:text-[#BBA899] ${
                 pathname === link.path ? 'text-[#BBA899]' : (isScrolled ? 'text-gray-500' : 'text-white/80')
               }`}
@@ -149,6 +150,7 @@ const Header: React.FC = () => {
                 <motion.div key={link.path} custom={i} variants={linkVariants}>
                   <Link 
                     href={link.path}
+                    prefetch={false}
                     onClick={() => setIsMenuOpen(false)}
                     className={`text-5xl font-light tracking-tighter hover:text-[#BBA899] transition-colors uppercase ${pathname === link.path ? 'text-[#BBA899]' : 'text-gray-800'}`}
                   >

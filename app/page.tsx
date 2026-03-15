@@ -9,20 +9,51 @@ export const metadata: Metadata = {
 export default function HomePage() {
   const jsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'Organization',
+    '@type': 'HomeAndConstructionBusiness',
     name: 'Lilli Palmer Building Contracting',
     url: 'https://www.lillipalmer.ae',
     logo: 'https://www.lillipalmer.ae/icon.png',
-    contactPoint: {
-      '@type': 'ContactPoint',
-      telephone: '+971 50 709 8676',
-      contactType: 'customer service',
-      areaServed: 'AE',
-      availableLanguage: 'en',
+    image: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&q=80&w=1200',
+    description: 'Lilli Palmer provides elite building contracting services including HVAC, electrical, plumbing, painting, and architectural construction in Dubai.',
+    telephone: '+971 50 709 8676',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: '702, Garhoud Views Building, Al Garhoud',
+      addressLocality: 'Dubai',
+      addressRegion: 'Dubai',
+      addressCountry: 'AE',
     },
-    sameAs: [
-      // Add social profiles here if available
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: '25.2486',
+      longitude: '55.3512',
+    },
+    openingHoursSpecification: [
+      {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: [
+          'Monday',
+          'Tuesday',
+          'Wednesday',
+          'Thursday',
+          'Friday',
+          'Saturday'
+        ],
+        opens: '08:00',
+        closes: '18:00',
+      }
     ],
+    sameAs: [
+      'https://www.instagram.com/lillipalmer.ae/',
+      'https://www.facebook.com/people/Lilli-Palmer-Building-Contracting/61584535720704/',
+      'https://www.linkedin.com/company/lilli-palmer/',
+      'https://www.tiktok.com/@lillipalmer.ae'
+    ],
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '5',
+      reviewCount: '19',
+    },
   };
 
   return (

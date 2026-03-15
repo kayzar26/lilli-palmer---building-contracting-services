@@ -7,6 +7,12 @@ type Props = {
   params: Promise<{ id: string }>;
 };
 
+export async function generateStaticParams() {
+  return BLOGS.map((blog) => ({
+    id: blog.id,
+  }));
+}
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { id } = await params;
   const blog = BLOGS.find(b => b.id === id);
