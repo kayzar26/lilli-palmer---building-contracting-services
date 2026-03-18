@@ -51,7 +51,7 @@ const ServicesContent: React.FC = () => {
                   <span className="text-2xl font-light text-gray-300">0{index + 1}</span>
                   <div className="w-full">
                     <div className="flex justify-between items-center mb-6">
-                      <h3 className="text-4xl font-light text-gray-800 group-hover:text-[#BBA899] transition-colors uppercase tracking-tight">{service.title}</h3>
+                      <h2 className="text-4xl font-light text-gray-800 group-hover:text-[#BBA899] transition-colors uppercase tracking-tight">{service.title}</h2>
                       <ArrowRight className="text-gray-300 group-hover:text-[#BBA899] transform group-hover:translate-x-3 transition-all duration-500" size={28} />
                     </div>
                     <p className="text-gray-500 text-lg mb-8 max-w-md font-light leading-relaxed">

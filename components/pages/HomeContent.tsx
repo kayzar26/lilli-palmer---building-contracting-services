@@ -245,7 +245,7 @@ const HomeContent: React.FC = () => {
                 </div>
                 <div className="flex justify-between items-start px-4">
                   <div className="space-y-2">
-                    <h4 className="text-gray-800 text-lg font-light tracking-[0.1em] uppercase">{service.title}</h4>
+                    <h3 className="text-gray-800 text-lg font-light tracking-[0.1em] uppercase">{service.title}</h3>
                     <p className="text-[#BBA899] text-[10px] uppercase tracking-[0.3em] font-bold line-clamp-1">{service.description}</p>
                   </div>
                   <span className="text-gray-300 font-light text-2xl">0{idx + 1}</span>
@@ -329,7 +329,7 @@ const HomeContent: React.FC = () => {
                 <p className="text-xl text-gray-700 font-light leading-relaxed mb-10 italic">"{testimonial.text}"</p>
               </div>
               <div>
-                <h4 className="text-gray-900 text-lg font-bold tracking-tight uppercase">{testimonial.name}</h4>
+                <h3 className="text-gray-900 text-lg font-bold tracking-tight uppercase">{testimonial.name}</h3>
                 <div className="flex flex-col md:flex-row md:items-center gap-1 md:gap-3 mt-2 text-[10px] uppercase font-bold tracking-[0.2em] text-gray-400">
                   <span>{testimonial.stats}</span>
                   <span className="hidden md:inline">•</span>

@@ -10,12 +10,12 @@ const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="bg-[#E2E2E2] text-[#69727D] pt-24 pb-10">
+    <footer className="bg-[#E2E2E2] text-[#333333] pt-24 pb-10">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 mb-20">
           <div>
             <h2 className="text-3xl font-light tracking-[0.2em] text-black mb-10">LILLI PALMER</h2>
-            <div className="space-y-2 text-[13px] uppercase tracking-widest leading-relaxed">
+            <div className="space-y-2 text-[13px] uppercase tracking-widest leading-relaxed text-[#555555]">
               <p>DUBAI BRANCH</p>
               <a href="https://maps.app.goo.gl/yKDKHBYmYQymwQXb7" className="hover:text-[#BBA899] transition-colors tracking-widest" target="_blank" rel="noopener noreferrer"> 
               <p>702, Garhoud Views Building</p>
@@ -27,10 +27,10 @@ const Footer: React.FC = () => {
             </div>
             
             <div className="flex gap-4 mt-8">
-              <a href="https://www.instagram.com/lillipalmer.ae/#" target="_blank" rel="noopener noreferrer" className="p-2 hover:bg-white/50 rounded-full transition-colors"><Instagram size={18} /></a>
-              <a href="https://www.facebook.com/people/Lilli-Palmer-Building-Contracting/61584535720704/" target="_blank" rel="noopener noreferrer" className="p-2 hover:bg-white/50 rounded-full transition-colors"><Facebook size={18} /></a>
-              <a href="https://www.linkedin.com/company/lilli-palmer/" target="_blank" rel="noopener noreferrer" className="p-2 hover:bg-white/50 rounded-full transition-colors"><Linkedin size={18} /></a>
-              <a href="https://www.tiktok.com/@lillipalmer.ae" target="_blank" rel="noopener noreferrer" className="p-2 hover:bg-white/50 rounded-full transition-colors">
+              <a href="https://www.instagram.com/lillipalmer.ae/#" target="_blank" rel="noopener noreferrer" className="p-2 hover:bg-white/50 rounded-full transition-colors" aria-label="Follow us on Instagram"><Instagram size={18} /></a>
+              <a href="https://www.facebook.com/people/Lilli-Palmer-Building-Contracting/61584535720704/" target="_blank" rel="noopener noreferrer" className="p-2 hover:bg-white/50 rounded-full transition-colors" aria-label="Follow us on Facebook"><Facebook size={18} /></a>
+              <a href="https://www.linkedin.com/company/lilli-palmer/" target="_blank" rel="noopener noreferrer" className="p-2 hover:bg-white/50 rounded-full transition-colors" aria-label="Follow us on LinkedIn"><Linkedin size={18} /></a>
+              <a href="https://www.tiktok.com/@lillipalmer.ae" target="_blank" rel="noopener noreferrer" className="p-2 hover:bg-white/50 rounded-full transition-colors" aria-label="Follow us on TikTok">
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
                 </svg>
@@ -49,6 +49,7 @@ const Footer: React.FC = () => {
             <button 
               onClick={scrollToTop}
               className="mt-10 self-start md:self-end p-4 border border-gray-400 rounded-full hover:bg-white hover:border-white transition-all"
+              aria-label="Scroll to top"
             >
               <ArrowUp size={24} />
             </button>

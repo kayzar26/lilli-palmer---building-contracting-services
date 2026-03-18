@@ -165,7 +165,7 @@ const ServiceDetailContent: React.FC<ServiceDetailContentProps> = ({ service }) 
                 <div className="aspect-video relative overflow-hidden mb-4 rounded-sm">
                   <Image src={s.image} alt={s.title} fill className="object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-105" />
                 </div>
-                <h4 className="text-[11px] font-bold tracking-widest text-gray-800 uppercase group-hover:text-[#BBA899]">{s.title}</h4>
+                <h3 className="text-[11px] font-bold tracking-widest text-gray-800 uppercase group-hover:text-[#BBA899]">{s.title}</h3>
               </Link>
             ))}
           </div>

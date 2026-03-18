@@ -15,8 +15,8 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Lilli Palmer | Building Contracting Services",
-  description: "Lilli Palmer provides elite building contracting services including HVAC, electrical, plumbing, painting, and architectural construction.",
+  title: "Lilli Palmer | Renovation & Building Contracting Dubai",
+  description: "Lilli Palmer provides premium building contracting services including MEP, HVAC, electrical, plumbing, painting, and construction.",
 };
 
 export default function RootLayout({
