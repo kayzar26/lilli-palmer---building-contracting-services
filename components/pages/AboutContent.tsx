@@ -72,6 +72,78 @@ const AboutContent: React.FC = () => {
             </motion.div>
           ))}
         </div>
+
+        {/* Leadership / Team Section */}
+        <div className="py-24 border-t border-gray-300">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="mb-16"
+          >
+            <p className="text-h1-custom text-[#BBA899] mb-4 uppercase tracking-[0.3em]">LEADERSHIP</p>
+            <h2 className="text-4xl md:text-6xl font-light tracking-tighter text-gray-800 uppercase max-w-2xl leading-tight">THE VISIONARIES BEHIND LILLI PALMER</h2>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24">
+            {/* CEO */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.1 }}
+              className="group"
+            >
+              <div className="relative aspect-[3/4] mb-8 overflow-hidden rounded-[2px] bg-gray-200">
+                <Image 
+                  src="/images/ceo.png" 
+                  alt="Founder and CEO" 
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover object-top grayscale group-hover:grayscale-0 transition-all duration-[1.2s] ease-out group-hover:scale-105" 
+                />
+              </div>
+              <div className="space-y-4">
+                <div>
+                  <h3 className="text-2xl md:text-3xl font-light text-gray-800 uppercase tracking-tight">Founder & CEO</h3>
+                  <p className="text-[10px] tracking-[0.3em] text-[#BBA899] uppercase font-bold mt-2">Strategic Vision</p>
+                </div>
+                <p className="text-gray-500 font-light leading-relaxed max-w-lg">
+                  With a profound understanding of the region's architectural heritage and future, our Founder laid the cornerstone of Lilli Palmer to redefine building contracting excellence in Dubai, driving the company's visionary approach to luxury maintenance and construction.
+                </p>
+              </div>
+            </motion.div>
+
+            {/* COO */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="group md:mt-24"
+            >
+              <div className="relative aspect-[3/4] mb-8 overflow-hidden rounded-[2px] bg-gray-200">
+                <Image 
+                  src="/images/coo.png" 
+                  alt="Director and COO" 
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover object-top grayscale group-hover:grayscale-0 transition-all duration-[1.2s] ease-out group-hover:scale-105" 
+                />
+              </div>
+              <div className="space-y-4">
+                <div>
+                  <h3 className="text-2xl md:text-3xl font-light text-gray-800 uppercase tracking-tight">Director & COO</h3>
+                  <p className="text-[10px] tracking-[0.3em] text-[#BBA899] uppercase font-bold mt-2">Operational Excellence</p>
+                </div>
+                <p className="text-gray-500 font-light leading-relaxed max-w-lg">
+                  Leading our operations with military precision, the Director ensures every project—from high-end HVAC overhauls to full architectural construction—is executed flawlessly, on time, and within scope, maintaining our uncompromising quality standards.
+                </p>
+              </div>
+            </motion.div>
+          </div>
+        </div>
       </div>
     </div>
   );

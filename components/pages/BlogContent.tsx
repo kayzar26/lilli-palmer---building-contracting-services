@@ -38,6 +38,7 @@ const BlogContent: React.FC = () => {
                     src={blog.image} 
                     alt={blog.title} 
                     fill
+                    priority={idx === 0}
                     className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-[1s] ease-luxury"
                   />
                 </div>

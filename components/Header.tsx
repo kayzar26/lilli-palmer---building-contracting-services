@@ -13,15 +13,27 @@ const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathname = usePathname();
 
+  // Sync scroll state
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Close menu when resizing to desktop to prevent scroll lock persistence
+  // Sync state with body attribute (for potential external CSS use)
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.setAttribute('data-menu-open', 'true');
+    } else {
+      document.body.removeAttribute('data-menu-open');
+    }
+    return () => document.body.removeAttribute('data-menu-open');
+  }, [isMenuOpen]);
+
+  // Handle Resize
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 768 && isMenuOpen) {
@@ -32,24 +44,10 @@ const Header: React.FC = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, [isMenuOpen]);
 
-  // Lock scroll when menu is open using ScrollSmoother
+  // Handle ScrollSmoother
   useEffect(() => {
     const smoother = ScrollSmoother.get();
-    if (smoother) {
-      smoother.paused(isMenuOpen);
-    } else {
-        // Fallback for when ScrollSmoother might not be active (e.g. standard scrolling)
-        if (isMenuOpen) {
-            document.body.style.overflow = 'hidden';
-        } else {
-            document.body.style.overflow = 'unset';
-        }
-    }
-    
-    return () => {
-        if (smoother) smoother.paused(false);
-        document.body.style.overflow = 'unset';
-    };
+    if (smoother) smoother.paused(isMenuOpen);
   }, [isMenuOpen]);
 
   const navLinks = [
@@ -64,7 +62,7 @@ const Header: React.FC = () => {
     closed: {
       y: "-100%",
       transition: {
-        duration: 0.4, // Faster (was 0.8)
+        duration: 0.3,
         ease: [0.16, 1, 0.3, 1] as const,
         when: "afterChildren"
       }
@@ -72,7 +70,7 @@ const Header: React.FC = () => {
     open: {
       y: 0,
       transition: {
-        duration: 0.4, // Faster (was 0.8)
+        duration: 0.4,
         ease: [0.16, 1, 0.3, 1] as const,
         when: "beforeChildren"
       }
@@ -80,35 +78,47 @@ const Header: React.FC = () => {
   };
 
   const linkVariants = {
-    closed: { y: 20, opacity: 0 }, // Reduced y distance for snappier feel
+    closed: { opacity: 0, y: 30 },
     open: (i: number) => ({
-      y: 0,
       opacity: 1,
+      y: 0,
       transition: {
-        delay: 0.1 + i * 0.05, // Much faster stagger (was 0.3 + i * 0.1)
-        duration: 0.4, // Faster (was 0.8)
+        delay: 0.1 + i * 0.05,
+        duration: 0.5,
         ease: [0.16, 1, 0.3, 1] as const
       }
     })
   };
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50">
-      {/* Background Element - Handles styles that might create a containing block */}
+    <header className="fixed top-0 left-0 w-full z-[10000]">
+      {/* Background Layer */}
       <div 
-        className={`absolute inset-0 transition-all duration-300 ${
-          isScrolled ? 'bg-white/95 backdrop-blur-sm shadow-sm' : 'bg-transparent'
+        className={`absolute inset-0 transition-opacity duration-300 ${
+          isScrolled || isMenuOpen ? 'bg-white/95 backdrop-blur-md shadow-sm opacity-100' : 'bg-transparent opacity-0 pointer-events-none'
         }`}
       />
 
-      {/* Content Container */}
-      <div className={`container mx-auto px-6 flex justify-between items-center relative z-20 transition-all duration-300 ${isScrolled ? 'py-4' : 'py-8'}`}>
-        <Link href="/" className="flex flex-col group" prefetch={false}>
-          <span className={`text-xl md:text-2xl font-light tracking-[0.2em] transition-colors ${isMenuOpen ? 'text-black' : (isScrolled ? 'text-black' : 'text-white')} group-hover:text-[#BBA899]`}>LILLI PALMER</span>
-          <span className={`text-[9px] tracking-[0.4em] uppercase -mt-1 transition-colors ${isMenuOpen ? 'text-gray-400' : (isScrolled ? 'text-gray-400' : 'text-white/60')}`}>Building Contracting LLC</span>
-        </Link>
+      {/* Main Container */}
+      <div className={`max-w-7xl w-full mx-auto px-6 flex justify-between items-center relative z-20 transition-all duration-300 ${isScrolled ? 'py-4' : 'py-10 md:py-16'} min-h-[110px]`}>
+        
+        {/* LOGO - Visually hidden when menu is open via definitive inline style to bypass CSS animation overrides */}
+        <div 
+          className="header-logo"
+          style={{
+            opacity: isMenuOpen ? 0 : 1,
+            visibility: isMenuOpen ? 'hidden' : 'visible',
+            pointerEvents: isMenuOpen ? 'none' : 'auto',
+            transition: 'opacity 300ms ease, visibility 300ms ease'
+          }}
+        >
+          <Link href="/" className="flex flex-col group animate-reveal" prefetch={false}>
+            <span className={`text-xl md:text-2xl font-light tracking-[0.2em] transition-colors ${isScrolled ? 'text-black' : 'text-white'} group-hover:text-[#BBA899]`}>LILLI PALMER</span>
+            <span className={`text-[9px] tracking-[0.4em] uppercase -mt-1 transition-colors ${isScrolled ? 'text-gray-400' : 'text-white/60'}`}>Building Contracting LLC</span>
+          </Link>
+        </div>
 
-        {/* Desktop Menu */}
+        {/* Navigation */}
         <nav className="hidden md:flex gap-10">
           {navLinks.map((link) => (
             <Link 
@@ -124,18 +134,18 @@ const Header: React.FC = () => {
           ))}
         </nav>
 
-        {/* High-End Animated Hamburger Toggle */}
-        <div className="md:hidden">
+        {/* Hamburger */}
+        <div className="md:hidden relative z-50">
           <HamburgerMenu 
             isOpen={isMenuOpen} 
             onToggle={() => setIsMenuOpen(!isMenuOpen)} 
             color={isMenuOpen ? "#000000" : (isScrolled ? "#000000" : "#FFFFFF")}
-            size={32}
+            size={34}
           />
         </div>
       </div>
 
-      {/* Mobile Menu Overlay */}
+      {/* OVERLAY */}
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div 
@@ -143,16 +153,18 @@ const Header: React.FC = () => {
             animate="open"
             exit="closed"
             variants={menuVariants}
-            className="fixed inset-0 bg-[#EBEBEB] z-10 flex flex-col items-center justify-center gap-8"
+            className="fixed inset-0 bg-[#EBEBEB] z-[10] flex flex-col items-center justify-between py-32"
           >
-            <div className="flex flex-col items-center gap-6">
+            <div className="h-24 md:hidden" />
+
+            <div className="flex flex-col items-center gap-6 md:gap-14 w-full">
               {navLinks.map((link, i) => (
-                <motion.div key={link.path} custom={i} variants={linkVariants}>
+                <motion.div key={link.path} custom={i} variants={linkVariants} className="w-full text-center">
                   <Link 
                     href={link.path}
                     prefetch={false}
                     onClick={() => setIsMenuOpen(false)}
-                    className={`text-5xl font-light tracking-tighter hover:text-[#BBA899] transition-colors uppercase ${pathname === link.path ? 'text-[#BBA899]' : 'text-gray-800'}`}
+                    className={`text-5xl md:text-8xl font-light tracking-tighter hover:text-[#BBA899] transition-colors uppercase ${pathname === link.path ? 'text-[#BBA899]' : 'text-gray-800'}`}
                   >
                     {link.name}
                   </Link>
@@ -163,15 +175,16 @@ const Header: React.FC = () => {
             <motion.div 
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 1 }}
-              className="mt-20 text-center space-y-4"
+              transition={{ delay: 0.4 }}
+              className="text-center space-y-2 px-6"
             >
               <p className="text-[10px] tracking-[0.4em] text-gray-400 uppercase font-bold">United Arab Emirates</p>
-              <a href="tel:+971507098676" className="block text-sm tracking-widest text-gray-600">+971 50 709 8676</a>
+              <a href="tel:+971507098676" className="block text-base tracking-widest text-gray-600 hover:text-black transition-colors">+971 50 709 8676</a>
             </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
+
     </header>
   );
 };

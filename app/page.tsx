@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import HomeContent from '@/components/pages/HomeContent';
+import Script from 'next/script';
 
 export const metadata: Metadata = {
   title: 'Lilli Palmer | Renovation & Building Contracting Dubai',
@@ -58,7 +59,8 @@ export default function HomePage() {
 
   return (
     <>
-      <script
+      <Script
+        id="schema-jsonld"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
