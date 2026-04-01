@@ -4,6 +4,9 @@ import ContactContent from '@/components/pages/ContactContent';
 export const metadata: Metadata = {
   title: 'Contact Us | Lilli Palmer',
   description: 'Connect with Lilli Palmer for your property vision and building requirements.',
+  alternates: {
+    canonical: 'https://www.lillipalmer.com/contact',
+  },
 };
 
 export default function ContactPage() {

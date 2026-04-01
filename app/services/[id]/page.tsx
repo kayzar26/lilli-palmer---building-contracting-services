@@ -21,6 +21,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${service.title} | Lilli Palmer`,
     description: service.description,
+    alternates: {
+      canonical: `https://www.lillipalmer.com/services/${id}`,
+    },
   };
 }
 
@@ -40,10 +43,10 @@ export default async function ServiceDetailPage({ params }: Props) {
     provider: {
       '@type': 'Organization',
       name: 'Lilli Palmer Building Contracting',
-      url: 'https://www.lillipalmer.ae',
+      url: 'https://www.lillipalmer.com',
     },
     image: service.image,
-    url: `https://www.lillipalmer.ae/services/${service.id}`,
+    url: `https://www.lillipalmer.com/services/${service.id}`,
     areaServed: {
       '@type': 'Country',
       name: 'United Arab Emirates',

@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next';
 import { SERVICES, BLOGS } from '@/constants';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://lilli-palmer-building-contracting-s-nine.vercel.app/';
+  const baseUrl = 'https://www.lillipalmer.com';
 
   // Static routes
   const routes = [
@@ -11,6 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/services',
     '/blog',
     '/contact',
+    '/privacy-policy',
   ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),

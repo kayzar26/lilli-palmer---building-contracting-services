@@ -21,6 +21,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${blog.title} | Lilli Palmer`,
     description: blog.excerpt,
+    alternates: {
+      canonical: `https://www.lillipalmer.com/blog/${id}`,
+    },
   };
 }
 
@@ -48,12 +51,12 @@ export default async function BlogDetailPage({ params }: Props) {
       name: 'Lilli Palmer Building Contracting',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://www.lillipalmer.ae/icon.png',
+        url: 'https://www.lillipalmer.com/icon.png',
       },
     },
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': `https://www.lillipalmer.ae/blog/${blog.id}`,
+      '@id': `https://www.lillipalmer.com/blog/${blog.id}`,
     },
   };
   

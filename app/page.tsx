@@ -5,6 +5,9 @@ import Script from 'next/script';
 export const metadata: Metadata = {
   title: 'Lilli Palmer | Renovation & Building Contracting Dubai',
   description: 'Lilli Palmer provides premium building contracting services including MEP, HVAC, electrical, plumbing, painting, and construction.',
+  alternates: {
+    canonical: 'https://www.lillipalmer.com',
+  },
 };
 
 export default function HomePage() {
@@ -12,8 +15,8 @@ export default function HomePage() {
     '@context': 'https://schema.org',
     '@type': 'HomeAndConstructionBusiness',
     name: 'Lilli Palmer Building Contracting',
-    url: 'https://www.lillipalmer.ae',
-    logo: 'https://www.lillipalmer.ae/icon.png',
+    url: 'https://www.lillipalmer.com',
+    logo: 'https://www.lillipalmer.com/icon.png',
     image: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&q=80&w=1200',
     description: 'Lilli Palmer provides elite building contracting services including HVAC, electrical, plumbing, painting, and architectural construction in Dubai.',
     telephone: '+971 50 709 8676',

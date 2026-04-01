@@ -57,9 +57,14 @@ const Footer: React.FC = () => {
         </div>
 
         <div className="border-t border-gray-400 pt-10 text-[10px] tracking-widest leading-loose flex flex-col md:flex-row justify-between uppercase">
-          <p className="max-w-xl mb-4 md:mb-0">
-            ALL IMAGES & INFORMATION SHOWN ON THIS WEBSITE ARE SUBJECT TO COPYRIGHT BY LILLI PALMER & MUST NOT BE USED WITHOUT WRITTEN CONSENT.
-          </p>
+          <div className="max-w-xl mb-4 md:mb-0">
+            <p>
+              ALL IMAGES & INFORMATION SHOWN ON THIS WEBSITE ARE SUBJECT TO COPYRIGHT BY LILLI PALMER & MUST NOT BE USED WITHOUT WRITTEN CONSENT.
+            </p>
+            <div className="mt-4 flex gap-6">
+              <Link href="/privacy-policy" className="hover:text-[#BBA899] transition-colors underline underline-offset-4">PRIVACY POLICY</Link>
+            </div>
+          </div>
           <p>
             CURATED BY <a href="https://www.instagram.com/_kayzar_" className="underline font-bold">KAYZAR</a> FOR LILLI PALMER
           </p>
