@@ -42,6 +42,6 @@ export const config = {
      * - favicon.ico
      * - sitemap.xml, robots.txt, llm.txt
      */
-    "/((?!api|_next/static|_next/image|favicon.ico|sitemap.xml|robots.txt|llm.txt).*)",
+    "/((?!api|_next/static|_next/image|images|favicon.ico|sitemap.xml|robots.txt|llm.txt).*)",
   ],
 };

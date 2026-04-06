@@ -20,7 +20,7 @@ export const SERVICES: Service[] = [
     id: 'hvac', 
     title: 'HVAC Solutions', 
     description: 'Precision climate control systems. Installation, repair, and seasonal optimization for high-end properties.', 
-    image: 'https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?auto=format&fit=crop&q=80&w=1200',
+    image: '/images/services/hvac.webp',
     extendedContent: 'HVAC systems are the lungs of your property. At Lilli Palmer, we specialize in the precision maintenance and rapid repair of high-end climate control systems.',
     features: ['Seasonal Optimization', 'Emergency Repair', 'Smart Integration', 'Air Quality Audits'],
     sections: [
@@ -52,7 +52,7 @@ export const SERVICES: Service[] = [
     id: 'electrical', 
     title: 'Electrical Repair', 
     description: 'Certified electrical engineers delivering safe, innovative power and lighting solutions.', 
-    image: 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&q=80&w=1200',
+    image: '/images/services/electrical.webp',
     extendedContent: 'Electrical integrity is the backbone of property safety. Our certified engineers provide full property audits and advanced infrastructure.',
     features: ['Full Property Audits', 'Lighting Design', 'Smart Home Setup', 'Fault Detection'],
     sections: [
@@ -84,7 +84,7 @@ export const SERVICES: Service[] = [
     id: 'plumbing', 
     title: 'Professional Plumbing', 
     description: 'Advanced drainage systems and precision fixture repairs executed with architectural care.', 
-    image: 'https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&q=80&w=1200',
+    image: '/images/services/plumbing.webp',
     extendedContent: 'From heritage fixtures to modern drainage, our master plumbers deliver uncompromised precision.',
     features: ['Leak Detection', 'Precision Fixtures', 'Gas Fitting', 'Drainage Management'],
     sections: [
@@ -116,7 +116,7 @@ export const SERVICES: Service[] = [
     id: 'painting', 
     title: 'Painting Services', 
     description: 'Exquisite interior and exterior finishing using premium palettes and meticulous techniques.', 
-    image: 'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&q=80&w=1200',
+    image: '/images/services/painting.webp',
     extendedContent: 'Surface preparation is 90% of a perfect finish. We use premium low-VOC paints and specialized techniques.',
     features: ['Heritage Restoration', 'Minimalist Finishes', 'Facade Protection', 'Custom Color Matching'],
     sections: [
@@ -148,7 +148,7 @@ export const SERVICES: Service[] = [
     id: 'renovation', 
     title: 'Home Renovation', 
     description: 'Transformative spatial design and structural upgrades that breathe new life into existing structures.', 
-    image: 'https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&q=80&w=1200',
+    image: '/images/services/renovation.webp',
     extendedContent: 'Renovating requires respect for original character while pushing boundaries of modern living.',
     features: ['Space Planning', 'Structural Changes', 'Kitchen Specialist', 'High-End Joinery'],
     sections: [
@@ -180,7 +180,7 @@ export const SERVICES: Service[] = [
     id: 'construction', 
     title: 'Full Construction', 
     description: 'From foundation to finish, we execute architectural visions with uncompromised precision.', 
-    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1200',
+    image: '/images/services/construction.webp',
     extendedContent: 'Architectural construction demands precision at every scale. We partner with leading designers to execute builds.',
     features: ['New Builds', 'Structural Extensions', 'Architectural Partnership', 'Project Engineering'],
     sections: [
@@ -212,7 +212,7 @@ export const SERVICES: Service[] = [
     id: 'annual-maintenance-contract', 
     title: 'Annual Maintenance', 
     description: 'Comprehensive maintenance contracts providing year-round peace of mind for your property.', 
-    image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=1200',
+    image: '/images/services/maintenance.webp',
     extendedContent: 'Our Annual Maintenance Contracts (AMC) offer proactive care, ensuring your property remains in pristine condition year-round.',
     features: ['Priority Response', 'Scheduled Preventive Maintenance', 'Unlimited Emergency Callouts', 'Comprehensive Coverage'],
     sections: [
@@ -229,7 +229,7 @@ export const BLOGS: BlogPost[] = [
     title: 'The Art of High-End HVAC', 
     date: 'Oct 12, 2025', 
     excerpt: 'Integrating climate control seamlessly into architectural design.', 
-    image: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&q=80&w=1200',
+    image: '/images/blog/blog1.webp',
     author: 'Aydan Doherty',
     category: 'Engineering',
     sections: [
@@ -242,7 +242,7 @@ export const BLOGS: BlogPost[] = [
     title: 'Color Trends for 2026', 
     date: 'Sept 28, 2025', 
     excerpt: 'Deep tones and textured finishes in luxury painting.', 
-    image: 'https://images.unsplash.com/photo-1562663474-6cbb3eaa4d14?auto=format&fit=crop&q=80&w=1200',
+    image: '/images/blog/blog2.webp',
     author: 'Lilli Palmer',
     category: 'Design',
     sections: [
@@ -255,7 +255,7 @@ export const BLOGS: BlogPost[] = [
     title: 'Restoration vs. Rebuild', 
     date: 'Aug 15, 2025', 
     excerpt: 'When to preserve heritage and when to build anew.', 
-    image: 'https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&q=80&w=1200',
+    image: '/images/blog/blog3.webp',
     author: 'Construction Lead',
     category: 'Architecture',
     sections: [

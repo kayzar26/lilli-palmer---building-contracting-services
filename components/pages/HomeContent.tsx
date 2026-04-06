@@ -73,21 +73,25 @@ const HomeContent: React.FC = () => {
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-end justify-between pb-24 px-6 overflow-hidden">
         {/* Background Image with Parallax-like effect */}
-        <motion.div 
+        {/* <motion.div 
           initial={{ scale: 1.2 }}
           animate={{ scale: 1 }}
-          transition={{ duration: 2.5, ease: luxuryEasing }}
+          transition={{ duration: 1, ease: luxuryEasing }}
           className="absolute inset-0 z-0"
-        >
+        > */}
+        {/* Background Image — no scale animation, plain fade for fastest LCP */}
+        <div className="absolute inset-0 z-0 animate-fade-in">
           <Image 
-            src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&q=80&w=1920" 
-            alt="Hero Background" 
+            src="/images/hero-image.avif"
+            alt="Lilli Palmer Building Contracting — Dubai" 
             fill
             className="object-cover brightness-[0.65]"
             priority
+            sizes="100vw"
+            quality={85}
           />
           <div className="absolute inset-0 bg-black/20"></div>
-        </motion.div>
+        </div>
 
         <div className="container mx-auto z-10 flex flex-col md:flex-row items-end justify-between gap-10">
           <motion.div 
@@ -124,7 +128,7 @@ const HomeContent: React.FC = () => {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              transition={{ delay: 1.2, duration: 1.5 }}
+              transition={{ delay: 1, duration: 1 }}
               className="text-white/70 text-h1-custom mt-6 tracking-[0.6em] uppercase"
             >
               Building Excellence, Maintaining Comfort
@@ -164,9 +168,10 @@ const HomeContent: React.FC = () => {
             className="relative h-[800px] w-full overflow-hidden rounded-[2px] shadow-2xl group"
           >
             <Image 
-              src="https://images.unsplash.com/photo-1517581177682-a085bb7ffb15?auto=format&fit=crop&q=80&w=1000" 
+              src="/images/luxury-construction.webp" 
               alt="Luxury Construction" 
               fill
+              sizes="(max-width: 768px) 100vw, 50vw"
               className="object-cover grayscale brightness-90 group-hover:brightness-100 group-hover:grayscale-0 transition-all duration-1000 ease-luxury"
             />
           </motion.div>
@@ -237,6 +242,7 @@ const HomeContent: React.FC = () => {
                     src={service.image} 
                     alt={service.title} 
                     fill
+                    sizes="(max-width: 768px) 350px, 600px"
                     className="object-cover grayscale brightness-90 transition-transform duration-[1.5s] ease-luxury group-hover:scale-110 group-hover:grayscale-0 group-hover:brightness-100"
                   />
                   <div className="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 flex items-center justify-center">

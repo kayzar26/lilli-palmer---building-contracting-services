@@ -5,13 +5,14 @@ import { Analytics } from "@vercel/analytics/next"
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import SmoothScroller from "@/components/SmoothScroller";
 import WhatsAppButton from "@/components/WhatsAppButton";
 
 const poppins = Poppins({
   variable: "--font-poppins",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["400", "500", "700"],
+  display: "swap",
+  preload: true,
 });
 
 export const metadata: Metadata = {
@@ -26,6 +27,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        {/* Establish early connections to external origins */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        {/* DNS prefetch for Unsplash (used in blog/service detail pages) */}
+        <link rel="dns-prefetch" href="https://images.unsplash.com" />
+        {/* Preload the self-hosted hero image — highest priority LCP resource */}
+        <link
+          rel="preload"
+          as="image"
+          href="/images/hero-image.avif"
+          type="image/avif"
+        />
+      </head>
       <body
         className={`${poppins.variable} font-sans antialiased bg-[#EBEBEB] text-[#69727D]`}
         suppressHydrationWarning
@@ -33,12 +48,10 @@ export default function RootLayout({
         <div className="min-h-screen flex flex-col selection:bg-[#BBA899] selection:text-white">
           <Header />
           <WhatsAppButton />
-          {/* <SmoothScroller> */}
             <main className="flex-grow">
               {children}
             </main>
             <Footer />
-          {/* </SmoothScroller> */}
         </div>
         <SpeedInsights />
         <Analytics/>

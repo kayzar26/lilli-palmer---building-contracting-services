@@ -4,8 +4,6 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
-
-import { ScrollSmoother } from 'gsap/ScrollSmoother';
 import HamburgerMenu from './HamburgerMenu';
 
 const Header: React.FC = () => {
@@ -44,11 +42,7 @@ const Header: React.FC = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, [isMenuOpen]);
 
-  // Handle ScrollSmoother
-  useEffect(() => {
-    const smoother = ScrollSmoother.get();
-    if (smoother) smoother.paused(isMenuOpen);
-  }, [isMenuOpen]);
+
 
   const navLinks = [
     { name: 'HOME', path: '/' },
