@@ -3,7 +3,7 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   compress: true,
   images: {
-    unoptimized: true,
+    unoptimized: false,
     qualities: [75, 85],
     minimumCacheTTL: 2592000,
     formats: ['image/avif', 'image/webp'],

@@ -3,10 +3,15 @@
 import React from 'react';
 import Link from 'next/link';
 import { Instagram, Facebook, Linkedin, ArrowUp } from 'lucide-react';
+import { pushToDataLayer } from '@/lib/gtm';
 
 const Footer: React.FC = () => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleLinkClick = (type: 'phone' | 'email' | 'address') => {
+    pushToDataLayer(`${type}_click`, { location: 'footer' });
   };
 
   return (
@@ -17,13 +22,19 @@ const Footer: React.FC = () => {
             <h2 className="text-3xl font-light tracking-[0.2em] text-black mb-10">LILLI PALMER</h2>
             <div className="space-y-2 text-[13px] uppercase tracking-widest leading-relaxed text-[#555555]">
               <p>DUBAI BRANCH</p>
-              <a href="https://maps.app.goo.gl/yKDKHBYmYQymwQXb7" className="hover:text-[#BBA899] transition-colors tracking-widest" target="_blank" rel="noopener noreferrer"> 
+              <a 
+                href="https://maps.app.goo.gl/yKDKHBYmYQymwQXb7" 
+                className="hover:text-[#BBA899] transition-colors tracking-widest" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                onClick={() => handleLinkClick('phone')}
+              > 
               <p>702, Garhoud Views Building</p>
               <p>Al Garhoud, Dubai, UAE</p>
               </a>
               <br />
-              <p><a href="tel:+971507098676" className="hover:text-[#BBA899] transition-colors tracking-widest">+971 50 709 8676</a></p>
-              <p><a href="mailto:contact@lillipalmer.com" className="hover:text-[#BBA899] transition-colors tracking-widest">contact@lillipalmer.com</a></p>
+              <p><a href="tel:+971507098676" onClick={() => handleLinkClick('phone')} className="hover:text-[#BBA899] transition-colors tracking-widest">+971 50 709 8676</a></p>
+              <p><a href="mailto:contact@lillipalmer.com" onClick={() => handleLinkClick('email')} className="hover:text-[#BBA899] transition-colors tracking-widest">contact@lillipalmer.com</a></p>
             </div>
             
             <div className="flex gap-4 mt-8">

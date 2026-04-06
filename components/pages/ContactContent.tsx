@@ -1,11 +1,51 @@
 "use client";
 
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Send, MapPin, Phone, Mail } from 'lucide-react';
+import { Send, MapPin, Phone, Mail, Loader2 } from 'lucide-react';
+import { useRouter } from 'next/navigation';
+import { submitContactForm } from '@/app/actions/contact';
+import { pushToDataLayer } from '@/lib/gtm';
 
 const ContactContent: React.FC = () => {
+  const router = useRouter();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
   const luxuryEasing = [0.16, 1, 0.3, 1] as const;
+
+  const handleLinkClick = (type: 'phone' | 'email' | 'address') => {
+    pushToDataLayer(`${type}_click`, { location: 'contact_page' });
+  };
+
+  const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setError(null);
+
+    const formData = new FormData(e.currentTarget);
+    
+    try {
+      const result = await submitContactForm(formData);
+      
+      if (result.success) {
+        // Fire GTM Conversion Event
+        pushToDataLayer('generate_lead', {
+          form_name: 'contact_page_form',
+          service: formData.get('service')
+        });
+        
+        // Redirect to thank you page
+        router.push('/thank-you');
+      } else {
+        setError(result.error || 'Something went wrong. Please try again.');
+        setIsSubmitting(false);
+      }
+    } catch (err) {
+      setError('An unexpected error occurred. Please try again.');
+      setIsSubmitting(false);
+    }
+  };
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -59,7 +99,13 @@ const ContactContent: React.FC = () => {
                 </div>
                 <div>
                   <p className="text-[10px] tracking-[0.3em] text-gray-400 uppercase mb-2 font-bold">Email Enquiries</p>
-                  <a href="mailto:contact@lillipalmer.com" className="text-xl text-gray-700 font-light group-hover:text-[#BBA899] transition-colors">contact@lillipalmer.com</a>
+                  <a 
+                    href="mailto:contact@lillipalmer.com" 
+                    onClick={() => handleLinkClick('email')}
+                    className="text-xl text-gray-700 font-light group-hover:text-[#BBA899] transition-colors"
+                  >
+                    contact@lillipalmer.com
+                  </a>
                 </div>
               </motion.div>
 
@@ -69,7 +115,13 @@ const ContactContent: React.FC = () => {
                 </div>
                 <div>
                   <p className="text-[10px] tracking-[0.3em] text-gray-400 uppercase mb-2 font-bold">Phone Enquiries</p>
-                  <a href="tel:+971507098676" className="text-xl text-gray-700 font-light group-hover:text-[#BBA899] transition-colors">+971 50 709 8676</a>
+                  <a 
+                    href="tel:+971507098676" 
+                    onClick={() => handleLinkClick('phone')}
+                    className="text-xl text-gray-700 font-light group-hover:text-[#BBA899] transition-colors"
+                  >
+                    +971 50 709 8676
+                  </a>
                 </div>
               </motion.div>
 
@@ -79,7 +131,13 @@ const ContactContent: React.FC = () => {
                 </div>
                 <div>
                   <p className="text-[10px] tracking-[0.3em] text-gray-400 uppercase mb-2 font-bold">Dubai Address</p>
-                  <a href="https://maps.app.goo.gl/yKDKHBYmYQymwQXb7" target="_blank" rel="noopener noreferrer" className="text-xl text-gray-700 font-light group-hover:text-[#BBA899] transition-colors">
+                  <a 
+                    href="https://maps.app.goo.gl/yKDKHBYmYQymwQXb7" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    onClick={() => handleLinkClick('address')}
+                    className="text-xl text-gray-700 font-light group-hover:text-[#BBA899] transition-colors"
+                  >
                     702, Garhoud Views Building, Al Garhoud, Dubai
                   </a>
                 </div>
@@ -97,12 +155,14 @@ const ContactContent: React.FC = () => {
             <motion.form 
               variants={containerVariants}
               className="space-y-8" 
-              onSubmit={(e) => e.preventDefault()}
+              onSubmit={handleFormSubmit}
             >
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="flex flex-col gap-2">
                   <motion.label variants={formElementVariants} className="text-[10px] font-bold tracking-[0.2em] text-gray-400 uppercase ml-1">First Name</motion.label>
                   <motion.input 
+                    name="firstName"
+                    required
                     variants={formElementVariants}
                     type="text" 
                     className="bg-gray-50 border border-transparent border-b-gray-200 px-5 py-4 rounded-[5px] focus:bg-white focus:border-[#BBA899] focus:ring-0 outline-none transition-all text-gray-800 placeholder-gray-300 font-light text-base ease-luxury" 
@@ -112,6 +172,7 @@ const ContactContent: React.FC = () => {
                 <div className="flex flex-col gap-2">
                   <motion.label variants={formElementVariants} className="text-[10px] font-bold tracking-[0.2em] text-gray-400 uppercase ml-1">Last Name</motion.label>
                   <motion.input 
+                    name="lastName"
                     variants={formElementVariants}
                     type="text" 
                     className="bg-gray-50 border border-transparent border-b-gray-200 px-5 py-4 rounded-[5px] focus:bg-white focus:border-[#BBA899] focus:ring-0 outline-none transition-all text-gray-800 placeholder-gray-300 font-light text-base ease-luxury" 
@@ -120,20 +181,38 @@ const ContactContent: React.FC = () => {
                 </div>
               </div>
 
-              <div className="flex flex-col gap-2">
-                <motion.label variants={formElementVariants} className="text-[10px] font-bold tracking-[0.2em] text-gray-400 uppercase ml-1">Email Address</motion.label>
-                <motion.input 
-                  variants={formElementVariants}
-                  type="email" 
-                  className="bg-gray-50 border border-transparent border-b-gray-200 px-5 py-4 rounded-[5px] focus:bg-white focus:border-[#BBA899] focus:ring-0 outline-none transition-all text-gray-800 placeholder-gray-300 font-light text-base ease-luxury" 
-                  placeholder="contact@lillipalmer.com" 
-                />
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="flex flex-col gap-2">
+                  <motion.label variants={formElementVariants} className="text-[10px] font-bold tracking-[0.2em] text-gray-400 uppercase ml-1">Email Address</motion.label>
+                  <motion.input 
+                    name="email"
+                    required
+                    variants={formElementVariants}
+                    type="email" 
+                    className="bg-gray-50 border border-transparent border-b-gray-200 px-5 py-4 rounded-[5px] focus:bg-white focus:border-[#BBA899] focus:ring-0 outline-none transition-all text-gray-800 placeholder-gray-300 font-light text-base ease-luxury" 
+                    placeholder="contact@lillipalmer.com" 
+                  />
+                </div>
+                <div className="flex flex-col gap-2">
+                  <motion.label variants={formElementVariants} className="text-[10px] font-bold tracking-[0.2em] text-gray-400 uppercase ml-1">Phone Number</motion.label>
+                  <motion.input 
+                    name="phone"
+                    required
+                    variants={formElementVariants}
+                    type="tel" 
+                    className="bg-gray-50 border border-transparent border-b-gray-200 px-5 py-4 rounded-[5px] focus:bg-white focus:border-[#BBA899] focus:ring-0 outline-none transition-all text-gray-800 placeholder-gray-300 font-light text-base ease-luxury" 
+                    placeholder="+971 50 --- ----" 
+                  />
+                </div>
               </div>
 
               <div className="flex flex-col gap-2">
                 <motion.label variants={formElementVariants} className="text-[10px] font-bold tracking-[0.2em] text-gray-400 uppercase ml-1">Service Required</motion.label>
                 <motion.div variants={formElementVariants} className="relative">
-                  <select className="appearance-none w-full bg-gray-50 border border-transparent border-b-gray-200 px-5 py-4 rounded-[5px] focus:bg-white focus:border-[#BBA899] focus:ring-0 outline-none transition-all text-gray-800 font-light text-base ease-luxury cursor-pointer">
+                  <select 
+                    name="service"
+                    className="appearance-none w-full bg-gray-50 border border-transparent border-b-gray-200 px-5 py-4 rounded-[5px] focus:bg-white focus:border-[#BBA899] focus:ring-0 outline-none transition-all text-gray-800 font-light text-base ease-luxury cursor-pointer"
+                  >
                     <option>HVAC Solutions</option>
                     <option>Full Construction</option>
                     <option>Home/Villa Renovation</option>
@@ -150,6 +229,7 @@ const ContactContent: React.FC = () => {
               <div className="flex flex-col gap-2">
                 <motion.label variants={formElementVariants} className="text-[10px] font-bold tracking-[0.2em] text-gray-400 uppercase ml-1">Project Details</motion.label>
                 <motion.textarea 
+                  name="details"
                   variants={formElementVariants}
                   rows={4} 
                   className="bg-gray-50 border border-transparent border-b-gray-200 px-5 py-4 rounded-[5px] focus:bg-white focus:border-[#BBA899] focus:ring-0 outline-none transition-all text-gray-800 placeholder-gray-300 font-light text-base resize-none ease-luxury" 
@@ -157,13 +237,24 @@ const ContactContent: React.FC = () => {
                 ></motion.textarea>
               </div>
 
+              {error && (
+                <motion.p variants={formElementVariants} className="text-red-500 text-sm text-center font-medium">
+                  {error}
+                </motion.p>
+              )}
+
               <motion.button 
+                disabled={isSubmitting}
                 variants={formElementVariants}
-                whileHover={{ scale: 1.01 }}
-                whileTap={{ scale: 0.99 }}
-                className="w-full bg-[#191919] text-white py-6 rounded-[5px] flex items-center justify-center gap-4 hover:bg-[#BBA899] shadow-lg hover:shadow-[#BBA899]/20 transition-all duration-500 uppercase tracking-[0.3em] font-bold text-[11px]"
+                whileHover={{ scale: isSubmitting ? 1 : 1.01 }}
+                whileTap={{ scale: isSubmitting ? 1 : 0.99 }}
+                className={`w-full bg-[#191919] text-white py-6 rounded-[5px] flex items-center justify-center gap-4 transition-all duration-500 uppercase tracking-[0.3em] font-bold text-[11px] ${isSubmitting ? 'opacity-70 cursor-not-allowed' : 'hover:bg-[#BBA899] shadow-lg hover:shadow-[#BBA899]/20'}`}
               >
-                Submit Enquiry <Send size={16} />
+                {isSubmitting ? (
+                  <>Processing <Loader2 size={16} className="animate-spin" /></>
+                ) : (
+                  <>Submit Enquiry <Send size={16} /></>
+                )}
               </motion.button>
               
               <motion.p variants={formElementVariants} className="text-center text-[10px] text-gray-400 tracking-widest uppercase mt-6">

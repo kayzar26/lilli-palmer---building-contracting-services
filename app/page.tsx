@@ -17,7 +17,7 @@ export default function HomePage() {
     name: 'Lilli Palmer Building Contracting',
     url: 'https://www.lillipalmer.com',
     logo: 'https://www.lillipalmer.com/icon.png',
-    image: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&q=80&w=1200',
+    image: 'https://www.lillipalmer.com/images/hero-image.avif',
     description: 'Lilli Palmer provides elite building contracting services including HVAC, electrical, plumbing, painting, and architectural construction in Dubai.',
     telephone: '+971 50 709 8676',
     address: {

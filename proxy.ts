@@ -17,6 +17,12 @@ const blocklistPathPattern =
 
 export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
+  
+  // 0. Early exit for static assets to minimize latency (TTFB)
+  if (pathname.startsWith('/_next/') || pathname.includes('.')) {
+    return NextResponse.next();
+  }
+
   const userAgent = request.headers.get("user-agent") || "";
 
   // A. Block malicious path probes or junk paths

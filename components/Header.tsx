@@ -4,7 +4,9 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
-import HamburgerMenu from './HamburgerMenu';
+import dynamic from 'next/dynamic';
+
+const HamburgerMenu = dynamic(() => import("./HamburgerMenu"), { ssr: false });
 
 const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -147,9 +149,9 @@ const Header: React.FC = () => {
             animate="open"
             exit="closed"
             variants={menuVariants}
-            className="fixed inset-0 bg-[#EBEBEB] z-[10] flex flex-col items-center justify-between py-32"
+            className="fixed inset-0 bg-[#EBEBEB] z-[10] flex flex-col items-center justify-between pt-10 pb-20"
           >
-            <div className="h-24 md:hidden" />
+            <div className="h-10 md:hidden" />
 
             <div className="flex flex-col items-center gap-6 md:gap-14 w-full">
               {navLinks.map((link, i) => (

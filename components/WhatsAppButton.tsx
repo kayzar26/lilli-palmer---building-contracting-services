@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import { pushToDataLayer } from '@/lib/gtm';
 
 const WhatsAppButton: React.FC = () => {
   const phoneNumber = "971507098676"; // From header
@@ -13,6 +14,7 @@ const WhatsAppButton: React.FC = () => {
       href={whatsappUrl}
       target="_blank"
       rel="noopener noreferrer"
+      onClick={() => pushToDataLayer('whatsapp_click', { location: 'floating_button' })}
       className="fixed bottom-8 right-8 z-40 flex items-center justify-center w-14 h-14 bg-[#25D366] rounded-full shadow-lg hover:shadow-xl transition-shadow group"
       initial={{ scale: 0, opacity: 0 }}
       animate={{ scale: 1, opacity: 1 }}

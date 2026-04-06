@@ -15,8 +15,8 @@ const containerVariants = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.15,
-      delayChildren: 0.3,
+      staggerChildren: 0.05,
+      delayChildren: 0.1,
     },
   },
 };
@@ -26,7 +26,7 @@ const wordVariants = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 1.2, ease: luxuryEasing },
+    transition: { duration: 0.8, ease: luxuryEasing },
   },
 };
 
@@ -128,7 +128,7 @@ const HomeContent: React.FC = () => {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              transition={{ delay: 1, duration: 1 }}
+              transition={{ delay: 0.6, duration: 0.8 }}
               className="text-white/70 text-h1-custom mt-6 tracking-[0.6em] uppercase"
             >
               Building Excellence, Maintaining Comfort
