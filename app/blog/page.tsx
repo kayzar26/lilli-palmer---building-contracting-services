@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import BlogContent from '@/components/pages/BlogContent';
 
 export const metadata: Metadata = {
-  title: 'Journal | Lilli Palmer',
+  title: 'Blog | Lilli Palmer',
   description: 'Read the latest insights and updates from Lilli Palmer.',
 };
 

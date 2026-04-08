@@ -19,7 +19,7 @@ const BlogContent: React.FC = () => {
           className="mb-24 text-center"
         >
           <p className="text-h1-custom text-[#BBA899] mb-4 uppercase tracking-[0.3em]">INSIGHTS & UPDATES</p>
-          <h1 className="text-5xl md:text-8xl font-light tracking-tighter text-gray-800 uppercase">JOURNAL</h1>
+          <h1 className="text-5xl md:text-8xl font-light tracking-tighter text-gray-800 uppercase">BLOGS</h1>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
