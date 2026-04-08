@@ -80,7 +80,7 @@ const HomeContent: React.FC = () => {
           className="absolute inset-0 z-0"
         > */}
         {/* Background Image — no scale animation, plain fade for fastest LCP */}
-        <div className="absolute inset-0 z-0 animate-fade-in">
+        <div className="absolute inset-0 z-0">
           <Image 
             src="/images/hero-image.avif"
             alt="Lilli Palmer Building Contracting — Dubai" 
@@ -94,45 +94,34 @@ const HomeContent: React.FC = () => {
         </div>
 
         <div className="container mx-auto z-10 flex flex-col md:flex-row items-end justify-between gap-10">
-          <motion.div 
+          {/* <motion.div 
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 1, duration: 1.2, ease: luxuryEasing }}
             className="hidden md:block"
-          >
+          > */}
+            <div className="hidden md:block"> 
+
             <Link href="/contact" className="block cursor-pointer">
               <CircularText />
             </Link>
-          </motion.div>
+            </div>
+          {/* </motion.div> */}
           
           <div className="text-right">
-            <motion.div
-              variants={containerVariants}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              className="flex flex-col items-end"
-            >
+            
+<div className="flex flex-col items-end">
               {heroWords.map((word, i) => (
                 <div key={i} className="overflow-hidden">
-                  <motion.span
-                    variants={wordVariants}
-                    className="block text-7xl md:text-[140px] font-light text-white leading-[0.85] tracking-tighter drop-shadow-2xl"
-                  >
+                  <span className="block text-7xl md:text-[140px] font-light text-white leading-[0.85] tracking-tighter drop-shadow-2xl">
                     {word}
-                  </motion.span>
+                  </span>
                 </div>
               ))}
-            </motion.div>
-            <motion.p 
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.6, duration: 0.8 }}
-              className="text-white/70 text-h1-custom mt-6 tracking-[0.6em] uppercase"
-            >
+            </div>
+            <p className="text-white/70 text-h1-custom mt-6 tracking-[0.6em] uppercase">
               Building Excellence, Maintaining Comfort
-            </motion.p>
+            </p>
           </div>
         </div>
       </section>

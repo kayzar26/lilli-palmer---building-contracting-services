@@ -49,12 +49,12 @@ export default function RootLayout({
         />
         {/* Establish early connections to external origins — preconnect removed for self-hosted next/font */}
         {/* Preload the self-hosted hero image — highest priority LCP resource */}
-        <link
+        {/* <link
           rel="preload"
           as="image"
           href="/images/hero-image.avif"
           type="image/avif"
-        />
+        /> */}
       </head>
       <body
         className={`${poppins.variable} font-sans antialiased bg-[#EBEBEB] text-[#69727D]`}
