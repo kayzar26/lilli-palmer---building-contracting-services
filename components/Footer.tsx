@@ -76,9 +76,6 @@ const Footer: React.FC = () => {
               <Link href="/privacy-policy" className="hover:text-[#BBA899] transition-colors underline underline-offset-4">PRIVACY POLICY</Link>
             </div>
           </div>
-          <p>
-            CURATED BY <a href="https://www.instagram.com/_kayzar_" className="underline font-bold">KAYZAR</a> FOR LILLI PALMER
-          </p>
         </div>
       </div>
 
