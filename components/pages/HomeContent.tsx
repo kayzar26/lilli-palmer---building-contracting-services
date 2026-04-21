@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import CircularText from '@/components/CircularText';
+import GlobalCTA from '@/components/GlobalCTA';
 import { SERVICES, TESTIMONIALS } from '@/constants';
 import { ArrowLeft, ArrowRight, Star } from 'lucide-react';
 
@@ -79,7 +80,7 @@ const HomeContent: React.FC = () => {
           transition={{ duration: 1, ease: luxuryEasing }}
           className="absolute inset-0 z-0"
         > */}
-        {/* Background Image — no scale animation, plain fade for fastest LCP */}
+        {/* Background Image — no scale animation, static import for blur placeholder */}
         <div className="absolute inset-0 z-0">
           <Image 
             src="/images/hero-image.avif"
@@ -87,8 +88,10 @@ const HomeContent: React.FC = () => {
             fill
             className="object-cover brightness-[0.65]"
             priority
+            fetchPriority="high"
+            loading="eager"
             sizes="100vw"
-            quality={85}
+            quality={75}
           />
           <div className="absolute inset-0 bg-black/20"></div>
         </div>
@@ -122,6 +125,12 @@ const HomeContent: React.FC = () => {
             <p className="text-white/70 text-h1-custom mt-6 tracking-[0.6em] uppercase">
               Building Excellence, Maintaining Comfort
             </p>
+            <div className="mt-14 mb-2 md:mb-0 flex justify-end">
+              <Link href="/contact" className="group inline-flex items-center gap-4 text-h1-custom text-white pb-2 border-b-2 border-white hover:text-[#BBA899] hover:border-[#BBA899] transition-all ease-luxury tracking-[0.2em] font-normal uppercase">
+                GET A QUOTE
+                <motion.span whileHover={{ x: 5 }} transition={{ type: "spring", stiffness: 400 }}><ArrowRight size={18} /></motion.span>
+              </Link>
+            </div>
           </div>
         </div>
       </section>
@@ -191,6 +200,23 @@ const HomeContent: React.FC = () => {
         </div>
       </section>
 
+      {/* Middle CTA Section */}
+      <section className="bg-[#191919] py-24 px-6 border-b border-white/10">
+        <div className="container mx-auto flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
+          <div>
+            <h2 className="text-3xl md:text-4xl font-light text-white uppercase tracking-tight mb-4">
+              Need help with your project?
+            </h2>
+            <p className="text-gray-400 text-lg font-light">
+              Our experts are ready to turn your vision into reality.
+            </p>
+          </div>
+          <Link href="/contact" className="shrink-0 bg-[#BBA899] text-white px-10 py-5 uppercase tracking-[0.2em] text-[11px] font-bold hover:bg-white hover:text-black transition-all">
+            Contact us today
+          </Link>
+        </div>
+      </section>
+
       {/* Services Carousel Section (Renamed from Projects) */}
       <section className="bg-white py-40 overflow-hidden">
         <div className="container mx-auto px-6 mb-20">
@@ -245,13 +271,19 @@ const HomeContent: React.FC = () => {
                   </div>
                   <span className="text-gray-300 font-light text-2xl">0{idx + 1}</span>
                 </div>
+                <div className="px-4 mt-8 pb-4">
+                  <span className="inline-flex items-center gap-2 text-[10px] font-bold tracking-[0.2em] text-gray-400 uppercase group-hover:text-[#191919] transition-colors border-b border-transparent group-hover:border-[#191919] pb-1">
+                    Request a Quote <ArrowRight size={12} />
+                  </span>
+                </div>
               </Link>
             </motion.div>
           ))}
         </div>
 
-        {/* Navigation Buttons */}
-        <div className="container mx-auto px-6 flex gap-4 mt-8">
+        {/* Navigation Buttons and CTA */}
+        <div className="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-8 mt-8">
+          <div className="flex gap-4">
             <button 
               onClick={() => scroll('left')}
               className="w-12 h-12 border border-gray-300 rounded-full flex items-center justify-center hover:bg-[#191919] hover:text-white hover:border-[#191919] transition-all duration-300"
@@ -266,6 +298,10 @@ const HomeContent: React.FC = () => {
             >
               <ArrowRight size={16} />
             </button>
+          </div>
+          <Link href="/contact" className="w-full md:w-auto text-center bg-[#191919] text-white px-10 py-5 uppercase tracking-[0.2em] text-[10px] font-bold hover:bg-[#BBA899] transition-all">
+            Get A Quote
+          </Link>
         </div>
       </section>
 
@@ -373,6 +409,8 @@ const HomeContent: React.FC = () => {
           </motion.div>
         </div>
       </section>
+      
+      <GlobalCTA />
     </div>
   );
 };

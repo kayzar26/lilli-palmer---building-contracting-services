@@ -17,7 +17,7 @@ const BlogDetailContent: React.FC<BlogDetailContentProps> = ({ blog }) => {
   const recentPosts = BLOGS.filter(b => b.id !== blog.id).slice(0, 2);
 
   return (
-    <div className="pt-32 pb-20 bg-[#EBEBEB]">
+    <div className="pt-44 pb-20 bg-[#EBEBEB]">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

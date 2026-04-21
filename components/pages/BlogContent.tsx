@@ -5,13 +5,14 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { BLOGS } from '@/constants';
 import { motion } from 'framer-motion';
+import GlobalCTA from '@/components/GlobalCTA';
 
 const BlogContent: React.FC = () => {
   const luxuryEasing = [0.16, 1, 0.3, 1] as const;
 
   return (
-    <div className="pt-40 pb-20 bg-[#EBEBEB]">
-      <div className="container mx-auto px-6">
+    <div className="pt-40 pb-0 bg-[#EBEBEB]">
+      <div className="container mx-auto px-6 mb-32">
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -57,6 +58,7 @@ const BlogContent: React.FC = () => {
           ))}
         </div>
       </div>
+      <GlobalCTA />
     </div>
   );
 };

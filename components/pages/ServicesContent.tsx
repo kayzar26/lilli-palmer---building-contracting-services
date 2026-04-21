@@ -6,13 +6,14 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { SERVICES } from '@/constants';
 import { CheckCircle2, ArrowRight } from 'lucide-react';
+import GlobalCTA from '@/components/GlobalCTA';
 
 const ServicesContent: React.FC = () => {
   const luxuryEasing = [0.16, 1, 0.3, 1] as const;
 
   return (
-    <div className="pt-40 pb-20">
-      <div className="container mx-auto px-6">
+    <div className="pt-40 pb-0">
+      <div className="container mx-auto px-6 mb-32">
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -65,6 +66,11 @@ const ServicesContent: React.FC = () => {
                         </li>
                       ))}
                     </ul>
+                    <div className="mt-10">
+                      <span className="inline-flex items-center gap-3 bg-[#191919] text-white px-10 py-5 uppercase tracking-[0.2em] text-[11px] font-bold group-hover:bg-[#BBA899] transition-all">
+                        Request a Quote <ArrowRight size={14} />
+                      </span>
+                    </div>
                   </div>
                 </div>
               </Link>
@@ -72,6 +78,7 @@ const ServicesContent: React.FC = () => {
           ))}
         </div>
       </div>
+      <GlobalCTA />
     </div>
   );
 };

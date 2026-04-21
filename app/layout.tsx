@@ -12,6 +12,7 @@ import GTMPageView from "@/components/GTMPageView";
 // Dynamic imports for non-critical components to reduce initial JS payload
 const Footer = dynamic(() => import("@/components/Footer"));
 const WhatsAppButton = dynamic(() => import("@/components/WhatsAppButton"));
+const CallButton = dynamic(() => import("@/components/CallButton"));
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -73,6 +74,7 @@ export default function RootLayout({
             <GTMPageView />
           </Suspense>
           <Header />
+          <CallButton />
           <WhatsAppButton />
           <main className="flex-grow">
             {children}

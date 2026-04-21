@@ -6,7 +6,7 @@ const nextConfig: NextConfig = {
     unoptimized: false,
     qualities: [75, 85],
     minimumCacheTTL: 2592000,
-    formats: ['image/avif', 'image/webp'],
+    formats: ['image/webp'],
     deviceSizes: [390, 640, 750, 828, 1080, 1200, 1920],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     // All images are now self-hosted in /public/images

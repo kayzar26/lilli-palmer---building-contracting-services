@@ -15,10 +15,10 @@ const ServiceDetailContent: React.FC<ServiceDetailContentProps> = ({ service }) 
   const otherServices = SERVICES.filter(s => s.id !== service.id).slice(0, 3);
 
   return (
-    <div className="pt-32 pb-20">
+    <div className="pt-52 pb-20">
       <div className="container mx-auto px-6">
         {/* Header Section */}
-        <div className="mb-16">
+        <div className="mb-16 relative z-[50]">
           <Link href="/services" className="inline-flex items-center gap-2 text-xs font-bold tracking-widest text-gray-400 hover:text-[#BBA899] transition-colors mb-8 uppercase">
             <ArrowLeft size={16} /> Back to Services
           </Link>

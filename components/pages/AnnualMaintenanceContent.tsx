@@ -66,7 +66,7 @@ const plans = [
 
 const AnnualMaintenanceContent: React.FC = () => {
   return (
-    <div className="pt-32 pb-20 bg-[#F5F5F5]">
+    <div className="pt-44 pb-20 bg-[#F5F5F5]">
       
       {/* Hero Section */}
       <section className="px-6 mb-20 text-center">

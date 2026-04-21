@@ -12,7 +12,7 @@ export const SERVICES: Service[] = [
     id: 'hvac', 
     title: 'HVAC Solutions', 
     description: 'Precision climate control systems. Installation, repair, and seasonal optimization for high-end properties.', 
-    image: '/images/services/hvac.webp',
+    image: '/images/services/hvac_new.png',
     extendedContent: 'HVAC systems are the lungs of your property. At Lilli Palmer, we specialize in the precision maintenance and rapid repair of high-end climate control systems.',
     features: ['Seasonal Optimization', 'Emergency Repair', 'Smart Integration', 'Air Quality Audits'],
     sections: [
@@ -76,7 +76,7 @@ export const SERVICES: Service[] = [
     id: 'plumbing', 
     title: 'Professional Plumbing', 
     description: 'Advanced drainage systems and precision fixture repairs executed with architectural care.', 
-    image: '/images/services/plumbing.webp',
+    image: '/images/services/plumbing_new.png',
     extendedContent: 'From heritage fixtures to modern drainage, our master plumbers deliver uncompromised precision.',
     features: ['Leak Detection', 'Precision Fixtures', 'Gas Fitting', 'Drainage Management'],
     sections: [
@@ -108,7 +108,7 @@ export const SERVICES: Service[] = [
     id: 'painting', 
     title: 'Painting Services', 
     description: 'Exquisite interior and exterior finishing using premium palettes and meticulous techniques.', 
-    image: '/images/services/painting.webp',
+    image: '/images/services/painting_new.png',
     extendedContent: 'Surface preparation is 90% of a perfect finish. We use premium low-VOC paints and specialized techniques.',
     features: ['Heritage Restoration', 'Minimalist Finishes', 'Facade Protection', 'Custom Color Matching'],
     sections: [
@@ -216,6 +216,20 @@ export const SERVICES: Service[] = [
 ];
 
 export const BLOGS: BlogPost[] = [
+  { 
+    id: 'b4', 
+    title: 'The Importance of HVAC Servicing in Summers', 
+    date: 'Apr 21, 2026', 
+    excerpt: 'Beat the heat proactively with preventative climate control maintenance. AI zoning, air quality, and reduced bills.', 
+    image: '/images/blog/hvac_summer_2026.png',
+    author: 'Aydan Doherty',
+    category: 'Maintenance',
+    sections: [
+      { title: 'The Summer Strain', content: 'As temperatures peak, your HVAC system works overtime. Preventative servicing ensures that your indoor sanctuary remains uninterrupted, preventing catastrophic failure during peak load.' },
+      { title: 'High-Efficiency AI Control', content: 'In 2026, modern smart thermostats do more than cool—they predict. By servicing your system now, you ensure maximum energy efficiency, leading to drastically reduced utility bills throughout the hot months.' },
+      { title: 'Indoor Air Quality (IAQ)', content: 'Summer brings dust and allergens. A professional service includes changing to hospital-grade MERV 13+ filtration to protect your family\'s respiratory health.' }
+    ]
+  },
   { 
     id: 'b1', 
     title: 'The Art of High-End HVAC', 

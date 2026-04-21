@@ -3,10 +3,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import GlobalCTA from '@/components/GlobalCTA';
 
 const AboutContent: React.FC = () => {
   return (
-    <div className="pt-32 pb-20">
+    <div className="pt-44 pb-20">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-center mb-32">
           <motion.div
@@ -145,6 +146,7 @@ const AboutContent: React.FC = () => {
           </div>
         </div>
       </div>
+      <GlobalCTA />
     </div>
   );
 };
