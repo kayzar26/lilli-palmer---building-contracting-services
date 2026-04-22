@@ -108,7 +108,7 @@ export const SERVICES: Service[] = [
     id: 'painting', 
     title: 'Painting Services', 
     description: 'Exquisite interior and exterior finishing using premium palettes and meticulous techniques.', 
-    image: '/images/services/painting_new.png',
+    image: '/images/services/painting_new.webp',
     extendedContent: 'Surface preparation is 90% of a perfect finish. We use premium low-VOC paints and specialized techniques.',
     features: ['Heritage Restoration', 'Minimalist Finishes', 'Facade Protection', 'Custom Color Matching'],
     sections: [
@@ -346,7 +346,7 @@ export const SERVICES: Service[] = [
     id: 'mep-contracting', 
     title: 'MEP Contracting', 
     description: 'Premier Mechanical, Electrical, and Plumbing engineering integration for luxury properties.', 
-    image: '/images/services/mep_contracting.png',
+    image: '/images/services/mep_contracting.webp',
     extendedContent: 'Lilli Palmer is recognized among the elite MEP companies in Dubai, delivering flawless mechanical, electrical, plumbing integration.',
     features: ['Mechanical Systems', 'Electrical Engineering', 'Plumbing Topography', 'Full MEP Lifecycle'],
     sections: [

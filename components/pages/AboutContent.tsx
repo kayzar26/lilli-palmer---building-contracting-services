@@ -98,7 +98,7 @@ const AboutContent: React.FC = () => {
             >
               <div className="relative aspect-[3/4] mb-8 overflow-hidden rounded-[2px] bg-gray-200">
                 <Image 
-                  src="/images/ceo.png" 
+                  src="/images/ceo.webp" 
                   alt="Founder and CEO" 
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
@@ -126,7 +126,7 @@ const AboutContent: React.FC = () => {
             >
               <div className="relative aspect-[3/4] mb-8 overflow-hidden rounded-[2px] bg-gray-200">
                 <Image 
-                  src="/images/coo.png" 
+                  src="/images/coo.webp" 
                   alt="Director and COO" 
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
