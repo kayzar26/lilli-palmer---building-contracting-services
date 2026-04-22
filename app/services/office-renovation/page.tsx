@@ -1,39 +1,17 @@
 import { Metadata } from 'next';
-import { notFound } from 'next/navigation';
-import { SERVICES } from '@/constants';
-import ServiceDetailContent from '@/components/pages/ServiceDetailContent';
+import { OFFICE_RENOVATION_SUB_SERVICE } from '@/constants';
+import SubServiceContent from '@/components/pages/SubServiceContent';
 
-type Props = {
-  params: Promise<{ id: string }>;
+export const metadata: Metadata = {
+  title: 'Office Renovation in Dubai | Lilli Palmer Building Contracting',
+  description: 'Premium office renovation and commercial fit-out services in Dubai. Executive boardroom design, workspace optimization, and IT infrastructure integration.',
+  alternates: {
+    canonical: 'https://www.lillipalmer.com/services/office-renovation',
+  },
 };
 
-export async function generateStaticParams() {
-  return SERVICES.map((service) => ({
-    id: service.id,
-  }));
-}
-
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { id } = await params;
-  const service = SERVICES.find(s => s.id === id);
-  if (!service) return { title: 'Service Not Found' };
-  
-  return {
-    title: `${service.title} | Lilli Palmer`,
-    description: service.description,
-    alternates: {
-      canonical: `https://www.lillipalmer.com/services/${id}`,
-    },
-  };
-}
-
-export default async function ServiceDetailPage({ params }: Props) {
-  const { id } = await params;
-  const service = SERVICES.find(s => s.id === id);
-  
-  if (!service) {
-    notFound();
-  }
+export default function OfficeRenovationPage() {
+  const service = OFFICE_RENOVATION_SUB_SERVICE;
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -46,7 +24,7 @@ export default async function ServiceDetailPage({ params }: Props) {
       url: 'https://www.lillipalmer.com',
     },
     image: service.image,
-    url: `https://www.lillipalmer.com/services/${service.id}`,
+    url: 'https://www.lillipalmer.com/services/office-renovation',
     areaServed: {
       '@type': 'Country',
       name: 'United Arab Emirates',
@@ -72,12 +50,12 @@ export default async function ServiceDetailPage({ params }: Props) {
       {
         '@type': 'ListItem',
         position: 3,
-        name: service.title,
-        item: `https://www.lillipalmer.com/services/${service.id}`,
+        name: 'Office Renovation',
+        item: 'https://www.lillipalmer.com/services/office-renovation',
       },
     ],
   };
-  
+
   return (
     <>
       <script
@@ -88,7 +66,11 @@ export default async function ServiceDetailPage({ params }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
-      <ServiceDetailContent service={service} />
+      <SubServiceContent
+        service={service}
+        backLink="/services"
+        backLabel="Back to Services"
+      />
     </>
   );
 }

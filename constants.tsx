@@ -12,7 +12,7 @@ export const SERVICES: Service[] = [
     id: 'hvac', 
     title: 'HVAC Solutions', 
     description: 'Precision climate control systems. Installation, repair, and seasonal optimization for high-end properties.', 
-    image: '/images/services/hvac_new.png',
+    image: '/images/services/hvac_new.webp',
     extendedContent: 'HVAC systems are the lungs of your property. At Lilli Palmer, we specialize in the precision maintenance and rapid repair of high-end climate control systems.',
     features: ['Seasonal Optimization', 'Emergency Repair', 'Smart Integration', 'Air Quality Audits'],
     sections: [
@@ -76,7 +76,7 @@ export const SERVICES: Service[] = [
     id: 'plumbing', 
     title: 'Professional Plumbing', 
     description: 'Advanced drainage systems and precision fixture repairs executed with architectural care.', 
-    image: '/images/services/plumbing_new.png',
+    image: '/images/services/plumbing_new.webp',
     extendedContent: 'From heritage fixtures to modern drainage, our master plumbers deliver uncompromised precision.',
     features: ['Leak Detection', 'Precision Fixtures', 'Gas Fitting', 'Drainage Management'],
     sections: [
@@ -139,33 +139,175 @@ export const SERVICES: Service[] = [
   { 
     id: 'renovation', 
     title: 'Home Renovation', 
-    description: 'Transformative spatial design and structural upgrades that breathe new life into existing structures.', 
+    description: 'Bespoke villa and apartment renovations, including luxury kitchen and bathroom transformations.', 
     image: '/images/services/renovation.webp',
-    extendedContent: 'Renovating requires respect for original character while pushing boundaries of modern living.',
-    features: ['Space Planning', 'Structural Changes', 'Kitchen Specialist', 'High-End Joinery'],
+    extendedContent: 'We specialize in high-end villa renovation and luxury apartment renovation across Dubai, turning outdated spaces into architectural masterpieces.',
+    features: ['Villa Renovation', 'Apartment Renovation', 'Kitchen Transformations', 'Bathroom Upgrades'],
     sections: [
-      { title: 'Spatial Design', text: 'We reimagine how you move through your home, removing barriers to create open environments.' },
-      { title: 'Material Selection', text: 'From Calacatta marble to custom-milled oak, we source the world’s finest materials.' },
-      { title: 'Project Management', text: 'We manage every detail, from council approvals to the final site clean.' }
+      { title: 'Kitchen Renovation', text: 'State-of-the-art culinary spaces featuring custom joinery, premium appliances, and ergonomic flow.' },
+      { title: 'Bathroom Renovation', text: 'Spa-like sanctuaries with high-end fixtures, marble finishes, and precision plumbing integration.' },
+      { title: 'Villa & Apartment Renovation', text: 'Complete spatial reimagining, from structural changes to fine interior detailing.' }
     ],
     benefits: [
-      { title: 'Value Addition', description: 'Strategic renovations that are proven to increase property valuation by 20-30%.' },
-      { title: 'Flow & Function', description: 'Reconfigured layouts that unlock the hidden potential of your existing footprint.' },
-      { title: 'Bespoke Identity', description: 'Custom joinery and unique finishes that reflect your personal narrative, not a trend.' },
-      { title: 'Stress-Free Build', description: 'A single point of contact manages all trades, schedules, and quality control.' }
+      { title: 'Lifestyle Optimization', description: 'Layouts specifically reconfigured to suit the modern lifestyle of villa and apartment owners.' },
+      { title: 'Premium Sourcing', description: 'Exclusive access to high-end marbles, woods, and fixtures that define luxury living.' },
+      { title: 'Strategic Value', description: 'Renovations designed to significantly increase the market value of your Dubai property.' },
+      { title: 'Turnkey Delivery', description: 'From concept and permits to final Snagging—we manage the entire lifecycle.' }
     ],
     process: [
-      { title: 'Concept Feasibility', description: 'We assess structural constraints to determine exactly what is possible.' },
-      { title: 'Material Sourcing', description: 'We escort you to private showrooms to select stones, woods, and fixtures.' },
-      { title: 'Construction Phase', description: 'A strictly scheduled build ensures momentum is maintained without compromising quality.' },
-      { title: 'Detailing', description: 'The final 5%—silicones, trims, and adjustments—receives 50% of our attention.' }
+      { title: 'Consultation', description: 'We discuss your specific needs for your villa or apartment renovation.' },
+      { title: 'Design & Permitting', description: 'We handle all required structural engineering and DED/municipality approvals.' },
+      { title: 'Construction', description: 'Our artisan trades execute the build with meticulous attention to detail.' },
+      { title: 'Handover', description: 'A detailed walkthrough ensuring every corner meets our white-glove standards.' }
     ],
-    whyChooseUs: 'We handle the "impossible" renovations. Tight access, occupied spaces, and heritage restrictions are where we excel. We respect that we are guests in your home, maintaining a tidy and polite site at all times.',
-    seoContent: 'When you choose Lilli Palmer for your home renovation in Dubai, you are partnering with a team that specialises in transforming existing spaces into extraordinary living environments. Our renovation services cover everything from complete kitchen and bathroom renovation to structural renovation work that reimagines your floor plan. Every renovation project we undertake begins with a detailed feasibility study to understand what is structurally possible, followed by material sourcing from the world\'s finest suppliers. Our renovation process is managed by a single dedicated project manager, ensuring your renovation stays on schedule and within budget. We have built our reputation on delivering renovation results that increase property value by 20–30% while reflecting the unique identity of each homeowner.',
+    whyChooseUs: 'We handle specialized home renovations where others fail. Whether it is a full villa overhaul or a high-end apartment update, we navigate the technical complexities of residential remodeling with absolute precision.',
+    seoContent: 'Looking for the best villa renovation in Dubai or expert apartment renovation? Lilli Palmer is the premier choice for luxury home renovation, specializing in bespoke kitchen renovation and high-end bathroom renovation. Our team of expert renovation contractors in Dubai handles everything from spatial planning and structural changes to the fine finishing of cabinetry and fixtures. We understand that your home is your sanctuary, which is why our home renovation services are designed to enhance both functionality and market value. Whether you are seeking a complete villa renovation or a focused kitchen and bathroom transformation for your apartment, we deliver result that are architecturally sound and visually stunning.',
+    subServices: [
+      {
+        id: 'villa-renovation',
+        title: 'Villa Renovation',
+        description: 'Complete villa renovation services across Dubai — from structural overhauls to luxury interior finishing.',
+        image: '/images/services/villa_renovation.webp',
+        carouselImages: ['/images/services/carousel/villa/1.webp', '/images/services/carousel/villa/2.webp', '/images/services/carousel/villa/3.webp', '/images/services/carousel/villa/4.webp', '/images/services/carousel/villa/5.webp'],
+        sections: [
+          { title: 'Structural Transformation', text: 'We reimagine villa floor plans by removing load-bearing walls with engineered steel supports, creating open-concept living areas that flood with natural light. Every structural modification is approved by certified engineers and compliant with DED regulations.' },
+          { title: 'Facade & Exterior Upgrade', text: 'Modern stone cladding, aluminium composite panels, and designer landscaping transform the kerb appeal of ageing villas. We integrate ambient exterior lighting and smart irrigation systems for a complete outdoor transformation.' },
+          { title: 'Interior Finishing', text: 'From Level 5 drywall finishing to bespoke joinery and imported Italian marble flooring, our artisan teams deliver interior finishes that rival five-star hotels. Every villa renovation is completed with a comprehensive snagging process.' }
+        ],
+        benefits: [
+          { title: 'Value Appreciation', description: 'Strategic villa renovations proven to increase property market value by 20-30% across Dubai communities.' },
+          { title: 'Turnkey Management', description: 'A single dedicated project manager handles all trades, permits, and quality control from start to finish.' },
+          { title: 'Heritage Respect', description: 'We preserve the architectural character of your villa while introducing modern luxury and functionality.' },
+          { title: 'Premium Materials', description: 'Direct sourcing partnerships with global suppliers ensure the finest marbles, woods, and fixtures at competitive pricing.' }
+        ],
+        process: [
+          { title: 'Villa Assessment', description: 'Our senior architect conducts a detailed structural and aesthetic assessment of your existing villa.' },
+          { title: 'Design & Approvals', description: 'We produce 3D visualizations and handle all DED and community NOC approvals on your behalf.' },
+          { title: 'Construction Phase', description: 'Our certified teams execute the renovation on a strict timeline with weekly progress updates.' },
+          { title: 'Snagging & Handover', description: 'A meticulous 200-point snagging checklist ensures every detail meets our white-glove standard.' }
+        ],
+        whyChooseUs: 'Villa renovations demand a contractor who understands the scale and complexity of large residential projects. With over a decade of villa renovation experience in communities like Arabian Ranches, Emirates Hills, and Palm Jumeirah, Lilli Palmer delivers results that are structurally sound, aesthetically breathtaking, and completed on time.',
+        seoContent: 'As a leading villa renovation company in Dubai, Lilli Palmer transforms outdated villas into contemporary masterpieces. Our villa renovation services cover every aspect of your project — from initial concept design and DED approvals through to structural modifications, premium finishing, and landscaping. Whether you own a villa in Arabian Ranches, Emirates Hills, Jumeirah, or Palm Jumeirah, our experienced villa renovation contractors deliver turnkey solutions that increase your property value by up to 30%. We specialize in open-plan villa conversions, modern facade upgrades, and complete interior redesigns that respect the original architectural character while introducing cutting-edge luxury. Every villa renovation we undertake is managed by a dedicated project coordinator, ensuring transparent timelines and meticulous quality control from foundation to final polish.',
+        cta: { heading: 'Ready to Reimagine Your Villa?', description: 'Schedule a complimentary villa assessment with our senior architect. We will evaluate your space and present a detailed renovation roadmap with transparent costing.', buttonText: 'Book a Villa Assessment' }
+      },
+      {
+        id: 'apartment-renovation',
+        title: 'Apartment Renovation',
+        description: 'Luxury apartment renovation and fit-out services for high-rise living across Dubai Marina, Downtown, and beyond.',
+        image: '/images/services/apartment_renovation.webp',
+        carouselImages: ['/images/services/carousel/apartment/1.webp', '/images/services/carousel/apartment/2.webp', '/images/services/carousel/apartment/3.webp', '/images/services/carousel/apartment/4.webp', '/images/services/carousel/apartment/5.webp'],
+        sections: [
+          { title: 'Layout Reconfiguration', text: 'We reconfigure apartment layouts to maximise space and light. Open-plan conversions, walk-in wardrobe additions, and utility room integrations are executed with precision engineering.' },
+          { title: 'Building Management Coordination', text: 'High-rise renovations require strict adherence to building management rules. We handle NOC applications, elevator bookings, noise schedules, and material delivery logistics seamlessly.' },
+          { title: 'Smart Home Integration', text: 'Every apartment renovation includes the option for full smart home integration — automated lighting, climate control, motorised blinds, and integrated security systems.' }
+        ],
+        benefits: [
+          { title: 'Space Maximisation', description: 'Intelligent design solutions that make every square foot work harder, creating the illusion of significantly more space.' },
+          { title: 'Zero Hassle', description: 'We manage all building management regulations, permits, and logistics so you never need to interact with the management office.' },
+          { title: 'Premium Finish', description: 'Hospital-grade waterproofing, premium acoustic insulation, and Level 5 wall finishes as standard.' },
+          { title: 'Quick Turnaround', description: 'Our streamlined apartment renovation process is designed for speed without sacrificing quality, minimising time away from your home.' }
+        ],
+        process: [
+          { title: 'Site Survey', description: 'We survey your apartment and identify structural constraints, plumbing routes, and electrical capacity.' },
+          { title: 'NOC & Permits', description: 'We obtain all necessary building management NOCs and municipality permits before any work begins.' },
+          { title: 'Fit-Out Execution', description: 'Our specialist apartment teams work within strict building hours and noise guidelines.' },
+          { title: 'Final Inspection', description: 'A comprehensive handover inspection ensures every element is perfect before you move back in.' }
+        ],
+        whyChooseUs: 'Apartment renovations in Dubai present unique challenges — restricted access, noise regulations, and building management politics. Our team has completed hundreds of apartment fit-outs across Dubai Marina, Downtown, JBR, and Business Bay. We know the rules, the logistics, and the shortcuts that save you time and money.',
+        seoContent: 'Our apartment renovation services are engineered for the unique challenges of high-rise living in Dubai. Lilli Palmer is a trusted apartment renovation company delivering premium fit-outs for apartments in Dubai Marina, Downtown Dubai, JBR, Business Bay, and beyond. We navigate building management regulations, coordinate hoist and lift logistics, and manage noise-sensitive schedules — so you don\'t have to. Our apartment renovation expertise includes complete layout reconfiguration, smart home integration, premium flooring installation, and bespoke joinery designed to maximize every square foot. Whether you are renovating a studio or a penthouse, we deliver apartment renovation results that feel five-star from the moment you walk through the door.',
+        cta: { heading: 'Transform Your Apartment Living', description: 'Book a site survey for your apartment. We will assess the space, handle all building management coordination, and deliver a detailed renovation plan.', buttonText: 'Book an Apartment Survey' }
+      },
+      {
+        id: 'kitchen-renovation',
+        title: 'Kitchen Renovation',
+        description: 'Bespoke kitchen renovation featuring custom cabinetry, premium countertops, and intelligent spatial design.',
+        image: '/images/services/kitchen_renovation.webp',
+        carouselImages: ['/images/services/carousel/kitchen/1.webp', '/images/services/carousel/kitchen/2.webp', '/images/services/carousel/kitchen/3.webp', '/images/services/carousel/kitchen/4.webp', '/images/services/carousel/kitchen/5.webp'],
+        sections: [
+          { title: 'Custom Cabinetry & Joinery', text: 'Our master joiners craft bespoke kitchen cabinets from solid hardwoods and premium veneers. Soft-close mechanisms, integrated LED lighting, and custom drawer organisers come standard.' },
+          { title: 'Countertop Selection', text: 'Choose from Calacatta marble, quartzite, Dekton, or engineered stone. We source slabs personally and template every countertop with laser precision for a seamless fit.' },
+          { title: 'Appliance Integration', text: 'We design around your preferred appliance brands — Gaggenau, Miele, Sub-Zero, Wolf — ensuring each unit is perfectly integrated into the cabinetry for a sleek, built-in finish.' }
+        ],
+        benefits: [
+          { title: 'Ergonomic Design', description: 'Kitchens designed around the golden triangle principle, optimising the relationship between sink, stove, and refrigerator.' },
+          { title: 'Premium Materials', description: 'Only the finest natural stones, solid hardwoods, and designer hardware make it into our kitchen renovations.' },
+          { title: 'Full MEP Handling', description: 'We manage all plumbing rerouting, electrical upgrades, and ventilation modifications required for your new layout.' },
+          { title: 'Lifetime Warranty', description: 'Our bespoke joinery comes with a comprehensive warranty covering structural integrity and hardware performance.' }
+        ],
+        process: [
+          { title: 'Design Consultation', description: 'We discuss your cooking habits, storage needs, and aesthetic preferences to design the perfect kitchen.' },
+          { title: 'Material Selection', description: 'Visit our private showroom to select stones, woods, hardware, and appliances with our design consultant.' },
+          { title: 'Demolition & Build', description: 'Complete strip-out and rebuild including plumbing, electrical, tiling, and cabinetry installation.' },
+          { title: 'Styling & Handover', description: 'Final appliance commissioning, deep clean, and a styled handover that is ready to cook in.' }
+        ],
+        whyChooseUs: 'The kitchen is the heart of every home, and a poorly designed kitchen renovation is a daily frustration. Our kitchen designers have completed hundreds of luxury kitchen projects across Dubai, combining European design principles with the practical demands of Middle Eastern entertaining and family life.',
+        seoContent: 'Transform the heart of your home with Lilli Palmer\'s premium kitchen renovation services in Dubai. Our kitchen renovation process begins with understanding how you use your kitchen — cooking habits, entertaining style, and storage needs — before designing a layout that is both ergonomically brilliant and aesthetically stunning. We source premium materials including Calacatta marble countertops, custom-milled solid wood cabinetry, and integrated European appliances from brands like Gaggenau, Miele, and Sub-Zero. Our kitchen renovation contractors handle complete demolition, plumbing rerouting, electrical upgrades, and precision installation. The result is a kitchen renovation that doesn\'t just look beautiful — it transforms the way you live, cook, and entertain.',
+        cta: { heading: 'Design Your Dream Kitchen', description: 'Book a kitchen design consultation with our specialists. We will help you plan the perfect layout, select premium materials, and provide a detailed quote.', buttonText: 'Book a Kitchen Consultation' }
+      },
+      {
+        id: 'bathroom-renovation',
+        title: 'Bathroom Renovation',
+        description: 'Spa-inspired bathroom renovation with natural stone, premium fixtures, and precision waterproofing.',
+        image: '/images/services/bathroom_renovation.webp',
+        carouselImages: ['/images/services/carousel/bathroom/1.webp', '/images/services/carousel/bathroom/2.webp', '/images/services/carousel/bathroom/3.webp', '/images/services/carousel/bathroom/4.webp', '/images/services/carousel/bathroom/5.webp'],
+        sections: [
+          { title: 'Waterproofing & Drainage', text: 'Every bathroom renovation begins with hospital-grade waterproofing — multi-layer membrane systems, precision drainage falls, and pressure-tested plumbing connections that guarantee zero leaks for decades.' },
+          { title: 'Natural Stone & Tiling', text: 'We work with Italian marble, natural travertine, large-format porcelain, and artisan zellige tiles. Every tile is laser-levelled and grouted to perfection for a flawless finish.' },
+          { title: 'Fixture & Fitting Selection', text: 'From freestanding marble tubs to ceiling-mounted rain showers and heated towel rails, we source fixtures from brands like Hansgrohe, Duravit, and Gessi to create a true spa experience.' }
+        ],
+        benefits: [
+          { title: 'Zero-Leak Guarantee', description: 'Multi-layer waterproofing systems tested to international standards, preventing costly water damage.' },
+          { title: 'Spa-Grade Finish', description: 'Natural stone finishes, underfloor heating, and premium fixtures that rival five-star hotel bathrooms.' },
+          { title: 'Smart Technology', description: 'Sensor-activated lighting, heated toilet seats, digital shower controls, and anti-fog mirrors available.' },
+          { title: 'Quick Completion', description: 'Our dedicated bathroom teams complete most renovations within 2-3 weeks, minimising disruption to your daily routine.' }
+        ],
+        process: [
+          { title: 'Existing Strip-Out', description: 'Complete removal of existing tiles, fixtures, and waterproofing down to the structural substrate.' },
+          { title: 'Waterproofing', description: 'Application of multi-layer waterproof membrane systems with 48-hour flood testing before any tiling begins.' },
+          { title: 'Tiling & Fixtures', description: 'Precision tiling installation followed by fixture mounting, silicone sealing, and grout finishing.' },
+          { title: 'Commissioning', description: 'All plumbing connections pressure-tested, fixtures calibrated, and a final deep clean before handover.' }
+        ],
+        whyChooseUs: 'A bathroom renovation gone wrong can cause catastrophic water damage to your property. Our specialist bathroom teams understand that waterproofing is not a step to rush. We invest more time in the layers you cannot see — membranes, drainage falls, and plumbing connections — because a beautiful bathroom must also be a bulletproof one.',
+        seoContent: 'Lilli Palmer delivers luxury bathroom renovation services in Dubai that transform ordinary bathrooms into private spa sanctuaries. Our bathroom renovation process prioritises flawless waterproofing, precision drainage engineering, and premium material selection — including Italian marble, natural travertine, and hand-selected porcelain. We specialise in walk-in shower conversions, freestanding tub installations, underfloor heating, and smart bathroom technology including sensor-activated lighting and heated towel systems. Every bathroom renovation project is managed end-to-end by our specialist team, from initial concept through to the final sealant bead. Whether you are renovating a guest powder room or a master en-suite, our bathroom renovation delivers a space that feels like a five-star retreat.',
+        cta: { heading: 'Create Your Private Sanctuary', description: 'Book a bathroom design consultation. We will assess your space, recommend premium materials, and deliver a detailed waterproofing and design plan.', buttonText: 'Book a Bathroom Consultation' }
+      }
+    ],
     cta: {
-      heading: 'Envisioning a Home That Truly Reflects You?',
-      description: 'Let\'s discuss your renovation vision. Our team will assess your space, explore structural possibilities, and present a detailed plan with transparent costing.',
-      buttonText: 'Start Your Renovation Journey'
+      heading: 'Ready to Transform Your Home?',
+      description: 'Consult with our renovation experts to explore the possibilities for your villa or apartment. We provide detailed roadmaps and transparent costing.',
+      buttonText: 'Start Your Home Renovation'
+    }
+  },
+  { 
+    id: 'office-renovation', 
+    title: 'Office Renovation', 
+    description: 'Sophisticated workplace transformations that enhance productivity and reflect corporate identity.', 
+    image: '/images/services/office_renovation.webp',
+    extendedContent: 'As leading office renovation contractors in Dubai, we create executive environments that blend professional utility with luxury aesthetics.',
+    features: ['Commercial Fit-out', 'Spatial Productivity', 'IT Infrastructure', 'Brand Integration'],
+    sections: [
+      { title: 'Executive Fit-out', text: 'High-end boardroom and executive office designs featuring premium acoustics and joinery.' },
+      { title: 'Workspace Optimization', text: 'Scientific space planning to improve employee flow, collaboration, and ergonomic comfort.' },
+      { title: 'Infrastructure Integration', text: 'Seamless integration of advanced IT, lighting, and climate control systems.' }
+    ],
+    benefits: [
+      { title: 'Brand Alignment', description: 'Workspaces that serve as a physical embodiment of your company\'s values and status.' },
+      { title: 'Productivity Gains', description: 'Optimized lighting and acoustics proven to increase focus and employee wellbeing.' },
+      { title: 'Scalable Design', description: 'Flexible layouts that allow your office to grow alongside your business.' },
+      { title: 'Minimal Disruption', description: 'Strict project management ensures your office renovation is completed on time with minimal downtime.' }
+    ],
+    process: [
+      { title: 'Workflow Audit', description: 'We analyze how your team works to design a space that facilitates movement.' },
+      { title: 'Concept Design', description: 'Aesthetic mood boards that integrate your brand palette and professional requirements.' },
+      { title: 'Build Phase', description: 'Precision construction executed by certified commercial fit-out specialists.' },
+      { title: 'System Commissioning', description: 'Final testing of all smart systems, lighting, and acoustic performance.' }
+    ],
+    whyChooseUs: 'We understand that an office is a tool for business. Our office renovation services prioritize both the speed of delivery and the extreme quality of the finish, ensuring your corporate image is reinforced by your physical environment.',
+    seoContent: 'Looking for professional office renovation in Dubai or high-end commercial fit-out services? Lilli Palmer is a top-tier office renovation company specializing in corporate workplace transformations. Our office renovation services are designed for companies that demand an executive finish and professional project management. From open-plan workspace optimization to high-end executive office fit-outs, we handle the complete lifecycle of your commercial renovation. As expert office renovation contractors, we understand the importance of timing and IT integration, ensuring your business operation is enhanced, not hindered, by the build process. Partner with Lilli Palmer to create an office environment that reflects your status and drives corporate success.',
+    cta: {
+      heading: 'Optimize Your Workspace Today',
+      description: 'Schedule a workspace audit with our office renovation consultants. We will help you reimagine your office for the future of work.',
+      buttonText: 'Request an Office Audit'
     }
   },
   { 
@@ -198,6 +340,38 @@ export const SERVICES: Service[] = [
       heading: 'Ready to Build Something Extraordinary?',
       description: 'From concept to completion, our construction team manages every detail. Let\'s discuss your architectural vision and turn blueprints into reality.',
       buttonText: 'Discuss Your Construction Project'
+    }
+  },
+  { 
+    id: 'mep-contracting', 
+    title: 'MEP Contracting', 
+    description: 'Premier Mechanical, Electrical, and Plumbing engineering integration for luxury properties.', 
+    image: '/images/services/mep_contracting.png',
+    extendedContent: 'Lilli Palmer is recognized among the elite MEP companies in Dubai, delivering flawless mechanical, electrical, plumbing integration.',
+    features: ['Mechanical Systems', 'Electrical Engineering', 'Plumbing Topography', 'Full MEP Lifecycle'],
+    sections: [
+      { title: 'Mechanical Engineering', text: 'Advanced climate control, ventilation, and thermal dynamics orchestrated for peak efficiency.' },
+      { title: 'Electrical Systems', text: 'Robust, safe, and intelligent electrical architectures that power modern smart living.' },
+      { title: 'Plumbing & Drainage', text: 'Hydraulic calculations and precision fixture installations ensuring continuous flow and whisper-quiet operation.' }
+    ],
+    benefits: [
+      { title: 'Unified Systems', description: 'Complete synchronization between mechanical, electrical, and plumbing elements prevents future conflicts.' },
+      { title: 'Energy Supremacy', description: 'Our MEP contractors in Dubai engineer solutions that significantly reduce carbon footprint and operational costs.' },
+      { title: 'Architectural Symbiosis', description: 'MEP systems are designed to exist invisibly, preserving the aesthetic purity of your property.' },
+      { title: 'Single-Source Reliability', description: 'Consolidate responsibility with one elite firm, avoiding the friction of managing multiple different contractors.' }
+    ],
+    process: [
+      { title: '3D Spatial Planning', description: 'We use advanced BIM (Building Information Modeling) to map all MEP routes before laying a single pipe.' },
+      { title: 'Component Fabrication', description: 'Precision elements are orchestrated with industrial-grade materials for ultimate longevity.' },
+      { title: 'Synchronized Execution', description: 'Our multidisciplinary teams install complex arrays simultaneously to compress build schedules.' },
+      { title: 'Commissioning', description: 'Intensive stress testing ensures all mechanical, electrical, plumbing systems operate flawlessly under peak load.' }
+    ],
+    whyChooseUs: 'When searching for MEP companies in Dubai, property owners demand precision. Lilli Palmer bridges the gap between raw engineering and high-end residential luxury. Your building is a living organism; our MEP contracting ensures it breathes, powers, and flows with absolute perfection.',
+    seoContent: 'Looking for top-tier MEP companies in Dubai? Lilli Palmer provides unparalleled Mechanical, Electrical, Plumbing (MEP) contracting solutions tailored exclusively for luxury residential and commercial developments. As leading MEP contractors in Dubai, we understand that true luxury lies in flawless functionality. Our in-house engineers manage the complete MEP lifecycle, from advanced 3D spatial planning to final commissioning. By unifying mechanical systems (HVAC), complex electrical engineering, and precision plumbing into a single, cohesive strategy, we eliminate the costly errors associated with fragmented contractors. When you demand uncompromising quality for your mechanical, electrical, plumbing infrastructure, partner with Lilli Palmer. We bring commercial-grade reliability to luxury spaces, establishing ourselves as the premier choice among MEP companies in the UAE.',
+    cta: {
+      heading: 'Require Elite MEP Integration for Your Project?',
+      description: 'Consult with our senior MEP engineers. We provide comprehensive mechanical, electrical, and plumbing roadmaps tailored to your architectural vision.',
+      buttonText: 'Schedule an MEP Consultation'
     }
   },
   { 
@@ -308,3 +482,35 @@ export const TESTIMONIALS: Testimonial[] = [
     text: 'LILLI PALMER delivered beyond my expectations. Great team and communication.',
   }
 ];
+
+export const OFFICE_RENOVATION_SUB_SERVICE: import('./types').SubService = {
+  id: 'office-renovation',
+  title: 'Office Renovation',
+  description: 'Sophisticated workplace transformations that enhance productivity and reflect corporate identity.',
+  image: '/images/services/office_renovation.webp',
+  carouselImages: ['/images/services/carousel/office/1.webp', '/images/services/carousel/office/2.webp', '/images/services/carousel/office/3.webp', '/images/services/carousel/office/4.webp', '/images/services/carousel/office/5.webp'],
+  sections: [
+    { title: 'Executive Fit-out', text: 'High-end boardroom and executive office designs featuring premium acoustics, bespoke joinery, and integrated AV systems that convey authority and sophistication.' },
+    { title: 'Workspace Optimization', text: 'Scientific space planning to improve employee flow, collaboration zones, and ergonomic comfort. We design offices that boost productivity and reduce fatigue.' },
+    { title: 'Infrastructure Integration', text: 'Seamless integration of advanced IT infrastructure, smart lighting scenes, climate zoning, and access control systems — all invisible to the end user.' }
+  ],
+  benefits: [
+    { title: 'Brand Alignment', description: 'Workspaces that serve as a physical embodiment of your company\'s values and market position.' },
+    { title: 'Productivity Gains', description: 'Optimized lighting, acoustics, and layout proven to increase focus and employee wellbeing.' },
+    { title: 'Scalable Design', description: 'Flexible layouts with modular furniture systems that allow your office to grow alongside your business.' },
+    { title: 'Minimal Disruption', description: 'Strict project management and phased construction ensures your business continues operating during renovation.' }
+  ],
+  process: [
+    { title: 'Workflow Audit', description: 'We analyze how your team works — meetings, collaboration, focused work — to design a space around your operations.' },
+    { title: 'Concept Design', description: 'Aesthetic mood boards and 3D renders that integrate your brand palette with professional requirements.' },
+    { title: 'Build Phase', description: 'Precision construction executed by certified commercial fit-out specialists, often outside business hours.' },
+    { title: 'System Commissioning', description: 'Final testing of all smart systems, lighting scenes, acoustic performance, and IT connectivity.' }
+  ],
+  whyChooseUs: 'We understand that an office is a tool for business. Our office renovation services prioritize both the speed of delivery and the extreme quality of the finish, ensuring your corporate image is reinforced by your physical environment.',
+  seoContent: 'Looking for professional office renovation in Dubai or high-end commercial fit-out services? Lilli Palmer is a top-tier office renovation company specializing in corporate workplace transformations. Our office renovation services are designed for companies that demand an executive finish and professional project management. From open-plan workspace optimization to high-end executive office fit-outs, we handle the complete lifecycle of your commercial renovation. As expert office renovation contractors, we understand the importance of timing and IT integration, ensuring your business operation is enhanced, not hindered, by the build process. Partner with Lilli Palmer to create an office environment that reflects your status and drives corporate success.',
+  cta: {
+    heading: 'Optimize Your Workspace Today',
+    description: 'Schedule a workspace audit with our office renovation consultants. We will help you reimagine your office for the future of work.',
+    buttonText: 'Request an Office Audit'
+  }
+};

@@ -66,11 +66,6 @@ const ServicesContent: React.FC = () => {
                         </li>
                       ))}
                     </ul>
-                    <div className="mt-10">
-                      <span className="inline-flex items-center gap-3 bg-[#191919] text-white px-10 py-5 uppercase tracking-[0.2em] text-[11px] font-bold group-hover:bg-[#BBA899] transition-all">
-                        Request a Quote <ArrowRight size={14} />
-                      </span>
-                    </div>
                   </div>
                 </div>
               </Link>

@@ -84,7 +84,7 @@ const HomeContent: React.FC = () => {
         <div className="absolute inset-0 z-0">
           <Image 
             src="/images/hero-image.avif"
-            alt="Lilli Palmer Building Contracting — Dubai" 
+            alt="Premium Building Contracting and Luxury Renovation Services in Dubai - Lilli Palmer" 
             fill
             className="object-cover brightness-[0.65]"
             priority
@@ -167,7 +167,7 @@ const HomeContent: React.FC = () => {
           >
             <Image 
               src="/images/luxury-construction.webp" 
-              alt="Luxury Construction" 
+              alt="Luxury Construction and Bespoke Home Remodeling in Dubai" 
               fill
               sizes="(max-width: 768px) 100vw, 50vw"
               className="object-cover grayscale brightness-90 group-hover:brightness-100 group-hover:grayscale-0 transition-all duration-1000 ease-luxury"
@@ -270,11 +270,6 @@ const HomeContent: React.FC = () => {
                     <p className="text-[#BBA899] text-[10px] uppercase tracking-[0.3em] font-bold line-clamp-1">{service.description}</p>
                   </div>
                   <span className="text-gray-300 font-light text-2xl">0{idx + 1}</span>
-                </div>
-                <div className="px-4 mt-8 pb-4">
-                  <span className="inline-flex items-center gap-2 text-[10px] font-bold tracking-[0.2em] text-gray-400 uppercase group-hover:text-[#191919] transition-colors border-b border-transparent group-hover:border-[#191919] pb-1">
-                    Request a Quote <ArrowRight size={12} />
-                  </span>
                 </div>
               </Link>
             </motion.div>

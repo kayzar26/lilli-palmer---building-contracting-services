@@ -12,6 +12,30 @@ const nextConfig: NextConfig = {
     // All images are now self-hosted in /public/images
     remotePatterns: [],
   },
+  async redirects() {
+    return [
+      {
+        source: '/lp/villa-painting',
+        destination: '/services/painting',
+        permanent: true,
+      },
+      {
+        source: '/lp/kitchen-renovation',
+        destination: '/services/renovation',
+        permanent: true,
+      },
+      {
+        source: '/lp/bathroom-renovation',
+        destination: '/services/renovation',
+        permanent: true,
+      },
+      {
+        source: '/lp/smart-contract',
+        destination: '/services/annual-maintenance-contract',
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {

@@ -25,6 +25,29 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: "Lilli Palmer | Renovation & Building Contracting Dubai",
   description: "Lilli Palmer provides premium building contracting services including MEP, HVAC, electrical, plumbing, painting, and construction.",
+  metadataBase: new URL('https://www.lillipalmer.com'),
+  openGraph: {
+    title: "Lilli Palmer | Renovation & Building Contracting Dubai",
+    description: "Premium building contracting services in Dubai including luxury renovations, MEP, and construction.",
+    url: 'https://www.lillipalmer.com',
+    siteName: 'Lilli Palmer Building Contracting',
+    images: [
+      {
+        url: '/images/hero-image.avif',
+        width: 1200,
+        height: 630,
+        alt: 'Lilli Palmer Building Contracting Dubai',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "Lilli Palmer | Renovation & Building Contracting Dubai",
+    description: "Premium building contracting services in Dubai.",
+    images: ['/images/hero-image.avif'],
+  },
 };
 
 export default function RootLayout({

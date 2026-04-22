@@ -9,6 +9,24 @@ export interface ServiceDetailItem {
   description: string;
 }
 
+export interface SubService {
+  id: string;
+  title: string;
+  description: string;
+  image: string;
+  seoContent: string;
+  carouselImages: string[];
+  sections: ServiceDetailSection[];
+  benefits: ServiceDetailItem[];
+  process: ServiceDetailItem[];
+  whyChooseUs: string;
+  cta: {
+    heading: string;
+    description: string;
+    buttonText: string;
+  };
+}
+
 export interface Service {
   id: string;
   title: string;
@@ -21,6 +39,7 @@ export interface Service {
   process?: ServiceDetailItem[];
   whyChooseUs?: string;
   seoContent?: string;
+  subServices?: SubService[];
   cta?: {
     heading: string;
     description: string;

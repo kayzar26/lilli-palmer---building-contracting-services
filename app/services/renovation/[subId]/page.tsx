@@ -1,52 +1,55 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { SERVICES } from '@/constants';
-import ServiceDetailContent from '@/components/pages/ServiceDetailContent';
+import SubServiceContent from '@/components/pages/SubServiceContent';
 
 type Props = {
-  params: Promise<{ id: string }>;
+  params: Promise<{ subId: string }>;
 };
 
+const renovationService = SERVICES.find(s => s.id === 'renovation');
+const subServices = renovationService?.subServices || [];
+
 export async function generateStaticParams() {
-  return SERVICES.map((service) => ({
-    id: service.id,
+  return subServices.map((sub) => ({
+    subId: sub.id,
   }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { id } = await params;
-  const service = SERVICES.find(s => s.id === id);
-  if (!service) return { title: 'Service Not Found' };
-  
+  const { subId } = await params;
+  const sub = subServices.find(s => s.id === subId);
+  if (!sub) return { title: 'Service Not Found' };
+
   return {
-    title: `${service.title} | Lilli Palmer`,
-    description: service.description,
+    title: `${sub.title} in Dubai | Lilli Palmer Building Contracting`,
+    description: sub.description,
     alternates: {
-      canonical: `https://www.lillipalmer.com/services/${id}`,
+      canonical: `https://www.lillipalmer.com/services/renovation/${subId}`,
     },
   };
 }
 
-export default async function ServiceDetailPage({ params }: Props) {
-  const { id } = await params;
-  const service = SERVICES.find(s => s.id === id);
-  
-  if (!service) {
+export default async function SubServicePage({ params }: Props) {
+  const { subId } = await params;
+  const sub = subServices.find(s => s.id === subId);
+
+  if (!sub) {
     notFound();
   }
 
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Service',
-    name: service.title,
-    description: service.description,
+    name: sub.title,
+    description: sub.description,
     provider: {
       '@type': 'Organization',
       name: 'Lilli Palmer Building Contracting',
       url: 'https://www.lillipalmer.com',
     },
-    image: service.image,
-    url: `https://www.lillipalmer.com/services/${service.id}`,
+    image: sub.image,
+    url: `https://www.lillipalmer.com/services/renovation/${sub.id}`,
     areaServed: {
       '@type': 'Country',
       name: 'United Arab Emirates',
@@ -72,12 +75,18 @@ export default async function ServiceDetailPage({ params }: Props) {
       {
         '@type': 'ListItem',
         position: 3,
-        name: service.title,
-        item: `https://www.lillipalmer.com/services/${service.id}`,
+        name: 'Renovation',
+        item: 'https://www.lillipalmer.com/services/renovation',
+      },
+      {
+        '@type': 'ListItem',
+        position: 4,
+        name: sub.title,
+        item: `https://www.lillipalmer.com/services/renovation/${sub.id}`,
       },
     ],
   };
-  
+
   return (
     <>
       <script
@@ -88,7 +97,11 @@ export default async function ServiceDetailPage({ params }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
-      <ServiceDetailContent service={service} />
+      <SubServiceContent
+        service={sub}
+        backLink="/services/renovation"
+        backLabel="Back to Renovation"
+      />
     </>
   );
 }

@@ -1,5 +1,3 @@
-"use client";
-
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -130,6 +128,39 @@ const ServiceDetailContent: React.FC<ServiceDetailContentProps> = ({ service }) 
               <p className="text-lg text-gray-600 font-light leading-[1.9]">
                 {service.seoContent}
               </p>
+            </div>
+          </div>
+        )}
+
+        {/* Sub-Services Section */}
+        {service.subServices && service.subServices.length > 0 && (
+          <div className="mb-24">
+            <div className="mb-16">
+              <p className="text-h1-custom text-[#BBA899] mb-4 uppercase tracking-[0.3em]">WHAT WE COVER</p>
+              <h2 className="text-4xl md:text-6xl font-light tracking-tighter text-gray-800 uppercase">Our Specializations</h2>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {service.subServices.map((sub) => (
+                <Link key={sub.id} href={`/services/renovation/${sub.id}`} className="group bg-white rounded-sm overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-500 border border-gray-100 block">
+                  <div className="relative aspect-video overflow-hidden">
+                    <Image
+                      src={sub.image}
+                      alt={sub.title}
+                      width={800}
+                      height={450}
+                      className="object-cover w-full h-full grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                    <div className="absolute bottom-0 left-0 right-0 p-8">
+                      <h3 className="text-2xl font-light text-white tracking-tight">{sub.title}</h3>
+                    </div>
+                  </div>
+                  <div className="p-8 flex items-center justify-between">
+                    <p className="text-gray-600 font-light leading-relaxed text-sm">{sub.description}</p>
+                    <ArrowRight size={18} className="text-[#BBA899] group-hover:translate-x-1 transition-transform shrink-0 ml-4" />
+                  </div>
+                </Link>
+              ))}
             </div>
           </div>
         )}
