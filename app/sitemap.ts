@@ -27,6 +27,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
+  // Dynamic SubService routes
+  const subServiceRoutes = SERVICES.flatMap((service) => 
+    (service.subServices || []).map((subService) => ({
+      url: `${baseUrl}/services/${service.id}/${subService.id}`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.6,
+    }))
+  );
+
   // Dynamic Blog routes
   const blogRoutes = BLOGS.map((blog) => ({
     url: `${baseUrl}/blog/${blog.id}`,
@@ -35,5 +45,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  return [...routes, ...serviceRoutes, ...blogRoutes];
+  return [...routes, ...serviceRoutes, ...subServiceRoutes, ...blogRoutes];
 }
