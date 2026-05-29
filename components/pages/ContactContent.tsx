@@ -4,8 +4,9 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Send, MapPin, Phone, Mail, Loader2 } from 'lucide-react';
 import { useRouter } from 'next/navigation';
+import { Breadcrumbs, BreadcrumbItem } from '@/components/ui/Breadcrumbs';
 import { submitContactForm } from '@/app/actions/contact';
-import { pushToDataLayer } from '@/lib/gtm';
+import { pushToDataLayer, formatToE164 } from '@/lib/gtm';
 
 const ContactContent: React.FC = () => {
   const router = useRouter();
@@ -32,7 +33,15 @@ const ContactContent: React.FC = () => {
         // Fire GTM Conversion Event
         pushToDataLayer('generate_lead', {
           form_name: 'contact_page_form',
-          service: formData.get('service')
+          service: formData.get('service'),
+          user_data: {
+            email: (formData.get('email') as string || "").trim().toLowerCase(),
+            phone_number: formatToE164(formData.get('phone') as string || ""),
+            address: {
+              first_name: (formData.get('firstName') as string || "").trim(),
+              last_name: (formData.get('lastName') as string || "").trim(),
+            }
+          }
         });
         
         // Redirect to thank you page
@@ -76,9 +85,15 @@ const ContactContent: React.FC = () => {
     }
   };
 
+  const breadcrumbItems: BreadcrumbItem[] = [
+    { label: 'Home', url: '/' },
+    { label: 'Contact Us' }
+  ];
+
   return (
     <div className="pt-40 pb-32 bg-[#EBEBEB]">
       <div className="container mx-auto px-6">
+        <Breadcrumbs items={breadcrumbItems} />
         <motion.div 
           initial="hidden"
           animate="visible"
@@ -102,7 +117,7 @@ const ContactContent: React.FC = () => {
                   <a 
                     href="mailto:contact@lillipalmer.com" 
                     onClick={() => handleLinkClick('email')}
-                    className="text-xl text-gray-700 font-light group-hover:text-[#BBA899] transition-colors"
+                    className="text-xl text-gray-700 font-light group-hover:text-[#BBA899] transition-colors no-capture"
                   >
                     contact@lillipalmer.com
                   </a>
@@ -118,7 +133,7 @@ const ContactContent: React.FC = () => {
                   <a 
                     href="tel:+971507098676" 
                     onClick={() => handleLinkClick('phone')}
-                    className="text-xl text-gray-700 font-light group-hover:text-[#BBA899] transition-colors"
+                    className="text-xl text-gray-700 font-light group-hover:text-[#BBA899] transition-colors no-capture"
                   >
                     +971 50 709 8676
                   </a>
@@ -136,7 +151,7 @@ const ContactContent: React.FC = () => {
                     target="_blank" 
                     rel="noopener noreferrer" 
                     onClick={() => handleLinkClick('address')}
-                    className="text-xl text-gray-700 font-light group-hover:text-[#BBA899] transition-colors"
+                    className="text-xl text-gray-700 font-light group-hover:text-[#BBA899] transition-colors no-capture"
                   >
                     702, Garhoud Views Building, Al Garhoud, Dubai
                   </a>

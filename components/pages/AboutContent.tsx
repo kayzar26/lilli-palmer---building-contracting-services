@@ -4,17 +4,24 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import GlobalCTA from '@/components/GlobalCTA';
+import { Breadcrumbs, BreadcrumbItem } from '@/components/ui/Breadcrumbs';
 
 const AboutContent: React.FC = () => {
+  const breadcrumbItems: BreadcrumbItem[] = [
+    { label: 'Home', url: '/' },
+    { label: 'About Us' }
+  ];
+
   return (
     <div className="pt-44 pb-20">
       <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-center mb-32">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-center mb-20">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
+            <Breadcrumbs items={breadcrumbItems} />
             <p className="text-h1-custom text-[#BBA899] mb-6 uppercase tracking-[0.3em]">OUR STORY</p>
             <h1 className="text-5xl md:text-8xl font-light tracking-tighter text-gray-800 leading-[1] mb-12">
               BUILDING<br />CONTRACTING<br />EXCELLENCE.
@@ -38,6 +45,7 @@ const AboutContent: React.FC = () => {
               src="/images/about/philosophy.webp" 
               alt="Architectural Excellence" 
               fill
+              sizes="(max-width: 768px) 100vw, 50vw"
               priority
               className="object-cover rounded-sm grayscale" 
             />
@@ -53,7 +61,7 @@ const AboutContent: React.FC = () => {
           </motion.div>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-12 py-24 border-t border-gray-300">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-12 py-16 border-t border-gray-300">
           {[
             { label: 'PROPERTIES MAINTAINED', value: '850+' },
             { label: 'SPECIALIST TRADES', value: '24' },
@@ -75,7 +83,7 @@ const AboutContent: React.FC = () => {
         </div>
 
         {/* Leadership / Team Section */}
-        <div className="py-24 border-t border-gray-300">
+        <div className="py-16 border-t border-gray-300">
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}

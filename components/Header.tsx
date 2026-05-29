@@ -175,7 +175,7 @@ const Header: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 10 }}
               transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-              className="fixed top-[85px] left-1/2 z-[10001] pointer-events-auto"
+              className="fixed top-[85px] left-1/2 -translate-x-1/2 z-[10001] pointer-events-auto"
               onMouseEnter={() => setIsDropdownOpen(true)}
               onMouseLeave={() => setIsDropdownOpen(false)}
             >
@@ -350,7 +350,7 @@ const Header: React.FC = () => {
               className="text-center space-y-2 mt-20"
             >
               <p className="text-[10px] tracking-[0.4em] text-gray-400 uppercase font-bold">United Arab Emirates</p>
-              <a href="tel:+971507098676" className="block text-base tracking-widest text-gray-600 hover:text-black transition-colors">+971 50 709 8676</a>
+              <a href="tel:+971507098676" className="block text-base tracking-widest text-gray-600 hover:text-black transition-colors no-capture">+971 50 709 8676</a>
             </motion.div>
           </motion.div>
         )}

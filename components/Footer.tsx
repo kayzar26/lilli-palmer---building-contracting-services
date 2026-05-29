@@ -24,17 +24,17 @@ const Footer: React.FC = () => {
               <p>DUBAI BRANCH</p>
               <a 
                 href="https://maps.app.goo.gl/yKDKHBYmYQymwQXb7" 
-                className="hover:text-[#BBA899] transition-colors tracking-widest" 
+                className="hover:text-[#BBA899] transition-colors tracking-widest no-capture" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                onClick={() => handleLinkClick('phone')}
+                onClick={() => handleLinkClick('address')}
               > 
               <p>702, Garhoud Views Building</p>
               <p>Al Garhoud, Dubai, UAE</p>
               </a>
               <br />
-              <p><a href="tel:+971507098676" onClick={() => handleLinkClick('phone')} className="hover:text-[#BBA899] transition-colors tracking-widest">+971 50 709 8676</a></p>
-              <p><a href="mailto:contact@lillipalmer.com" onClick={() => handleLinkClick('email')} className="hover:text-[#BBA899] transition-colors tracking-widest">contact@lillipalmer.com</a></p>
+              <p><a href="tel:+971507098676" onClick={() => handleLinkClick('phone')} className="hover:text-[#BBA899] transition-colors tracking-widest no-capture">+971 50 709 8676</a></p>
+              <p><a href="mailto:contact@lillipalmer.com" onClick={() => handleLinkClick('email')} className="hover:text-[#BBA899] transition-colors tracking-widest no-capture">contact@lillipalmer.com</a></p>
             </div>
             
             <div className="flex gap-4 mt-8">
@@ -54,6 +54,7 @@ const Footer: React.FC = () => {
               <Link href="/" className="hover:text-[#BBA899] transition-colors" prefetch={false}>HOME</Link>
               <Link href="/services" className="hover:text-[#BBA899] transition-colors" prefetch={false}>SERVICES</Link>
               <Link href="/about" className="hover:text-[#BBA899] transition-colors" prefetch={false}>ABOUT</Link>
+              <Link href="/blog" className="hover:text-[#BBA899] transition-colors" prefetch={false}>BLOG</Link>
               <Link href="/contact" className="hover:text-[#BBA899] transition-colors" prefetch={false}>CONTACT</Link>
             </nav>
             

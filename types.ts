@@ -25,6 +25,7 @@ export interface SubService {
     description: string;
     buttonText: string;
   };
+  faqs?: { question: string; answer: string; }[];
 }
 
 export interface Service {
@@ -45,6 +46,7 @@ export interface Service {
     description: string;
     buttonText: string;
   };
+  faqs?: { question: string; answer: string; }[];
 }
 
 export interface BlogPostSection {

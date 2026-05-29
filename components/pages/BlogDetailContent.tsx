@@ -6,7 +6,8 @@ import Image from 'next/image';
 import { BLOGS } from '@/constants';
 import { BlogPost } from '@/types';
 import { motion } from 'framer-motion';
-import { ArrowLeft, Calendar, User, Tag } from 'lucide-react';
+import { Calendar, User, Tag } from 'lucide-react';
+import { Breadcrumbs, BreadcrumbItem } from '@/components/ui/Breadcrumbs';
 
 interface BlogDetailContentProps {
   blog: BlogPost;
@@ -16,6 +17,12 @@ const BlogDetailContent: React.FC<BlogDetailContentProps> = ({ blog }) => {
   const luxuryEasing = [0.16, 1, 0.3, 1] as const;
   const recentPosts = BLOGS.filter(b => b.id !== blog.id).slice(0, 2);
 
+  const breadcrumbItems: BreadcrumbItem[] = [
+    { label: 'Home', url: '/' },
+    { label: 'Blog', url: '/blog' },
+    { label: blog.title }
+  ];
+
   return (
     <div className="pt-44 pb-20 bg-[#EBEBEB]">
       <div className="container mx-auto px-6">
@@ -24,9 +31,7 @@ const BlogDetailContent: React.FC<BlogDetailContentProps> = ({ blog }) => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: luxuryEasing }}
         >
-          <Link href="/blog" className="inline-flex items-center gap-2 text-xs font-bold tracking-widest text-gray-400 hover:text-[#BBA899] transition-colors mb-12 uppercase">
-            <ArrowLeft size={16} /> Back to Journal
-          </Link>
+          <Breadcrumbs items={breadcrumbItems} />
           
           <div className="max-w-4xl mx-auto">
             <div className="flex flex-wrap gap-6 mb-8 text-[10px] font-bold tracking-widest text-gray-500 uppercase">
@@ -47,7 +52,7 @@ const BlogDetailContent: React.FC<BlogDetailContentProps> = ({ blog }) => {
           transition={{ duration: 1.2, ease: luxuryEasing }}
           className="relative h-[400px] md:h-[700px] mb-20 overflow-hidden rounded-sm"
         >
-          <Image src={blog.image} alt={blog.title} fill priority className="object-cover" />
+          <Image src={blog.image} alt={blog.title} fill sizes="100vw" priority className="object-cover" />
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
@@ -71,7 +76,7 @@ const BlogDetailContent: React.FC<BlogDetailContentProps> = ({ blog }) => {
                 {recentPosts.map(post => (
                   <Link key={post.id} href={`/blog/${post.id}`} className="group block">
                     <div className="relative aspect-[16/9] overflow-hidden mb-6 rounded-sm">
-                      <Image src={post.image} alt={post.title} fill className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700" />
+                      <Image src={post.image} alt={post.title} fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700" />
                     </div>
                     <p className="text-[10px] tracking-widest text-gray-400 mb-2 uppercase">{post.date}</p>
                     <h4 className="text-xl font-medium text-gray-800 group-hover:text-[#BBA899] transition-colors">{post.title}</h4>

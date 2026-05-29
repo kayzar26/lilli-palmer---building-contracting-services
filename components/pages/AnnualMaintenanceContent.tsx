@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Check, X, Phone, ShieldCheck, Plus, Minus } from 'lucide-react';
 import Link from 'next/link';
+import { Breadcrumbs, BreadcrumbItem } from '@/components/ui/Breadcrumbs';
 
 const luxuryEasing = [0.16, 1, 0.3, 1] as const;
 
@@ -95,6 +96,12 @@ const AccordionItem = ({ question, answer }: { question: string; answer: string 
 };
 
 const AnnualMaintenanceContent: React.FC = () => {
+  const breadcrumbItems: BreadcrumbItem[] = [
+    { label: 'Home', url: '/' },
+    { label: 'Services', url: '/services' },
+    { label: 'Annual Maintenance Contract' }
+  ];
+
   return (
     <div className="pt-44 pb-20 bg-[#F5F5F5]">
       
@@ -106,6 +113,9 @@ const AnnualMaintenanceContent: React.FC = () => {
             variants={fadeUpVariants}
             className="max-w-4xl mx-auto"
          >
+            <div className="flex justify-center">
+              <Breadcrumbs items={breadcrumbItems} />
+            </div>
             <p className="text-[#BBA899] font-bold tracking-[0.3em] uppercase mb-6 text-sm">LILLI PALMER BUILDING CONTRACTING</p>
             <h1 className="text-5xl md:text-7xl font-light text-[#111] mb-6 tracking-tight leading-[1.1]">
               Premium <span className="text-[#6C8D9B] italic font-normal">Annual Maintenance Contract</span> in Dubai

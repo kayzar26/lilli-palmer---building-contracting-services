@@ -136,7 +136,7 @@ const HomeContent: React.FC = () => {
       </section>
 
       {/* Slogan Section */}
-      <section className="bg-[#111111] py-40 px-6">
+      <section className="bg-[#111111] py-28 px-6">
         <div className="container mx-auto">
           <motion.div 
             variants={fadeUpVariants}
@@ -156,7 +156,7 @@ const HomeContent: React.FC = () => {
       </section>
 
       {/* About Brief Section */}
-      <section className="bg-[#EBEBEB] py-40 px-6 relative">
+      <section className="bg-[#EBEBEB] py-28 px-6 relative">
         <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-32 items-center">
           <motion.div 
             variants={imageRevealVariants}
@@ -218,7 +218,7 @@ const HomeContent: React.FC = () => {
       </section>
 
       {/* Services Carousel Section (Renamed from Projects) */}
-      <section className="bg-white py-40 overflow-hidden">
+      <section className="bg-white py-28 overflow-hidden">
         <div className="container mx-auto px-6 mb-20">
           <motion.div 
             variants={fadeUpVariants}
@@ -301,7 +301,7 @@ const HomeContent: React.FC = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section className="bg-[#EBEBEB] py-40 overflow-hidden relative">
+      <section className="bg-[#EBEBEB] py-28 overflow-hidden relative">
         <div className="container mx-auto px-6 mb-20">
           <motion.div 
             variants={fadeUpVariants}
@@ -310,9 +310,19 @@ const HomeContent: React.FC = () => {
             viewport={{ once: true }}
             className="flex flex-col md:flex-row md:items-end justify-between gap-12"
           >
-            <h2 className="text-gray-800 text-4xl md:text-6xl font-light leading-tight uppercase tracking-tighter max-w-3xl">
-              TRUSTED BY<br /><span className="text-[#BBA899]">THE BEST.</span>
-            </h2>
+            <div className="space-y-4 max-w-3xl">
+              <h2 className="text-gray-800 text-4xl md:text-6xl font-light leading-tight uppercase tracking-tighter">
+                TRUSTED BY<br /><span className="text-[#BBA899]">THE BEST.</span>
+              </h2>
+              <a 
+                href="https://maps.app.goo.gl/FbSMAcJ1eHFd5Pba8" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="inline-flex items-center gap-2 text-xs font-bold tracking-[0.2em] text-[#BBA899] hover:text-[#191919] uppercase transition-colors"
+              >
+                Read our Google Business reviews <span className="text-lg">→</span>
+              </a>
+            </div>
             <div className="hidden md:flex gap-4">
               <button 
                 onClick={() => scrollTestimonials('left')}

@@ -41,11 +41,40 @@ export default function AnnualMaintenancePage() {
     ],
   };
 
+  const breadcrumbJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: 'https://www.lillipalmer.com',
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Services',
+        item: 'https://www.lillipalmer.com/services',
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: 'Annual Maintenance Contract',
+        item: 'https://www.lillipalmer.com/services/annual-maintenance-contract',
+      },
+    ],
+  };
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
       <AnnualMaintenanceContent />
     </>

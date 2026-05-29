@@ -1,9 +1,11 @@
 import React from 'react';
 import Link from 'next/link';
 import { SubService } from '@/types';
-import { ArrowLeft, ArrowRight, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import GlobalCTA from '@/components/GlobalCTA';
 import { StackingSlider } from '@/components/ui/StackingSlider';
+import { Breadcrumbs, BreadcrumbItem } from '@/components/ui/Breadcrumbs';
+import { FAQSection } from '@/components/ui/FAQSection';
 
 interface SubServiceContentProps {
   service: SubService;
@@ -19,15 +21,24 @@ const SubServiceContent: React.FC<SubServiceContentProps> = ({ service, backLink
     image: img
   })) || [];
 
+  const breadcrumbItems: BreadcrumbItem[] = [
+    { label: 'Home', url: '/' },
+    { label: 'Services', url: '/services' },
+  ];
+
+  if (backLink.includes('renovation')) {
+    breadcrumbItems.push({ label: 'Renovation', url: '/services/renovation' });
+  }
+
+  breadcrumbItems.push({ label: service.title });
+
   return (
     <div className="bg-white">
       {/* Page Header */}
       <div className="container mx-auto px-6 md:px-12 pt-40 md:pt-56 pb-12">
-        {/* Back link */}
+        {/* Breadcrumbs */}
         <div className="mb-12">
-          <Link href={backLink} className="inline-flex items-center gap-2 text-xs font-bold tracking-widest text-[#BBA899] hover:text-black transition-colors uppercase">
-            <ArrowLeft size={16} /> {backLabel}
-          </Link>
+          <Breadcrumbs items={breadcrumbItems} />
         </div>
 
         {/* Title Section */}
@@ -118,6 +129,11 @@ const SubServiceContent: React.FC<SubServiceContentProps> = ({ service, backLink
             <p className="text-lg text-gray-600 font-light leading-[1.9]">{service.seoContent}</p>
           </div>
         </div>
+
+        {/* FAQs Section */}
+        {service.faqs && service.faqs.length > 0 && (
+          <FAQSection faqs={service.faqs} />
+        )}
 
         {/* CTA Banner */}
         <div className="mb-24 bg-[#191919] rounded-sm overflow-hidden">

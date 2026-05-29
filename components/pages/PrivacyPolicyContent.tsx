@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Breadcrumbs, BreadcrumbItem } from '@/components/ui/Breadcrumbs';
 
 const PrivacyPolicyContent: React.FC = () => {
   const luxuryEasing = [0.16, 1, 0.3, 1] as const;
@@ -26,9 +27,15 @@ const PrivacyPolicyContent: React.FC = () => {
     }
   };
 
+  const breadcrumbItems: BreadcrumbItem[] = [
+    { label: 'Home', url: '/' },
+    { label: 'Privacy Policy' }
+  ];
+
   return (
     <div className="pt-40 pb-32 bg-white">
       <div className="container mx-auto px-6 max-w-4xl">
+        <Breadcrumbs items={breadcrumbItems} />
         <motion.div 
           initial="hidden"
           animate="visible"
@@ -110,17 +117,17 @@ const PrivacyPolicyContent: React.FC = () => {
               </p>
               <div className="bg-[#EBEBEB] p-10 rounded-[2px] space-y-4 font-light text-gray-800 shadow-sm">
                 <p className="font-bold uppercase tracking-widest text-[11px] text-[#BBA899]">Lilli Palmer Building Contracting LLC</p>
-                <div className="space-y-1">
+                <div className="space-y-1 no-capture">
                   <p>702, Garhoud Views Building, Al Garhoud</p>
                   <p>Dubai, United Arab Emirates</p>
                 </div>
                 <div className="pt-4 space-y-2">
                   <p className="text-[10px] uppercase font-bold tracking-[0.2em] text-gray-400">Email Address</p>
-                  <p><a href="mailto:contact@lillipalmer.com" className="text-xl text-gray-700 hover:text-[#BBA899] transition-colors">contact@lillipalmer.com</a></p>
+                  <p><a href="mailto:contact@lillipalmer.com" className="text-xl text-gray-700 hover:text-[#BBA899] transition-colors no-capture">contact@lillipalmer.com</a></p>
                 </div>
                 <div className="pt-2 space-y-2">
                   <p className="text-[10px] uppercase font-bold tracking-[0.2em] text-gray-400">Phone Support</p>
-                  <p><a href="tel:+971507098676" className="text-xl text-gray-700 hover:text-[#BBA899] transition-colors">+971 50 709 8676</a></p>
+                  <p><a href="tel:+971507098676" className="text-xl text-gray-700 hover:text-[#BBA899] transition-colors no-capture">+971 50 709 8676</a></p>
                 </div>
               </div>
             </motion.section>

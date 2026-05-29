@@ -29,7 +29,7 @@ const GlobalCTA: React.FC = () => {
           <a 
             href={`tel:${phoneNumber}`}
             onClick={() => pushToDataLayer('phone_click', { location: 'global_cta' })}
-            className="w-full sm:w-auto bg-white text-[#111111] px-10 py-5 flex items-center justify-center gap-3 hover:bg-[#EBEBEB] transition-all uppercase tracking-[0.2em] font-bold text-[11px]"
+            className="w-full sm:w-auto bg-white text-[#111111] px-10 py-5 flex items-center justify-center gap-3 hover:bg-[#EBEBEB] transition-all uppercase tracking-[0.2em] font-bold text-[11px] no-capture"
           >
             <Phone size={18} /> Call Now
           </a>

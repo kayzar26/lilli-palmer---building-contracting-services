@@ -12,7 +12,7 @@ const CallButton: React.FC = () => {
     <motion.a
       href={`tel:${phoneNumber}`}
       onClick={() => pushToDataLayer('phone_click', { location: 'floating_button' })}
-      className="fixed bottom-24 right-6 md:right-12 lg:right-16 z-[9999] flex items-center justify-center w-14 h-14 bg-[#191919] text-white rounded-full shadow-lg hover:shadow-xl hover:bg-[#BBA899] transition-all group"
+      className="fixed bottom-24 right-6 md:right-12 lg:right-16 z-[9999] flex items-center justify-center w-14 h-14 bg-[#191919] text-white rounded-full shadow-lg hover:shadow-xl hover:bg-[#BBA899] transition-all group no-capture"
       initial={{ scale: 0, opacity: 0 }}
       animate={{ scale: 1, opacity: 1 }}
       transition={{ 

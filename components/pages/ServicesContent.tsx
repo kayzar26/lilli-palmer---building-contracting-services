@@ -7,24 +7,31 @@ import { motion } from 'framer-motion';
 import { SERVICES } from '@/constants';
 import { CheckCircle2, ArrowRight } from 'lucide-react';
 import GlobalCTA from '@/components/GlobalCTA';
+import { Breadcrumbs, BreadcrumbItem } from '@/components/ui/Breadcrumbs';
 
 const ServicesContent: React.FC = () => {
   const luxuryEasing = [0.16, 1, 0.3, 1] as const;
 
+  const breadcrumbItems: BreadcrumbItem[] = [
+    { label: 'Home', url: '/' },
+    { label: 'Services' }
+  ];
+
   return (
     <div className="pt-40 pb-0">
-      <div className="container mx-auto px-6 mb-32">
+      <div className="container mx-auto px-6 mb-16">
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: luxuryEasing }}
           className="mb-24"
         >
+          <Breadcrumbs items={breadcrumbItems} />
           <p className="text-h1-custom text-[#BBA899] mb-4 uppercase tracking-[0.3em]">OUR CAPABILITIES</p>
           <h1 className="text-5xl md:text-8xl font-light tracking-tighter text-gray-800">SERVICES</h1>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-y-32 gap-x-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-y-16 gap-x-12">
           {SERVICES.map((service, index) => (
             <motion.div
               key={service.id}
@@ -35,13 +42,14 @@ const ServicesContent: React.FC = () => {
             >
               <Link 
                 href={`/services/${service.id}`}
-                className={`flex flex-col group ${index % 2 === 1 ? 'md:mt-32' : ''}`}
+                className={`flex flex-col group ${index % 2 === 1 ? 'md:mt-16' : ''}`}
               >
                 <div className="relative h-[600px] mb-8 overflow-hidden rounded-[3px] shadow-lg">
                   <Image 
                     src={service.image} 
                     alt={service.title} 
                     fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
                     priority={index === 0}
                     className="object-cover grayscale brightness-90 group-hover:brightness-100 group-hover:grayscale-0 transition-all duration-[1.2s] ease-luxury group-hover:scale-105" 
                   />

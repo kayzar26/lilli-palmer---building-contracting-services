@@ -6,9 +6,15 @@ import Image from 'next/image';
 import { BLOGS } from '@/constants';
 import { motion } from 'framer-motion';
 import GlobalCTA from '@/components/GlobalCTA';
+import { Breadcrumbs, BreadcrumbItem } from '@/components/ui/Breadcrumbs';
 
 const BlogContent: React.FC = () => {
   const luxuryEasing = [0.16, 1, 0.3, 1] as const;
+
+  const breadcrumbItems: BreadcrumbItem[] = [
+    { label: 'Home', url: '/' },
+    { label: 'Blogs' }
+  ];
 
   return (
     <div className="pt-40 pb-0 bg-[#EBEBEB]">
@@ -19,6 +25,9 @@ const BlogContent: React.FC = () => {
           transition={{ duration: 1, ease: luxuryEasing }}
           className="mb-24 text-center"
         >
+          <div className="flex justify-center">
+            <Breadcrumbs items={breadcrumbItems} />
+          </div>
           <p className="text-h1-custom text-[#BBA899] mb-4 uppercase tracking-[0.3em]">INSIGHTS & UPDATES</p>
           <h1 className="text-5xl md:text-8xl font-light tracking-tighter text-gray-800 uppercase">BLOGS</h1>
         </motion.div>
@@ -39,6 +48,7 @@ const BlogContent: React.FC = () => {
                     src={blog.image} 
                     alt={blog.title} 
                     fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
                     priority={idx === 0}
                     className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-[1s] ease-luxury"
                   />

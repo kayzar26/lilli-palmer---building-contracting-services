@@ -38,7 +38,12 @@ export const SERVICES: Service[] = [
       heading: 'Is Your HVAC System Performing at Its Best?',
       description: 'Schedule a complimentary HVAC performance assessment with our certified engineers. We\'ll identify efficiency gaps and recommend solutions tailored to your property.',
       buttonText: 'Book Your Free HVAC Assessment'
-    }
+    },
+    faqs: [
+      { question: 'How often should HVAC systems be serviced in Dubai?', answer: 'In Dubai\'s hot and dusty climate, we recommend servicing your HVAC system at least 2-3 times a year. Regular filter cleaning and coil wash prevent breakdowns and keep your energy bills low.' },
+      { question: 'Do you offer emergency AC repair in Dubai?', answer: 'Yes! We offer rapid emergency AC repair services with priority dispatch times for our retained and annual maintenance contract clients.' },
+      { question: 'What are the common signs that my AC needs servicing?', answer: 'Common indicators include weak airflow, strange whistling or rattling noises, water leakage from the indoor unit, and sudden unexplained increases in your electricity bill.' }
+    ]
   },
   { 
     id: 'electrical', 
@@ -70,7 +75,12 @@ export const SERVICES: Service[] = [
       heading: 'Concerned About Your Property\'s Electrical Safety?',
       description: 'Our certified electrical engineers will conduct a thorough safety audit of your property, identifying potential hazards and recommending smart upgrades.',
       buttonText: 'Request an Electrical Repair'
-    }
+    },
+    faqs: [
+      { question: 'What should I do if my electrical board keeps tripping?', answer: 'First, unplug any recently connected appliances. If the board continues to trip, it indicates a short circuit or overloaded circuit. Turn off the main switch and contact our certified electricians immediately.' },
+      { question: 'Are your electricians licensed to work in Dubai?', answer: 'Yes, all our electrical engineers are fully licensed, certified, and trained to strictly comply with Dubai Electricity and Water Authority (DEWA) regulations and international safety standards.' },
+      { question: 'Can you assist with smart home lighting installations?', answer: 'Absolutely. We specialize in upgrading standard electrical distribution boards and wiring to support smart automation hubs, automated lighting systems, and custom ambient controls.' }
+    ]
   },
   { 
     id: 'plumbing', 
@@ -102,7 +112,12 @@ export const SERVICES: Service[] = [
       heading: 'Protect Your Property from Hidden Plumbing Issues',
       description: 'Our non-invasive plumbing inspection uses fibre-optic cameras and acoustic detection to identify problems before they cause damage. No tiles broken, no walls opened.',
       buttonText: 'Schedule a Plumbing Inspection'
-    }
+    },
+    faqs: [
+      { question: 'How do you detect water leaks behind walls without breaking tiles?', answer: 'We utilize advanced non-invasive leak detection systems, including acoustic sensors and thermal imaging cameras, to locate leaks precisely without causing any structural damage to your walls or tiles.' },
+      { question: 'What causes low water pressure in villas, and how do you fix it?', answer: 'Low pressure is usually caused by scale buildup, airlocks, or a failing pressure pump. We inspect the booster pump system, flush the water lines, and recalibrate or replace valves to restore optimal, steady flow.' },
+      { question: 'Do you install and service European luxury sanitaryware?', answer: 'Yes, our plumbing specialists are highly experienced in installing and maintaining premium international fixtures and sanitaries from global brands like Hansgrohe, Duravit, and Gessi.' }
+    ]
   },
   { 
     id: 'painting', 
@@ -134,7 +149,12 @@ export const SERVICES: Service[] = [
       heading: 'Ready to Transform Your Space with a Perfect Finish?',
       description: 'Book a colour consultation with our painting specialists. We\'ll help you select the perfect palette and provide a detailed quote for your project.',
       buttonText: 'Get a Painting Consultation'
-    }
+    },
+    faqs: [
+      { question: 'How long does it take to paint a standard 3-bedroom villa?', answer: 'A standard interior painting project takes between 3 to 5 days. This includes our extensive Level 5 surface preparation (sanding, priming, and defect patching) which ensures a flawless finish.' },
+      { question: 'What type of paint do you use for interior walls?', answer: 'We source premium, health-conscious, low-VOC and zero-VOC paints. These paints are completely odorless and allow you to safely re-enter and occupy the painted rooms immediately after handover.' },
+      { question: 'How do you protect furniture and flooring during the project?', answer: 'We cover all furniture and flooring with heavy-duty drop cloths, museum-grade protective plastic sheets, and professional masking tape, ensuring complete isolation and protection of your assets.' }
+    ]
   },
   { 
     id: 'renovation', 
@@ -188,7 +208,12 @@ export const SERVICES: Service[] = [
         ],
         whyChooseUs: 'Villa renovations demand a contractor who understands the scale and complexity of large residential projects. With over a decade of villa renovation experience in communities like Arabian Ranches, Emirates Hills, and Palm Jumeirah, Lilli Palmer delivers results that are structurally sound, aesthetically breathtaking, and completed on time.',
         seoContent: 'As a leading villa renovation company in Dubai, Lilli Palmer transforms outdated villas into contemporary masterpieces. Our villa renovation services cover every aspect of your project — from initial concept design and DED approvals through to structural modifications, premium finishing, and landscaping. Whether you own a villa in Arabian Ranches, Emirates Hills, Jumeirah, or Palm Jumeirah, our experienced villa renovation contractors deliver turnkey solutions that increase your property value by up to 30%. We specialize in open-plan villa conversions, modern facade upgrades, and complete interior redesigns that respect the original architectural character while introducing cutting-edge luxury. Every villa renovation we undertake is managed by a dedicated project coordinator, ensuring transparent timelines and meticulous quality control from foundation to final polish.',
-        cta: { heading: 'Ready to Reimagine Your Villa?', description: 'Schedule a complimentary villa assessment with our senior architect. We will evaluate your space and present a detailed renovation roadmap with transparent costing.', buttonText: 'Book a Villa Assessment' }
+        cta: { heading: 'Ready to Reimagine Your Villa?', description: 'Schedule a complimentary villa assessment with our senior architect. We will evaluate your space and present a detailed renovation roadmap with transparent costing.', buttonText: 'Book a Villa Assessment' },
+        faqs: [
+          { question: 'What are the main stages of a complete villa renovation?', answer: 'The stages include initial space assessment and architectural design, obtaining NOCs and authority approvals, demolition and MEP rough-ins, structural modifications, flooring and wall finishing, custom joinery, and final handover.' },
+          { question: 'Can you help with community developer NOCs?', answer: 'Yes. We are licensed contractors registered with major community developers (Emaar, Nakheel, Dubai Properties) and handle all NOC applications, developer approvals, and community guidelines.' },
+          { question: 'Do you offer facade and landscape integration during renovations?', answer: 'Yes, we provide full facade upgrades (modern stone cladding, composite panelling) and landscape contracting to ensure your villa\'s interior and exterior are beautifully integrated.' }
+        ]
       },
       {
         id: 'apartment-renovation',
@@ -215,7 +240,12 @@ export const SERVICES: Service[] = [
         ],
         whyChooseUs: 'Apartment renovations in Dubai present unique challenges — restricted access, noise regulations, and building management politics. Our team has completed hundreds of apartment fit-outs across Dubai Marina, Downtown, JBR, and Business Bay. We know the rules, the logistics, and the shortcuts that save you time and money.',
         seoContent: 'Our apartment renovation services are engineered for the unique challenges of high-rise living in Dubai. Lilli Palmer is a trusted apartment renovation company delivering premium fit-outs for apartments in Dubai Marina, Downtown Dubai, JBR, Business Bay, and beyond. We navigate building management regulations, coordinate hoist and lift logistics, and manage noise-sensitive schedules — so you don\'t have to. Our apartment renovation expertise includes complete layout reconfiguration, smart home integration, premium flooring installation, and bespoke joinery designed to maximize every square foot. Whether you are renovating a studio or a penthouse, we deliver apartment renovation results that feel five-star from the moment you walk through the door.',
-        cta: { heading: 'Transform Your Apartment Living', description: 'Book a site survey for your apartment. We will assess the space, handle all building management coordination, and deliver a detailed renovation plan.', buttonText: 'Book an Apartment Survey' }
+        cta: { heading: 'Transform Your Apartment Living', description: 'Book a site survey for your apartment. We will assess the space, handle all building management coordination, and deliver a detailed renovation plan.', buttonText: 'Book an Apartment Survey' },
+        faqs: [
+          { question: 'How do you handle restricted working hours in high-rise buildings?', answer: 'We coordinate strictly with your building management (FM) to work within the allowed contractor hours (usually 9:00 AM to 5:00 PM, weekdays) and schedule noisy work to prevent disturbance.' },
+          { question: 'Can we reconfigure the layout of our apartment?', answer: 'Yes. Non-load bearing walls can be removed to create open-plan living areas. However, plumbing and drainage positions are usually fixed by the building\'s main shafts, which we design around.' },
+          { question: 'How do you prevent water leaks to lower apartments during wet area upgrades?', answer: 'We apply multi-layer, high-performance waterproof membranes and conduct a strict 48-hour flood test before installing any floor tiles, guaranteeing absolute watertightness.' }
+        ]
       },
       {
         id: 'kitchen-renovation',
@@ -242,7 +272,12 @@ export const SERVICES: Service[] = [
         ],
         whyChooseUs: 'The kitchen is the heart of every home, and a poorly designed kitchen renovation is a daily frustration. Our kitchen designers have completed hundreds of luxury kitchen projects across Dubai, combining European design principles with the practical demands of Middle Eastern entertaining and family life.',
         seoContent: 'Transform the heart of your home with Lilli Palmer\'s premium kitchen renovation services in Dubai. Our kitchen renovation process begins with understanding how you use your kitchen — cooking habits, entertaining style, and storage needs — before designing a layout that is both ergonomically brilliant and aesthetically stunning. We source premium materials including Calacatta marble countertops, custom-milled solid wood cabinetry, and integrated European appliances from brands like Gaggenau, Miele, and Sub-Zero. Our kitchen renovation contractors handle complete demolition, plumbing rerouting, electrical upgrades, and precision installation. The result is a kitchen renovation that doesn\'t just look beautiful — it transforms the way you live, cook, and entertain.',
-        cta: { heading: 'Design Your Dream Kitchen', description: 'Book a kitchen design consultation with our specialists. We will help you plan the perfect layout, select premium materials, and provide a detailed quote.', buttonText: 'Book a Kitchen Consultation' }
+        cta: { heading: 'Design Your Dream Kitchen', description: 'Book a kitchen design consultation with our specialists. We will help you plan the perfect layout, select premium materials, and provide a detailed quote.', buttonText: 'Book a Kitchen Consultation' },
+        faqs: [
+          { question: 'Do you custom-make kitchen cabinetry locally?', answer: 'Yes, all our kitchen joinery and custom cabinets are fabricated in our state-of-the-art facility in Dubai, using premium German hardware and high-quality imported hardwoods/veneers.' },
+          { question: 'What are the best materials for luxury kitchen countertops?', answer: 'We recommend natural marbles (with custom sealing), quartzite, or high-performance engineered surfaces like Dekton and Silestone, which are scratch, heat, and stain resistant.' },
+          { question: 'Can you relocate my kitchen sink or cooking range?', answer: 'Yes. Our MEP contracting division handles all plumbing and gas pipe re-routing, electrical panel upgrades, and ventilation modifications required to support your new layout.' }
+        ]
       },
       {
         id: 'bathroom-renovation',
@@ -269,14 +304,24 @@ export const SERVICES: Service[] = [
         ],
         whyChooseUs: 'A bathroom renovation gone wrong can cause catastrophic water damage to your property. Our specialist bathroom teams understand that waterproofing is not a step to rush. We invest more time in the layers you cannot see — membranes, drainage falls, and plumbing connections — because a beautiful bathroom must also be a bulletproof one.',
         seoContent: 'Lilli Palmer delivers luxury bathroom renovation services in Dubai that transform ordinary bathrooms into private spa sanctuaries. Our bathroom renovation process prioritises flawless waterproofing, precision drainage engineering, and premium material selection — including Italian marble, natural travertine, and hand-selected porcelain. We specialise in walk-in shower conversions, freestanding tub installations, underfloor heating, and smart bathroom technology including sensor-activated lighting and heated towel systems. Every bathroom renovation project is managed end-to-end by our specialist team, from initial concept through to the final sealant bead. Whether you are renovating a guest powder room or a master en-suite, our bathroom renovation delivers a space that feels like a five-star retreat.',
-        cta: { heading: 'Create Your Private Sanctuary', description: 'Book a bathroom design consultation. We will assess your space, recommend premium materials, and deliver a detailed waterproofing and design plan.', buttonText: 'Book a Bathroom Consultation' }
+        cta: { heading: 'Create Your Private Sanctuary', description: 'Book a bathroom design consultation. We will assess your space, recommend premium materials, and deliver a detailed waterproofing and design plan.', buttonText: 'Book a Bathroom Consultation' },
+        faqs: [
+          { question: 'How do you guarantee that a new bathroom won\'t leak?', answer: 'We apply three layers of liquid elastomeric waterproofing membranes on floors and walls, focusing on joints and pipe penetrations. Every bathroom undergoes a 48-hour flood test inspected by a supervisor.' },
+          { question: 'What options do you offer for walk-in showers and wet rooms?', answer: 'We specialize in seamless walk-in showers featuring linear invisible drains, customized glass enclosures, built-in niches, rain showers, and anti-slip natural stone finishes.' },
+          { question: 'How long does a master bathroom renovation take to complete?', answer: 'Typically, a master bathroom renovation takes 10 to 14 working days, from initial strip-out and screeding to final fixture installation and silicone detailing.' }
+        ]
       }
     ],
     cta: {
       heading: 'Ready to Transform Your Home?',
       description: 'Consult with our renovation experts to explore the possibilities for your villa or apartment. We provide detailed roadmaps and transparent costing.',
       buttonText: 'Start Your Home Renovation'
-    }
+    },
+    faqs: [
+      { question: 'Do I need government and developer approvals for a home renovation?', answer: 'Yes. Major interior renovations, structural modifications, or exterior upgrades in Dubai require NOC approvals from the developer (e.g., Emaar, Nakheel) and permits from Dubai Municipality or Trakhees. We handle the entire permitting and approval process on your behalf.' },
+      { question: 'How long does a kitchen or bathroom renovation typically take?', answer: 'A luxury bathroom renovation generally takes 2 to 3 weeks, whereas a bespoke kitchen renovation takes 3 to 4 weeks, including custom joinery fabrication and MEP adjustments.' },
+      { question: 'Is it possible to live in the house during a renovation?', answer: 'For minor or single-room projects (like a guest toilet upgrade), yes. However, for full-scale kitchen, bathroom, or spatial layout overhauls, we highly recommend temporary relocation due to noise, dust, and utility shutdowns.' }
+    ]
   },
   { 
     id: 'office-renovation', 
@@ -308,7 +353,12 @@ export const SERVICES: Service[] = [
       heading: 'Optimize Your Workspace Today',
       description: 'Schedule a workspace audit with our office renovation consultants. We will help you reimagine your office for the future of work.',
       buttonText: 'Request an Office Audit'
-    }
+    },
+    faqs: [
+      { question: 'Do you manage building permits and Civil Defence approvals for offices?', answer: 'Yes. We handle all approvals with Dubai Municipality, Civil Defence, building developers, and zoning authorities (like TECOM or DAFZA) to ensure your office is fully compliant.' },
+      { question: 'Can you work during the night to minimize office downtime?', answer: 'Yes, we offer flexible night shifts and weekend working schedules, executing noisy work after-hours to keep your daily business operations completely undisrupted.' },
+      { question: 'How do you ensure proper acoustics in meeting rooms?', answer: 'We integrate double-glazed glass partitions, acoustic wall panels, soundproof ceiling systems, and specialized door seals to isolate noise and protect privacy in meeting rooms.' }
+    ]
   },
   { 
     id: 'construction', 
@@ -340,7 +390,12 @@ export const SERVICES: Service[] = [
       heading: 'Ready to Build Something Extraordinary?',
       description: 'From concept to completion, our construction team manages every detail. Let\'s discuss your architectural vision and turn blueprints into reality.',
       buttonText: 'Discuss Your Construction Project'
-    }
+    },
+    faqs: [
+      { question: 'Are you a fully licensed building contractor in Dubai?', answer: 'Yes, Lilli Palmer is a fully licensed building contracting company in Dubai, certified to construct residential villas, structural extensions, and commercial properties.' },
+      { question: 'Do you handle the entire structural engineering and approvals process?', answer: 'Yes, we manage the complete cycle: from structural engineering, architectural blueprint adjustments, obtaining developer NOCs, to Dubai Municipality and civil engineering approvals.' },
+      { question: 'Can we build an extension to our existing villa?', answer: 'Absolutely. We specialize in structural extensions, including adding floors, extending living rooms, building guest suites, and constructing independent pool houses, matching your existing architecture.' }
+    ]
   },
   { 
     id: 'mep-contracting', 
@@ -372,7 +427,12 @@ export const SERVICES: Service[] = [
       heading: 'Require Elite MEP Integration for Your Project?',
       description: 'Consult with our senior MEP engineers. We provide comprehensive mechanical, electrical, and plumbing roadmaps tailored to your architectural vision.',
       buttonText: 'Schedule an MEP Consultation'
-    }
+    },
+    faqs: [
+      { question: 'What is MEP contracting and why is it crucial?', answer: 'MEP stands for Mechanical, Electrical, and Plumbing. An integrated MEP contracting approach ensures that HVAC cooling, electrical circuits, and water systems are designed and routed in harmony, avoiding construction clashes.' },
+      { question: 'Do you provide MEP services for existing properties?', answer: 'Yes. We specialize in upgrading and overhauling MEP systems in older luxury properties, replacing outdated wiring, plumbing manifolds, and HVAC ductworks with efficient modern infrastructure.' },
+      { question: 'What materials do you use for MEP installations?', answer: 'We use premium, industrial-grade materials like PPR/PEX piping for plumbing, marine-grade cabling for electricals, and insulated ductwork to ensure long-term durability in high-ambient temperatures.' }
+    ]
   },
   { 
     id: 'annual-maintenance-contract', 
@@ -512,5 +572,10 @@ export const OFFICE_RENOVATION_SUB_SERVICE: import('./types').SubService = {
     heading: 'Optimize Your Workspace Today',
     description: 'Schedule a workspace audit with our office renovation consultants. We will help you reimagine your office for the future of work.',
     buttonText: 'Request an Office Audit'
-  }
+  },
+  faqs: [
+    { question: 'Do you manage building permits and Civil Defence approvals for offices?', answer: 'Yes. We handle all approvals with Dubai Municipality, Civil Defence, building developers, and zoning authorities (like TECOM or DAFZA) to ensure your office is fully compliant.' },
+    { question: 'Can you work during the night to minimize office downtime?', answer: 'Yes, we offer flexible night shifts and weekend working schedules, executing noisy work after-hours to keep your daily business operations completely undisrupted.' },
+    { question: 'How do you ensure proper acoustics in meeting rooms?', answer: 'We integrate double-glazed glass partitions, acoustic wall panels, soundproof ceiling systems, and specialized door seals to isolate noise and protect privacy in meeting rooms.' }
+  ]
 };

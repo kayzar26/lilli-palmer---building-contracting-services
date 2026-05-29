@@ -3,7 +3,9 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { SERVICES } from '@/constants';
 import { Service } from '@/types';
-import { ArrowLeft, ArrowRight, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, CheckCircle2 } from 'lucide-react';
+import { Breadcrumbs, BreadcrumbItem } from '@/components/ui/Breadcrumbs';
+import { FAQSection } from '@/components/ui/FAQSection';
 
 interface ServiceDetailContentProps {
   service: Service;
@@ -11,15 +13,19 @@ interface ServiceDetailContentProps {
 
 const ServiceDetailContent: React.FC<ServiceDetailContentProps> = ({ service }) => {
   const otherServices = SERVICES.filter(s => s.id !== service.id).slice(0, 3);
+  
+  const breadcrumbItems: BreadcrumbItem[] = [
+    { label: 'Home', url: '/' },
+    { label: 'Services', url: '/services' },
+    { label: service.title }
+  ];
 
   return (
     <div className="pt-52 pb-20">
       <div className="container mx-auto px-6">
         {/* Header Section */}
         <div className="mb-16 relative z-[50]">
-          <Link href="/services" className="inline-flex items-center gap-2 text-xs font-bold tracking-widest text-gray-400 hover:text-[#BBA899] transition-colors mb-8 uppercase">
-            <ArrowLeft size={16} /> Back to Services
-          </Link>
+          <Breadcrumbs items={breadcrumbItems} />
           <p className="text-h1-custom text-[#BBA899] mb-4 uppercase tracking-[0.3em]">EXCELLENCE IN {service.title.split(' ')[0]}</p>
           <h1 className="text-5xl md:text-8xl font-light tracking-tighter text-gray-800 uppercase">{service.title}</h1>
         </div>
@@ -30,6 +36,7 @@ const ServiceDetailContent: React.FC<ServiceDetailContentProps> = ({ service }) 
             src={service.image} 
             alt={service.title} 
             fill
+            sizes="100vw"
             priority
             className="object-cover grayscale brightness-90"
           />
@@ -187,6 +194,11 @@ const ServiceDetailContent: React.FC<ServiceDetailContentProps> = ({ service }) 
           </div>
         )}
 
+        {/* FAQs Section */}
+        {service.faqs && service.faqs.length > 0 && (
+          <FAQSection faqs={service.faqs} />
+        )}
+
         {/* Other Services Section */}
         <div className="border-t border-gray-300 pt-24">
           <h2 className="text-h1-custom text-black mb-12 uppercase tracking-[0.3em]">Explore Other Expertise</h2>
@@ -194,7 +206,7 @@ const ServiceDetailContent: React.FC<ServiceDetailContentProps> = ({ service }) 
             {otherServices.map(s => (
               <Link key={s.id} href={`/services/${s.id}`} className="group block">
                 <div className="aspect-video relative overflow-hidden mb-4 rounded-sm">
-                  <Image src={s.image} alt={s.title} fill className="object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-105" />
+                  <Image src={s.image} alt={s.title} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-105" />
                 </div>
                 <h3 className="text-[11px] font-bold tracking-widest text-gray-800 uppercase group-hover:text-[#BBA899]">{s.title}</h3>
               </Link>
